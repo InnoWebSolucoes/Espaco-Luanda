@@ -225,7 +225,7 @@
       font-size: 0.78rem;
       font-weight: 300;
       line-height: 1.85;
-      color: rgba(26,16,8,0.6);
+      color: rgba(26,16,8,0.82);
       margin-top: 1.1rem;
     }
     .dining-btn {
@@ -267,7 +267,7 @@
     /* ─── Mobile breakpoint overrides ────────────────────────────────────────── */
     @media (max-width: 768px) {
       /* Prevent any element from causing horizontal overflow / page zoom-out */
-      html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+      html, body { overflow-x: clip !important; max-width: 100vw !important; }
 
       .hamburger-btn     { display: flex !important; }
       .desktop-links     { display: none !important; }
@@ -547,11 +547,11 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════ DINING TIMES SECTION ═══
-       Reference: florporto.com style — sticky right timeline (sun → moon),
-       left-scrolling content: image · title · subheading · text · CTA
+       3 dining periods — sticky right timeline: vertical line on right edge,
+       horizontal ticks extending left, label at active stop, sun/moon at ends
   ══════════════════════════════════════════════════════════════════════════ -->
   <section id="dining-section"
-           style="position:relative;width:100%;background:#faf8f4;overflow:hidden;">
+           style="position:relative;width:100%;background:#faf8f4;">
 
     <!-- Logo — top left -->
     <div style="position:absolute;top:2rem;left:1.5rem;z-index:5;">
@@ -564,10 +564,34 @@
       <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
       <div style="flex:1;min-width:0;padding:7.5rem 1.6rem 5rem 1.6rem;">
 
-        <!-- Item 1: Almoço -->
+        <!-- Item 0: Petiscos -->
         <article class="dining-item" data-period="0">
           <div style="overflow:hidden;">
-            <img src="dish-2.webp" alt="Almoço"
+            <img src="dining-1.webp" alt="Petiscos"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <h2 class="dining-title">Petiscos</h2>
+          <p class="dining-sub">das 11:00 às 16:00</p>
+          <p class="dining-desc">Começa bem o dia. Os nossos petiscos são o convite perfeito para reunir e partilhar — pequenas criações cheias de sabor, inspiradas no melhor de Angola e do mundo.</p>
+          <a href="#" class="dining-btn">Ver Mais</a>
+        </article>
+
+        <!-- Item 1: Cocktails -->
+        <article class="dining-item" data-period="1">
+          <div style="overflow:hidden;">
+            <img src="dining-2.webp" alt="Cocktails"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <h2 class="dining-title">Cocktails</h2>
+          <p class="dining-sub">das 12:00 às 00:00</p>
+          <p class="dining-desc">Arte líquida no copo. A nossa carta de cocktails combina destilados premium com ingredientes frescos e técnicas contemporâneas — cada sorso é uma experiência pensada ao detalhe.</p>
+          <a href="#" class="dining-btn">Ver Mais</a>
+        </article>
+
+        <!-- Item 2: Almoço -->
+        <article class="dining-item" data-period="2">
+          <div style="overflow:hidden;">
+            <img src="dining-3.webp" alt="Almoço"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
           <h2 class="dining-title">Almoço</h2>
@@ -576,69 +600,98 @@
           <a href="#" class="dining-btn">Ver Mais</a>
         </article>
 
-        <!-- Item 2: Jantar -->
-        <article class="dining-item" data-period="1">
-          <div style="overflow:hidden;">
-            <img src="dish-4.webp" alt="Jantar"
-                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
-          </div>
-          <h2 class="dining-title">Jantar</h2>
-          <p class="dining-sub">das 19:00 às 00:00</p>
-          <p class="dining-desc">Uma experiência para os sentidos. À luz do anoitecer, celebramos cada momento com pratos que unem o melhor da carne e do mar em perfeita harmonia.</p>
-          <a href="#" class="dining-btn">Ver Mais</a>
-        </article>
-
       </div>
 
-      <!-- ── RIGHT: sticky timeline ────────────────────────────────────── -->
-      <div style="width:60px;flex-shrink:0;position:sticky;top:0;height:100vh;
-                  display:flex;flex-direction:column;align-items:center;
-                  justify-content:space-between;padding:3rem 0;">
+      <!-- ── RIGHT: sticky timeline — vertical line RIGHT, ticks extend LEFT ── -->
+      <div style="width:84px;flex-shrink:0;position:sticky;top:0;height:100vh;">
 
-        <!-- Sun icon -->
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-          <circle cx="7.5" cy="7.5" r="3.2" stroke="#c8a06a" stroke-width="0.9"/>
-          <line x1="7.5" y1="0.5" x2="7.5" y2="2.4" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="7.5" y1="12.6" x2="7.5" y2="14.5" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="0.5" y1="7.5" x2="2.4" y2="7.5" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="12.6" y1="7.5" x2="14.5" y2="7.5" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="2.8" y1="2.8" x2="4.1" y2="4.1" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="10.9" y1="10.9" x2="12.2" y2="12.2" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="12.2" y1="2.8" x2="10.9" y2="4.1" stroke="#c8a06a" stroke-width="0.85"/>
-          <line x1="4.1" y1="10.9" x2="2.8" y2="12.2" stroke="#c8a06a" stroke-width="0.85"/>
-        </svg>
-
-        <!-- Track + sliding indicator -->
-        <div id="dining-track"
-             style="position:relative;flex:1;width:1px;background:rgba(26,16,8,0.13);
-                    margin:0.5rem 0;">
-          <!-- Sliding dot -->
-          <div id="dining-dot"
-               style="position:absolute;left:50%;transform:translate(-50%,-50%);
-                      top:25%;width:9px;height:9px;border-radius:50%;
-                      border:1.5px solid #c8a06a;background:#faf8f4;
-                      transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
-          <!-- Label — vertical, left of line -->
-          <span id="dining-label"
-                style="position:absolute;top:25%;right:calc(100% + 8px);
-                       transform:translateY(-50%);
-                       font-family:'Montserrat',sans-serif;
-                       font-size:0.44rem;font-weight:400;
-                       letter-spacing:0.18em;text-transform:uppercase;
-                       color:rgba(26,16,8,0.42);white-space:nowrap;
-                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);">almoço</span>
+        <!-- Sun — top right -->
+        <div style="position:absolute;top:2.8rem;right:14px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="2.9" stroke="#c8a06a" stroke-width="0.85"/>
+            <line x1="7" y1="0.4" x2="7" y2="2.2" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="7" y1="11.8" x2="7" y2="13.6" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="0.4" y1="7" x2="2.2" y2="7" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="11.8" y1="7" x2="13.6" y2="7" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="2.5" y1="2.5" x2="3.8" y2="3.8" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="10.2" y1="10.2" x2="11.5" y2="11.5" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="11.5" y1="2.5" x2="10.2" y2="3.8" stroke="#c8a06a" stroke-width="0.8"/>
+            <line x1="3.8" y1="10.2" x2="2.5" y2="11.5" stroke="#c8a06a" stroke-width="0.8"/>
+          </svg>
         </div>
 
-        <!-- Moon icon -->
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-          <path d="M6.5 1.2C3.9 1.2 1.8 3.3 1.8 6s2.1 4.8 4.7 4.8
-                   c1.7 0 3.2-.9 4-2.3-0.7.3-1.5.5-2.3.5
-                   C5.6 9 3.5 6.9 3.5 4.3c0-1.3.5-2.4 1.4-3.2
-                   A4.8 4.8 0 006.5 1.2z"
-                stroke="#c8a06a" stroke-width="0.85" stroke-linecap="round" fill="none"/>
-        </svg>
+        <!-- Moon — bottom right -->
+        <div style="position:absolute;bottom:2.8rem;right:13px;">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M6.5 1.2C3.9 1.2 1.8 3.3 1.8 6s2.1 4.8 4.7 4.8
+                     c1.7 0 3.2-.9 4-2.3-0.7.3-1.5.5-2.3.5
+                     C5.6 9 3.5 6.9 3.5 4.3c0-1.3.5-2.4 1.4-3.2
+                     A4.8 4.8 0 006.5 1.2z"
+                  stroke="#c8a06a" stroke-width="0.85" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
 
-      </div><!-- /timeline -->
+        <!-- Vertical line — pinned to right edge, spanning between sun and moon -->
+        <div id="dining-track"
+             style="position:absolute;right:20px;top:5.2rem;bottom:5.2rem;
+                    width:1px;background:rgba(26,16,8,0.16);">
+
+          <!-- Moving dot on the line -->
+          <div id="dining-dot"
+               style="position:absolute;right:-4px;top:20%;
+                      width:9px;height:9px;border-radius:50%;
+                      background:#faf8f4;border:1.5px solid #c8a06a;
+                      transform:translateY(-50%);
+                      transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
+
+          <!-- Tick 0 — Petiscos (active by default) -->
+          <div class="dining-tick" data-idx="0"
+               style="position:absolute;top:20%;right:0;height:1px;
+                      width:26px;background:#c8a06a;
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Montserrat',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:#c8a06a;
+                         transition:opacity 0.4s ease,color 0.4s ease;">petiscos</span>
+          </div>
+
+          <!-- Tick 1 — Cocktails (inactive by default) -->
+          <div class="dining-tick" data-idx="1"
+               style="position:absolute;top:50%;right:0;height:1px;
+                      width:12px;background:rgba(26,16,8,0.2);
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Montserrat',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:rgba(26,16,8,0.3);opacity:0;
+                         transition:opacity 0.4s ease,color 0.4s ease;">cocktails</span>
+          </div>
+
+          <!-- Tick 2 — Almoço (inactive by default) -->
+          <div class="dining-tick" data-idx="2"
+               style="position:absolute;top:76%;right:0;height:1px;
+                      width:12px;background:rgba(26,16,8,0.2);
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Montserrat',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:rgba(26,16,8,0.3);opacity:0;
+                         transition:opacity 0.4s ease,color 0.4s ease;">almoço</span>
+          </div>
+
+        </div><!-- /dining-track -->
+
+      </div><!-- /timeline column -->
 
     </div>
 
@@ -949,21 +1002,30 @@
       }
     });
 
-    /* ── Dining timeline: dot slides as items scroll into view ────────────── */
+    /* ── Dining timeline: ticks + dot slide as items scroll into view ──────── */
     (function () {
-      const dot    = document.getElementById('dining-dot');
-      const label  = document.getElementById('dining-label');
-      const items  = document.querySelectorAll('.dining-item');
-      if (!dot || !label || !items.length) return;
+      const dot   = document.getElementById('dining-dot');
+      const ticks = document.querySelectorAll('.dining-tick');
+      const items = document.querySelectorAll('.dining-item');
+      if (!dot || !ticks.length || !items.length) return;
 
-      /* % position along the track for each period (0 = top, 100 = bottom) */
-      const positions = ['22%', '72%'];
-      const labels    = ['almoço', 'jantar'];
+      /* % position along the track for each period */
+      const positions = ['20%', '50%', '76%'];
 
       function activate(idx) {
-        dot.style.top   = positions[idx];
-        label.style.top = positions[idx];
-        label.textContent = labels[idx];
+        dot.style.top = positions[idx];
+        ticks.forEach((tick, i) => {
+          const lbl = tick.querySelector('.dining-tick-label');
+          if (i === idx) {
+            tick.style.width      = '26px';
+            tick.style.background = '#c8a06a';
+            if (lbl) { lbl.style.opacity = '1'; lbl.style.color = '#c8a06a'; }
+          } else {
+            tick.style.width      = '12px';
+            tick.style.background = 'rgba(26,16,8,0.2)';
+            if (lbl) { lbl.style.opacity = '0'; lbl.style.color = 'rgba(26,16,8,0.3)'; }
+          }
+        });
       }
       activate(0);
 
