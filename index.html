@@ -547,7 +547,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════ DINING TIMES SECTION ═══
-       3 dining periods — sticky right timeline: vertical line on right edge,
+       4 weekly specials — sticky right timeline: vertical line on right edge,
        horizontal ticks extending left, label at active stop, sun/moon at ends
   ══════════════════════════════════════════════════════════════════════════ -->
   <section id="dining-section"
@@ -564,39 +564,51 @@
       <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
       <div style="flex:1;min-width:0;padding:7.5rem 1.6rem 5rem 1.6rem;">
 
-        <!-- Item 0: Petiscos -->
+        <!-- Item 0: Segunda -->
         <article class="dining-item" data-period="0">
           <div style="overflow:hidden;">
-            <img src="dining-1.webp" alt="Petiscos"
+            <img src="dining-monday.jpg" alt="Segundas sem lei"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Petiscos</h2>
-          <p class="dining-sub">das 11:00 às 16:00</p>
-          <p class="dining-desc">Começa bem o dia. Os nossos petiscos são o convite perfeito para reunir e partilhar — pequenas criações cheias de sabor, inspiradas no melhor de Angola e do mundo.</p>
+          <h2 class="dining-title">Segundas sem lei</h2>
+          <p class="dining-sub">Segundas a partir das 18h</p>
+          <p class="dining-desc">Aproveita a Segunda-feira Sem Lei com 20% de desconto nas nossas carnes premium. Vem relaxar, brindar e começar a semana do jeito certo... Sem regras, sem pressa, só boas vibes! Segunda é o novo sábado. Venha Viver sem lei...</p>
           <a href="#" class="dining-btn">Ver Mais</a>
         </article>
 
-        <!-- Item 1: Cocktails -->
+        <!-- Item 1: Terça -->
         <article class="dining-item" data-period="1">
           <div style="overflow:hidden;">
-            <img src="dining-2.webp" alt="Cocktails"
+            <img src="dining-tuesday.jpg" alt="Terça do Chefe"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Cocktails</h2>
-          <p class="dining-sub">das 12:00 às 00:00</p>
-          <p class="dining-desc">Arte líquida no copo. A nossa carta de cocktails combina destilados premium com ingredientes frescos e técnicas contemporâneas — cada sorso é uma experiência pensada ao detalhe.</p>
+          <h2 class="dining-title">Terça do Chefe</h2>
+          <p class="dining-sub">Terças a partir das 19h00</p>
+          <p class="dining-desc">As terças-feiras ganharam um novo sabor no Espaço Luanda! Venha viver uma experiência gastronômica única com o menu exclusivo preparado pelo nosso Chefe. E para começar a noite da melhor forma, oferecemos uma rodada de caipirinha por nossa conta (por cliente!)</p>
           <a href="#" class="dining-btn">Ver Mais</a>
         </article>
 
-        <!-- Item 2: Almoço -->
+        <!-- Item 2: Quinta -->
         <article class="dining-item" data-period="2">
           <div style="overflow:hidden;">
-            <img src="dining-3.webp" alt="Almoço"
+            <img src="dining-thursday.jpg" alt="Quintas"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Almoço</h2>
-          <p class="dining-sub">das 12:00 às 16:00</p>
-          <p class="dining-desc">Sabores que aquecam. A nossa ementa de almoço celebra o melhor do mar e da terra, servida com um toque de tradição angolana e elegância contemporânea.</p>
+          <h2 class="dining-title">Quintas</h2>
+          <p class="dining-sub">Todas as quintas</p>
+          <p class="dining-desc">Pediste a nossa costela premium? Então prepara-te: tens direito a 2 horas de cerveja Brava por nossa conta! Sabor, suculência e o brinde perfeito para animar a tua quinta com costelas e cerveja.</p>
+          <a href="#" class="dining-btn">Ver Mais</a>
+        </article>
+
+        <!-- Item 3: Sexta -->
+        <article class="dining-item" data-period="3">
+          <div style="overflow:hidden;">
+            <img src="dining-friday.jpg" alt="Sexta-feira"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <h2 class="dining-title">Sexta-feira</h2>
+          <p class="dining-sub">Todas as sextas</p>
+          <p class="dining-desc">Música ao vivo com RYBAY e um menu especial À Moda do Chef. A combinação perfeita para entrar no fim de semana com estilo e sabor. Reserva a tua mesa e vem curtir uma noite vibrante, deliciosa e com som ao vivo!</p>
           <a href="#" class="dining-btn">Ver Mais</a>
         </article>
 
@@ -631,22 +643,22 @@
           </svg>
         </div>
 
-        <!-- Vertical line — pinned to right edge, spanning between sun and moon -->
+        <!-- Vertical line — right edge, spanning between sun and moon -->
         <div id="dining-track"
              style="position:absolute;right:20px;top:5.2rem;bottom:5.2rem;
                     width:1px;background:rgba(26,16,8,0.16);">
 
           <!-- Moving dot on the line -->
           <div id="dining-dot"
-               style="position:absolute;right:-4px;top:20%;
+               style="position:absolute;right:-4px;top:15%;
                       width:9px;height:9px;border-radius:50%;
                       background:#faf8f4;border:1.5px solid #c8a06a;
                       transform:translateY(-50%);
                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
 
-          <!-- Tick 0 — Petiscos (active by default) -->
+          <!-- Tick 0 — Segunda (active by default) -->
           <div class="dining-tick" data-idx="0"
-               style="position:absolute;top:20%;right:0;height:1px;
+               style="position:absolute;top:15%;right:0;height:1px;
                       width:26px;background:#c8a06a;
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -656,12 +668,12 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:#c8a06a;
-                         transition:opacity 0.4s ease,color 0.4s ease;">petiscos</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">segunda</span>
           </div>
 
-          <!-- Tick 1 — Cocktails (inactive by default) -->
+          <!-- Tick 1 — Terça (inactive) -->
           <div class="dining-tick" data-idx="1"
-               style="position:absolute;top:50%;right:0;height:1px;
+               style="position:absolute;top:38%;right:0;height:1px;
                       width:12px;background:rgba(26,16,8,0.2);
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -671,12 +683,12 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(26,16,8,0.3);opacity:0;
-                         transition:opacity 0.4s ease,color 0.4s ease;">cocktails</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">terça</span>
           </div>
 
-          <!-- Tick 2 — Almoço (inactive by default) -->
+          <!-- Tick 2 — Quinta (inactive) -->
           <div class="dining-tick" data-idx="2"
-               style="position:absolute;top:76%;right:0;height:1px;
+               style="position:absolute;top:62%;right:0;height:1px;
                       width:12px;background:rgba(26,16,8,0.2);
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -686,7 +698,22 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(26,16,8,0.3);opacity:0;
-                         transition:opacity 0.4s ease,color 0.4s ease;">almoço</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">quinta</span>
+          </div>
+
+          <!-- Tick 3 — Sexta (inactive) -->
+          <div class="dining-tick" data-idx="3"
+               style="position:absolute;top:84%;right:0;height:1px;
+                      width:12px;background:rgba(26,16,8,0.2);
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Montserrat',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:rgba(26,16,8,0.3);opacity:0;
+                         transition:opacity 0.4s ease,color 0.4s ease;">sexta</span>
           </div>
 
         </div><!-- /dining-track -->
@@ -1010,7 +1037,7 @@
       if (!dot || !ticks.length || !items.length) return;
 
       /* % position along the track for each period */
-      const positions = ['20%', '50%', '76%'];
+      const positions = ['15%', '38%', '62%', '84%'];
 
       function activate(idx) {
         dot.style.top = positions[idx];
