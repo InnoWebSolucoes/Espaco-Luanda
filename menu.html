@@ -41,7 +41,12 @@
       margin: -1rem -1.4rem -1rem 0;
     }
     .back-link:hover { color: #c8a06a; }
-    .nav-logo { height: 40px; width: auto; display: block; }
+    .nav-logo {
+      height: 40px; width: auto; display: block;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    #top-nav.cat-active .nav-logo { opacity: 0.88; pointer-events: auto; }
 
     /* ── SPHERE VIEW ─────────────────────────────────────────────── */
     #sphere-view {
@@ -349,6 +354,7 @@
 
       document.getElementById('cat-view').classList.add('visible');
       document.getElementById('sphere-view').classList.add('fading');
+      document.getElementById('top-nav').classList.add('cat-active');
 
       // Switch nav back button to go back to sphere
       const navBack = document.getElementById('nav-back');
@@ -360,6 +366,7 @@
     function backToSphere() {
       document.getElementById('cat-view').classList.remove('visible');
       document.getElementById('sphere-view').classList.remove('fading');
+      document.getElementById('top-nav').classList.remove('cat-active');
 
       // Restore nav back link to index.html
       const navBack = document.getElementById('nav-back');
@@ -940,6 +947,7 @@ void main() {
     titleEl.addEventListener('click', openCategory);
     descEl.addEventListener('click',  openCategory);
     btnEl.addEventListener('click',   openCategory);
+    canvas.addEventListener('click',  openCategory);
 
     const canvas = document.getElementById('infinite-grid-menu-canvas');
     const sketch = new InfiniteGridMenu(canvas, SPHERE_ITEMS, setActive, setMoving, sk => {
