@@ -233,7 +233,10 @@
       #carousel-stage   { overflow: hidden !important; }
       /* Make stage height match the square plate so there's no dead space */
       #carousel-stage   { height: 92vw !important; }
-      #carousel-section { height: auto !important; overflow: visible !important; }
+      /* z-index:6 > feature-section z-index:5 so the spice image (which overflows
+         upward from this section) renders in front of the white feature background */
+      #carousel-section { height: auto !important; overflow: visible !important;
+                          position: relative; z-index: 6 !important; }
       /* Tighter carousel bottom panel on mobile */
       #carousel-section > div:last-child {
         padding: 0 1.5rem !important;
@@ -539,17 +542,29 @@
            word boundaries — no mid-word wraps during the animation.            */
         const words = splitWords(mainTextEl);
         gsap.set(words, { opacity: 0, y: 36, rotateZ: -2 });
+        /* Keep observing (no disconnect) so the animation re-plays every time
+           the element enters the viewport and reverses when it leaves.           */
         const obs = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
+            /* Scroll INTO view — play forward */
             gsap.to(words, {
               opacity: 1, y: 0, rotateZ: 0,
               stagger: 0.09,
               duration: 0.75,
-              ease: 'power3.out'
+              ease: 'power3.out',
+              overwrite: 'auto'
             });
-            obs.disconnect();
+          } else {
+            /* Scroll OUT of view — reverse */
+            gsap.to(words, {
+              opacity: 0, y: 36, rotateZ: -2,
+              stagger: { each: 0.04, from: 'end' },
+              duration: 0.45,
+              ease: 'power2.in',
+              overwrite: 'auto'
+            });
           }
-        }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+        }, { threshold: 0.15 });
         obs.observe(mainTextEl);
       } else {
         /* Desktop: GSAP char-by-char stagger with ScrollTrigger */
