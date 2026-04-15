@@ -173,16 +173,76 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 300;
-      font-size: 2.6rem;
-      color: rgba(255,255,255,0.9);
+      font-size: 2.4rem;
+      color: rgba(255,255,255,0.88);
       text-decoration: none;
       letter-spacing: 0.01em;
-      line-height: 1.3;
+      line-height: 1.25;
       display: block;
-      text-align: center;
+      text-align: left;
+      width: 100%;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       transition: color 0.22s ease;
     }
+    .mob-link:last-child { border-bottom: none; }
     .mob-link:hover { color: #c8a06a; }
+    /* Contact info in overlay */
+    .mob-contact {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      line-height: 1.7;
+    }
+
+    /* ─── Dining times section ───────────────────────────────────────────────── */
+    .dining-item { margin-bottom: 5.5rem; }
+    .dining-item:last-child { margin-bottom: 4rem; }
+    .dining-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      color: #1a1008;
+      line-height: 1;
+      margin-top: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .dining-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c8a06a;
+      margin-top: 0.75rem;
+    }
+    .dining-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(26,16,8,0.6);
+      margin-top: 1.1rem;
+    }
+    .dining-btn {
+      display: inline-block;
+      margin-top: 1.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #1a1008;
+      text-decoration: none;
+      border-bottom: 1px solid #c8a06a;
+      padding-bottom: 3px;
+      transition: color 0.22s ease;
+    }
+    .dining-btn:hover { color: #c8a06a; }
     .mob-close-btn {
       position: absolute;
       top: 1.8rem;
@@ -356,15 +416,23 @@
     <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
          style="height:60px;width:auto;display:block;opacity:0.92;margin-bottom:0;" />
     <div class="mob-ornament"></div>
-    <!-- Nav links -->
-    <nav style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+    <!-- Nav links — left-aligned, full-width, uniform bottom borders -->
+    <nav style="display:flex;flex-direction:column;align-items:flex-start;
+                width:100%;padding:0 2.5rem;">
       <a href="#" class="mob-link" onclick="closeMenu()">Menu</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Sobre</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Contacto</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Cartão Presente</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Encomendar Agora</a>
     </nav>
-    <div class="mob-ornament"></div>
+
+    <!-- Contact info pinned to bottom -->
+    <div style="position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;">
+      <div style="width:36px;height:1px;background:rgba(255,255,255,0.18);margin-bottom:1rem;"></div>
+      <p class="mob-contact">Luanda, Angola</p>
+      <p class="mob-contact">+244 900 000 000</p>
+    </div>
+
   </div>
 
   <!-- ══════════════════════════════════ FEATURE SECTION — TEXT ONLY ═══════ -->
@@ -473,6 +541,104 @@
         <p class="dish-name-el" id="dname-2">Entrecosto Wagyu Grelhado</p>
         <p class="dish-name-el" id="dname-3">Camarão Flambado de Luanda</p>
       </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ DINING TIMES SECTION ═══
+       Reference: florporto.com style — sticky right timeline (sun → moon),
+       left-scrolling content: image · title · subheading · text · CTA
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="dining-section"
+           style="position:relative;width:100%;background:#faf8f4;overflow:hidden;">
+
+    <!-- Logo — top left -->
+    <div style="position:absolute;top:2rem;left:1.5rem;z-index:5;">
+      <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+           style="height:52px;width:auto;display:block;" />
+    </div>
+
+    <div style="display:flex;width:100%;align-items:flex-start;">
+
+      <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
+      <div style="flex:1;min-width:0;padding:7.5rem 1.6rem 5rem 1.6rem;">
+
+        <!-- Item 1: Almoço -->
+        <article class="dining-item" data-period="0">
+          <div style="overflow:hidden;">
+            <img src="dish-2.webp" alt="Almoço"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <h2 class="dining-title">Almoço</h2>
+          <p class="dining-sub">das 12:00 às 16:00</p>
+          <p class="dining-desc">Sabores que aquecam. A nossa ementa de almoço celebra o melhor do mar e da terra, servida com um toque de tradição angolana e elegância contemporânea.</p>
+          <a href="#" class="dining-btn">Ver Mais</a>
+        </article>
+
+        <!-- Item 2: Jantar -->
+        <article class="dining-item" data-period="1">
+          <div style="overflow:hidden;">
+            <img src="dish-4.webp" alt="Jantar"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <h2 class="dining-title">Jantar</h2>
+          <p class="dining-sub">das 19:00 às 00:00</p>
+          <p class="dining-desc">Uma experiência para os sentidos. À luz do anoitecer, celebramos cada momento com pratos que unem o melhor da carne e do mar em perfeita harmonia.</p>
+          <a href="#" class="dining-btn">Ver Mais</a>
+        </article>
+
+      </div>
+
+      <!-- ── RIGHT: sticky timeline ────────────────────────────────────── -->
+      <div style="width:60px;flex-shrink:0;position:sticky;top:0;height:100vh;
+                  display:flex;flex-direction:column;align-items:center;
+                  justify-content:space-between;padding:3rem 0;">
+
+        <!-- Sun icon -->
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <circle cx="7.5" cy="7.5" r="3.2" stroke="#c8a06a" stroke-width="0.9"/>
+          <line x1="7.5" y1="0.5" x2="7.5" y2="2.4" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="7.5" y1="12.6" x2="7.5" y2="14.5" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="0.5" y1="7.5" x2="2.4" y2="7.5" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="12.6" y1="7.5" x2="14.5" y2="7.5" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="2.8" y1="2.8" x2="4.1" y2="4.1" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="10.9" y1="10.9" x2="12.2" y2="12.2" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="12.2" y1="2.8" x2="10.9" y2="4.1" stroke="#c8a06a" stroke-width="0.85"/>
+          <line x1="4.1" y1="10.9" x2="2.8" y2="12.2" stroke="#c8a06a" stroke-width="0.85"/>
+        </svg>
+
+        <!-- Track + sliding indicator -->
+        <div id="dining-track"
+             style="position:relative;flex:1;width:1px;background:rgba(26,16,8,0.13);
+                    margin:0.5rem 0;">
+          <!-- Sliding dot -->
+          <div id="dining-dot"
+               style="position:absolute;left:50%;transform:translate(-50%,-50%);
+                      top:25%;width:9px;height:9px;border-radius:50%;
+                      border:1.5px solid #c8a06a;background:#faf8f4;
+                      transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
+          <!-- Label — vertical, left of line -->
+          <span id="dining-label"
+                style="position:absolute;top:25%;right:calc(100% + 8px);
+                       transform:translateY(-50%);
+                       font-family:'Montserrat',sans-serif;
+                       font-size:0.44rem;font-weight:400;
+                       letter-spacing:0.18em;text-transform:uppercase;
+                       color:rgba(26,16,8,0.42);white-space:nowrap;
+                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);">almoço</span>
+        </div>
+
+        <!-- Moon icon -->
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M6.5 1.2C3.9 1.2 1.8 3.3 1.8 6s2.1 4.8 4.7 4.8
+                   c1.7 0 3.2-.9 4-2.3-0.7.3-1.5.5-2.3.5
+                   C5.6 9 3.5 6.9 3.5 4.3c0-1.3.5-2.4 1.4-3.2
+                   A4.8 4.8 0 006.5 1.2z"
+                stroke="#c8a06a" stroke-width="0.85" stroke-linecap="round" fill="none"/>
+        </svg>
+
+      </div><!-- /timeline -->
 
     </div>
 
@@ -688,8 +854,8 @@
         tl.to(nameEls[oldR.hidden], { x: NX.next,    opacity: 0, duration: D, ease: 'power2.out' }, 0);
 
         /* Wobble: incoming plate leans as it decelerates, then elastically settles. */
-        tl.to(cards[oldR.next], { rotateZ: -1.4, duration: D * 0.52, ease: 'power1.out' }, 0);
-        tl.to(cards[oldR.next], { rotateZ:  0,   duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
+        tl.to(cards[oldR.next], { rotateZ: -5, duration: D * 0.52, ease: 'power1.out' }, 0);
+        tl.to(cards[oldR.next], { rotateZ:  0, duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
 
       } else {
         /* BACKWARD — everything shifts right at identical velocity.             */
@@ -706,8 +872,8 @@
         tl.to(nameEls[oldR.hidden], { x: NX.prev,    opacity: 0, duration: D, ease: 'power2.out' }, 0);
 
         /* Wobble: mirror direction for backward advance. */
-        tl.to(cards[oldR.prev], { rotateZ:  1.4, duration: D * 0.52, ease: 'power1.out' }, 0);
-        tl.to(cards[oldR.prev], { rotateZ:  0,   duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
+        tl.to(cards[oldR.prev], { rotateZ:  5, duration: D * 0.52, ease: 'power1.out' }, 0);
+        tl.to(cards[oldR.prev], { rotateZ:  0, duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
       }
     }
 
@@ -728,12 +894,20 @@
     const hamBtn        = document.getElementById('hamburger-btn');
     const closeBtn      = document.getElementById('close-overlay');
     const mobLinks      = mobileOverlay ? Array.from(mobileOverlay.querySelectorAll('.mob-link')) : [];
+    let   savedScroll   = 0;
 
     function openMenu() {
       if (!mobileOverlay) return;
+      /* Lock scroll — position:fixed approach works on iOS Safari */
+      savedScroll = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top      = `-${savedScroll}px`;
+      document.body.style.left     = '0';
+      document.body.style.right    = '0';
+      document.body.style.overflow = 'hidden';
+
       mobileOverlay.setAttribute('aria-hidden', 'false');
       mobileOverlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
       gsap.set(mobLinks, { opacity: 0, y: 32 });
       gsap.to(mobLinks, {
         opacity: 1, y: 0,
@@ -754,7 +928,13 @@
         onComplete: () => {
           mobileOverlay.classList.remove('open');
           mobileOverlay.setAttribute('aria-hidden', 'true');
+          /* Restore scroll position */
+          document.body.style.position = '';
+          document.body.style.top      = '';
+          document.body.style.left     = '';
+          document.body.style.right    = '';
           document.body.style.overflow = '';
+          window.scrollTo(0, savedScroll);
         }
       });
     }
@@ -768,6 +948,33 @@
         closeMenu();
       }
     });
+
+    /* ── Dining timeline: dot slides as items scroll into view ────────────── */
+    (function () {
+      const dot    = document.getElementById('dining-dot');
+      const label  = document.getElementById('dining-label');
+      const items  = document.querySelectorAll('.dining-item');
+      if (!dot || !label || !items.length) return;
+
+      /* % position along the track for each period (0 = top, 100 = bottom) */
+      const positions = ['22%', '72%'];
+      const labels    = ['almoço', 'jantar'];
+
+      function activate(idx) {
+        dot.style.top   = positions[idx];
+        label.style.top = positions[idx];
+        label.textContent = labels[idx];
+      }
+      activate(0);
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) activate(+e.target.dataset.period);
+        });
+      }, { threshold: 0.35 });
+
+      items.forEach(item => obs.observe(item));
+    })();
 
   </script>
 
