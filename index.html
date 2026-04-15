@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espaço Luanda — Steak & Sea</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Nav link — ornamental hover underline ─────────────────────────────
+       On hover a small calligraphic ornament scales in from the centre,
+       replacing the old shining-line sweep.
+    ─────────────────────────────────────────────────────────────────────── */
+    .nav-link {
+      position: relative;
+      text-decoration: none;
+      padding-bottom: 6px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      /* ornamental SVG: line ─── • ○◆○ • ─── line, coloured #c8a06a */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='4' x2='26' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3Ccircle cx='28.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Ccircle cx='32.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Cpolygon points='40,1.2 44,4 40,6.8 36,4' fill='none' stroke='%23c8a06a' stroke-width='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.3' fill='%23c8a06a'/%3E%3Ccircle cx='47.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Ccircle cx='51.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Cline x1='54' y1='4' x2='80' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 80px;
+      height: 8px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-link:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    /* ─── Slot-machine "VER MENU" button ───────────────────────────────────── */
+    .slot-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.65);
+      color: #fff; cursor: pointer; text-decoration: none;
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+    .slot-btn:hover { border-color: rgba(255,255,255,1); }
+    .slot-inner { height: 14px; overflow: hidden; display: block; }
+    .slot-track {
+      display: flex; flex-direction: column;
+      height: 28px;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slot-btn:hover .slot-track { transform: translateY(-14px); }
+    .slot-word {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      line-height: 14px; height: 14px;
+      display: block; text-align: center; white-space: nowrap;
+    }
+
+    /* ─── Hero tagline ──────────────────────────────────────────────────────── */
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 300;
+      font-size: clamp(2rem,4.5vw,4rem);
+      color: #fff;
+      letter-spacing: 0.01em; line-height: 1.1;
+      text-shadow: 0 2px 32px rgba(0,0,0,0.45);
+    }
+
+    /* ─── Dish card — square at 68vh, fills the plate stage ────────────────── */
+    .dish-card {
+      position: absolute;
+      left: calc(50% - 34vh);
+      top: 0;
+      width: 68vh;
+      height: 100%;
+      transform-origin: center center;
+      will-change: transform, opacity;
+      cursor: pointer;
+      overflow: visible;
+      background: transparent;
+    }
+    .dish-card-img {
+      width: 100%; height: 100%;
+      object-fit: contain; display: block;
+    }
+
+    /* ─── Per-card dish name elements (slide & fade with their plate) ────────── */
+    .dish-name-el {
+      position: absolute;
+      left: 0; right: 0;
+      top: 0;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      color: #1a1008;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    /* ─── Carousel arrow buttons — minimal angle-bracket style ──────────────── */
+    .carousel-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.3rem 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.5;
+      transition: opacity 0.25s ease;
+    }
+    .carousel-btn:hover  { opacity: 1; }
+    .carousel-btn:active { opacity: 0.7; }
+  </style>
+</head>
+<body style="background:#fff; overflow-x:hidden;">
+
+  <!-- ═══════════════════════════════════════════════════════ HERO SECTION ═══ -->
+  <section style="position:relative;width:100%;height:100vh;min-height:600px;">
+
+    <div style="position:absolute;inset:0;background:#1a1008;overflow:hidden;">
+      <video autoplay muted loop playsinline
+             style="position:absolute;inset:0;width:100%;height:100%;
+                    object-fit:cover;object-position:center;">
+        <source src="bg-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.38);z-index:1;"></div>
+
+    <!-- ── NAVBAR ── -->
+    <nav style="position:absolute;top:0;left:0;right:0;z-index:10;
+                display:flex;align-items:center;justify-content:space-between;
+                padding:2.25rem 3rem;">
+      <div style="display:flex;align-items:center;gap:2.5rem;">
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Menu</a>
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a>
+      </div>
+      <div style="position:absolute;left:50%;transform:translateX(-50%);">
+        <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+             style="height:72px;width:auto;display:block;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:2.5rem;">
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Contacto</a>
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Cartão Presente</a>
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Encomendar Agora</a>
+      </div>
+    </nav>
+
+    <!-- ── HERO CENTRE ── -->
+    <div style="position:absolute;inset:0;z-index:5;
+                display:flex;flex-direction:column;align-items:center;
+                justify-content:center;gap:2.5rem;
+                text-align:center;padding:0 2rem;">
+      <h1 class="tagline">Uma captura além. Um corte acima.</h1>
+      <a href="#" class="slot-btn">
+        <div class="slot-inner">
+          <div class="slot-track">
+            <span class="slot-word">Ver Menu</span>
+            <span class="slot-word">Ver Menu</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════ FEATURE SECTION — TEXT ONLY ═══════ -->
+  <section id="feature-section" style="position:relative;width:100%;background:#fff;overflow:visible;">
+
+    <div style="position:relative;z-index:2;
+                display:flex;flex-direction:column;align-items:center;
+                padding:11rem 2rem 8rem;">
+      <div id="feature-text"
+           style="text-align:center;max-width:760px;overflow:visible;position:relative;z-index:2;">
+        <p id="main-text" style="
+          font-family:'Cormorant Garamond',serif;
+          font-style:italic;
+          font-weight:300;
+          font-size:clamp(2.2rem,3.4vw,3.8rem);
+          color:#1a1008;
+          line-height:1.4;
+          letter-spacing:0.01em;
+        ">fresh sea food. prime steaks. timeless taste. the Art of Luanda</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════ CAROUSEL SECTION ════════════════════
+       Plate stage: 68vh tall (plates are large square images).
+       Bottom 32vh: counter + progress bar + arrows + large dish name.
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="carousel-section"
+           style="position:relative;width:100%;height:100vh;background:#fff;overflow:visible;">
+
+    <!-- Spice image bridges the text section above and the plates below.
+         Negative top pulls it up into the feature section so the scatter
+         sits at the transition zone, matching the reference layout.             -->
+    <img src="falafel-bowl-bg.webp"
+         style="position:absolute;top:-55vh;left:-2%;width:47%;height:auto;
+                pointer-events:none;z-index:0;display:block;"
+         alt="" />
+
+    <!-- ── PLATE STAGE ─────────────────────────────────────────────── -->
+    <div id="carousel-stage"
+         style="position:relative;width:100%;height:68vh;overflow:visible;perspective:1400px;z-index:2;">
+
+      <div class="dish-card" id="card-0">
+        <img class="dish-card-img" src="dish-1.webp" alt="Dish 1" />
+      </div>
+      <div class="dish-card" id="card-1">
+        <img class="dish-card-img" src="dish-2.webp" alt="Dish 2" />
+      </div>
+      <div class="dish-card" id="card-2">
+        <img class="dish-card-img" src="dish-3.webp" alt="Dish 3" />
+      </div>
+      <div class="dish-card" id="card-3">
+        <img class="dish-card-img" src="dish-4.webp" alt="Dish 4" />
+      </div>
+
+    </div><!-- /stage -->
+
+    <!-- ── BOTTOM PANEL (32vh) ─────────────────────────────────────── -->
+    <div style="position:relative;width:100%;height:32vh;padding:0 3.5rem;
+                display:flex;flex-direction:column;justify-content:center;gap:1.4rem;
+                z-index:30;">
+
+      <!-- Counter row: number + progress bar + arrows -->
+      <div style="display:flex;align-items:center;gap:1.2rem;">
+
+        <!-- Number + total -->
+        <div style="display:flex;align-items:baseline;gap:0.3rem;flex-shrink:0;">
+          <span id="counter-current"
+                style="font-family:'Cormorant Garamond',serif;font-style:italic;
+                       font-size:2.1rem;font-weight:400;color:#1a1008;line-height:1;">01</span>
+          <span style="font-family:'Montserrat',sans-serif;font-size:0.52rem;
+                       font-weight:400;color:#b89060;letter-spacing:0.12em;">04</span>
+        </div>
+
+        <!-- Progress bar (grows to fill space between number and arrows) -->
+        <div style="flex:1;position:relative;height:1px;background:rgba(26,16,8,0.1);">
+          <div id="progress-bar"
+               style="position:absolute;left:0;top:0;height:100%;background:#c8a06a;
+                      width:25%;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
+        </div>
+
+        <!-- Arrows — thin SVG chevrons, no borders -->
+        <div style="display:flex;gap:1.4rem;align-items:center;flex-shrink:0;">
+          <button class="carousel-btn" onclick="carouselAdvance(-1)" aria-label="Previous">
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+              <polyline points="13 1 3 9 13 17" stroke="#1a1008" stroke-width="0.9"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="carousel-btn" onclick="carouselAdvance(1)" aria-label="Next">
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+              <polyline points="9 1 19 9 9 17" stroke="#1a1008" stroke-width="0.9"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Dish name area: 4 elements stacked, each tracks its plate's x position -->
+      <div id="dish-name-area"
+           style="position:relative;height:3.6rem;overflow:visible;">
+        <p class="dish-name-el" id="dname-0">Frutos do Mar ao Alho</p>
+        <p class="dish-name-el" id="dname-1">Lagosta Grelhada ao Sal</p>
+        <p class="dish-name-el" id="dname-2">Entrecosto Wagyu Grelhado</p>
+        <p class="dish-name-el" id="dname-3">Camarão Flambado de Luanda</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ SCRIPTS ═══ -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ── Custom char splitter ─────────────────────────────────────────────────
+       Wraps every non-space character in an inline-block span for GSAP stagger.
+    ──────────────────────────────────────────────────────────────────────────── */
+    function splitChars(el) {
+      const text = el.textContent;
+      el.textContent = '';
+      const spans = [];
+      for (let i = 0; i < text.length; i++) {
+        const ch   = text[i];
+        const span = document.createElement('span');
+        span.textContent = ch;
+        if (ch === ' ') {
+          span.style.cssText = 'display:inline;white-space:pre;';
+        } else {
+          span.style.cssText = 'display:inline-block;will-change:transform,opacity;';
+          spans.push(span);
+        }
+        el.appendChild(span);
+      }
+      return spans;
+    }
+
+    /* ── Scroll-linked text animation (ONE unified block) ─────────────────────
+       plays forward on enter · reverses on scroll-up · re-triggers every pass
+    ──────────────────────────────────────────────────────────────────────────── */
+    document.fonts.ready.then(() => {
+      const chars = splitChars(document.getElementById('main-text'));
+      gsap.fromTo(chars,
+        { opacity: 0, y: 40, rotateZ: -3 },
+        {
+          opacity: 1, y: 0, rotateZ: 0,
+          stagger: 0.022,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#main-text',
+            start: 'top 55%',
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
+    });
+
+
+    /* ── CAROUSEL ─────────────────────────────────────────────────────────── */
+    const TOTAL = 4;
+    let cur   = 0;
+    let busy  = false;
+    let autoTimer;
+
+    const cards   = Array.from({ length: TOTAL }, (_, i) => document.getElementById('card-'  + i));
+    const nameEls = Array.from({ length: TOTAL }, (_, i) => document.getElementById('dname-' + i));
+
+    /* TOTAL=4: the 4th card (c+2)%4 is always hidden.
+       We teleport it to the correct off-screen side before each advance.       */
+    function roles(c) {
+      return {
+        active: c % TOTAL,
+        prev:   (c - 1 + TOTAL) % TOTAL,
+        next:   (c + 1) % TOTAL,
+        hidden: (c + 2) % TOTAL,
+      };
+    }
+
+    /* Positions — pure horizontal slides, no tilt. Card ≈ 68vh wide.
+       prev/next are scaled down and offset so they peek from the edges.        */
+    const POS = {
+      active:  { x:    0, scaleX: 1,    scaleY: 1,    opacity: 1, zIndex: 20 },
+      prev:    { x: -560, scaleX: 0.55, scaleY: 0.55, opacity: 1, zIndex: 10 },
+      next:    { x:  560, scaleX: 0.55, scaleY: 0.55, opacity: 1, zIndex: 10 },
+      hiddenL: { x:-1300, scaleX: 0.42, scaleY: 0.42, opacity: 0, zIndex:  1 },
+      hiddenR: { x: 1300, scaleX: 0.42, scaleY: 0.42, opacity: 0, zIndex:  1 },
+    };
+
+    /* Name x-offsets match card positions so each title tracks its plate.      */
+    const NX = { active: 0, prev: -560, next: 560, hiddenL: -1300, hiddenR: 1300 };
+
+    function initCarousel() {
+      const r = roles(0);
+      gsap.set(cards[r.active],   POS.active);
+      gsap.set(nameEls[r.active], { x: NX.active,  opacity: 1 });
+      gsap.set(cards[r.prev],     POS.prev);
+      gsap.set(nameEls[r.prev],   { x: NX.prev,    opacity: 0 });
+      gsap.set(cards[r.next],     POS.next);
+      gsap.set(nameEls[r.next],   { x: NX.next,    opacity: 0 });
+      gsap.set(cards[r.hidden],   POS.hiddenL);
+      gsap.set(nameEls[r.hidden], { x: NX.hiddenL, opacity: 0 });
+    }
+
+    /* Counter updates at the START of each transition (number ticks as the
+       plate is already in motion, matching the reference behaviour).            */
+    function updateCounter() {
+      const num = String(cur + 1).padStart(2, '0');
+      const el  = document.getElementById('counter-current');
+      el.textContent = num;
+      gsap.fromTo(el,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y:   0, duration: 0.4, ease: 'power2.out' }
+      );
+      gsap.to('#progress-bar', {
+        width: ((cur + 1) / TOTAL * 100) + '%',
+        duration: 0.7, ease: 'power2.out'
+      });
+    }
+
+    /* D = shared slide duration. Both the outgoing and incoming plate use the
+       SAME ease + duration so they move as one locked unit — no overlap.       */
+    const D    = 0.72;
+    const EASE = 'power2.inOut';
+
+    function carouselAdvance(dir) {
+      if (busy) return;
+      busy = true;
+      resetAutoTimer();
+
+      const oldR = roles(cur);
+      cur = (cur + dir + TOTAL) % TOTAL;   /* update IMMEDIATELY — counter ticks now */
+      updateCounter();
+
+      /* Snap hidden card to the correct waiting side (happens off-screen).     */
+      if (dir > 0) {
+        gsap.set(cards[oldR.hidden],   POS.hiddenR);
+        gsap.set(nameEls[oldR.hidden], { x: NX.hiddenR, opacity: 0 });
+      } else {
+        gsap.set(cards[oldR.hidden],   POS.hiddenL);
+        gsap.set(nameEls[oldR.hidden], { x: NX.hiddenL, opacity: 0 });
+      }
+
+      const tl = gsap.timeline({ onComplete: () => { busy = false; } });
+
+      if (dir > 0) {
+        /* FORWARD — everything shifts left at identical velocity.               */
+        tl.to(cards[oldR.active],   { ...POS.prev,    duration: D, ease: EASE }, 0);
+        tl.to(nameEls[oldR.active], { x: NX.prev,    opacity: 0, duration: D, ease: EASE }, 0);
+
+        tl.to(cards[oldR.next],     { ...POS.active,  duration: D, ease: EASE }, 0);
+        tl.to(nameEls[oldR.next],   { x: NX.active,  opacity: 1, duration: D, ease: EASE }, 0);
+
+        tl.to(cards[oldR.prev],     { ...POS.hiddenL, duration: D * 0.82, ease: 'power2.in' }, 0);
+        tl.to(nameEls[oldR.prev],   { x: NX.hiddenL, opacity: 0, duration: D * 0.82, ease: 'power2.in' }, 0);
+
+        tl.to(cards[oldR.hidden],   { ...POS.next,    duration: D, ease: 'power2.out' }, 0);
+        tl.to(nameEls[oldR.hidden], { x: NX.next,    opacity: 0, duration: D, ease: 'power2.out' }, 0);
+
+        /* Wobble: incoming plate leans as it decelerates, then elastically settles. */
+        tl.to(cards[oldR.next], { rotateZ: -1.4, duration: D * 0.52, ease: 'power1.out' }, 0);
+        tl.to(cards[oldR.next], { rotateZ:  0,   duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
+
+      } else {
+        /* BACKWARD — everything shifts right at identical velocity.             */
+        tl.to(cards[oldR.active],   { ...POS.next,    duration: D, ease: EASE }, 0);
+        tl.to(nameEls[oldR.active], { x: NX.next,    opacity: 0, duration: D, ease: EASE }, 0);
+
+        tl.to(cards[oldR.prev],     { ...POS.active,  duration: D, ease: EASE }, 0);
+        tl.to(nameEls[oldR.prev],   { x: NX.active,  opacity: 1, duration: D, ease: EASE }, 0);
+
+        tl.to(cards[oldR.next],     { ...POS.hiddenR, duration: D * 0.82, ease: 'power2.in' }, 0);
+        tl.to(nameEls[oldR.next],   { x: NX.hiddenR, opacity: 0, duration: D * 0.82, ease: 'power2.in' }, 0);
+
+        tl.to(cards[oldR.hidden],   { ...POS.prev,    duration: D, ease: 'power2.out' }, 0);
+        tl.to(nameEls[oldR.hidden], { x: NX.prev,    opacity: 0, duration: D, ease: 'power2.out' }, 0);
+
+        /* Wobble: mirror direction for backward advance. */
+        tl.to(cards[oldR.prev], { rotateZ:  1.4, duration: D * 0.52, ease: 'power1.out' }, 0);
+        tl.to(cards[oldR.prev], { rotateZ:  0,   duration: D * 0.9,  ease: 'elastic.out(1.05,0.38)' }, D * 0.52);
+      }
+    }
+
+    function resetAutoTimer() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => carouselAdvance(1), 4500);
+    }
+
+    initCarousel();
+    updateCounter();
+    resetAutoTimer();
+
+  </script>
+
+</body>
+</html>
