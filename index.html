@@ -294,7 +294,7 @@
       #carousel-stage   { height: 92vw !important; }
       /* Section 2 stays sticky on mobile too; height auto so it hugs its content */
       #carousel-section { height: auto !important; overflow: visible !important;
-                          position: sticky !important; top: -10vh !important;
+                          position: sticky !important; top: -15vh !important;
                           z-index: 1 !important; }
       /* Tighter carousel bottom panel on mobile */
       #carousel-section > div:last-child {
@@ -355,7 +355,7 @@
       <!-- Left links (desktop only) -->
       <div class="desktop-links" style="display:flex;align-items:center;gap:2.5rem;">
         <a href="menu.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Menu</a>
-        <!-- <a href="about.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a> -->
+        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a>
         <a href="events.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Eventos</a>
       </div>
 
@@ -371,7 +371,7 @@
       <!-- Right: desktop links + mobile hamburger -->
       <div style="display:flex;align-items:center;gap:2.5rem;">
         <div class="desktop-links" style="display:flex;align-items:center;gap:2.5rem;">
-          <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Contacto</a>
+          <a href="#contact" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Contacto</a>
         </div>
         <!-- Hamburger (mobile only) -->
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu">
@@ -424,9 +424,9 @@
     <nav style="display:flex;flex-direction:column;align-items:flex-start;
                 width:100%;padding:1.2rem 2.5rem 0;">
       <a href="menu.html" class="mob-link" onclick="closeMenu()">Menu</a>
-      <!-- <a href="about.html" class="mob-link" onclick="closeMenu()">Sobre</a> -->
+      <a href="#" class="mob-link" onclick="closeMenu()">Sobre</a>
       <a href="events.html" class="mob-link" onclick="closeMenu()">Eventos</a>
-      <a href="#" class="mob-link" onclick="closeMenu()">Contacto</a>
+      <a href="#contact" class="mob-link" onclick="closeMenu()">Contacto</a>
     </nav>
 
     <!-- Contact info pinned to bottom -->
@@ -444,7 +444,7 @@
        Sticks at top:0 so the entire section pins while section 3 slides over it.
   ══════════════════════════════════════════════════════════════════════════ -->
   <section id="carousel-section"
-           style="position:sticky;top:-10vh;z-index:1;width:100%;
+           style="position:sticky;top:-15vh;z-index:1;width:100%;
                   background:#fff;overflow:visible;">
 
     <!-- Feature text — in flow, compact top so plates stay in viewport -->
@@ -725,6 +725,83 @@
     </div>
 
   </section>
+
+  <!-- ══════════════════════════════════════════════════ CONTACT FOOTER ══════ -->
+  <footer id="contact" style="
+    background:#0e0904;
+    border-top:1px solid rgba(200,160,106,0.12);
+    padding:7rem 2.4rem 4rem;
+    position:relative;
+    z-index:2;
+    overflow:hidden;
+  ">
+
+    <!-- Radial glow -->
+    <div style="position:absolute;inset:0;pointer-events:none;
+                background:radial-gradient(ellipse 70% 60% at 50% 0%,
+                  rgba(200,160,106,0.06) 0%, transparent 70%);"></div>
+
+    <!-- Top row: logo centred -->
+    <div style="text-align:center;margin-bottom:5rem;position:relative;z-index:1;">
+      <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+           style="height:64px;width:auto;max-width:none;display:inline-block;opacity:0.9;" />
+    </div>
+
+    <!-- Info grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;
+                max-width:860px;margin:0 auto 5rem;
+                position:relative;z-index:1;text-align:center;">
+
+      <!-- Morada -->
+      <div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:0.58rem;font-weight:500;
+                  letter-spacing:0.28em;text-transform:uppercase;color:#c8a06a;
+                  margin-bottom:1.2rem;">Morada</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;
+                  line-height:1.7;color:rgba(245,240,232,0.75);">
+          Luanda, Angola
+        </p>
+      </div>
+
+      <!-- Reservas -->
+      <div style="border-left:1px solid rgba(200,160,106,0.12);
+                  border-right:1px solid rgba(200,160,106,0.12);
+                  padding:0 2rem;">
+        <p style="font-family:'Montserrat',sans-serif;font-size:0.58rem;font-weight:500;
+                  letter-spacing:0.28em;text-transform:uppercase;color:#c8a06a;
+                  margin-bottom:1.2rem;">Reservas</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;
+                  line-height:1.7;color:rgba(245,240,232,0.75);">
+          +244 900 000 000
+        </p>
+      </div>
+
+      <!-- Horário -->
+      <div>
+        <p style="font-family:'Montserrat',sans-serif;font-size:0.58rem;font-weight:500;
+                  letter-spacing:0.28em;text-transform:uppercase;color:#c8a06a;
+                  margin-bottom:1.2rem;">Horário</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;
+                  line-height:1.7;color:rgba(245,240,232,0.75);">
+          Seg – Dom<br>18h00 – 00h00
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div style="width:60px;height:1px;background:rgba(200,160,106,0.25);
+                margin:0 auto 3rem;position:relative;z-index:1;"></div>
+
+    <!-- Copyright -->
+    <p style="font-family:'Montserrat',sans-serif;font-size:0.55rem;font-weight:300;
+              letter-spacing:0.2em;text-transform:uppercase;
+              color:rgba(245,240,232,0.2);text-align:center;
+              position:relative;z-index:1;">
+      &copy; 2026 Espaço Luanda &nbsp;&middot;&nbsp; Luanda, Angola
+    </p>
+
+  </footer>
 
   <!-- ════════════════════════════════════════════════════════════ SCRIPTS ═══ -->
   <script>
