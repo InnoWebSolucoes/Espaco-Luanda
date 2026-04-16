@@ -116,23 +116,6 @@
       transition: opacity 0.12s ease;
     }
 
-    .action-button {
-      position: absolute; left: 50%;
-      width: 50px; height: 50px; border-radius: 50%;
-      background: transparent;
-      border: 1px solid rgba(200,160,106,0.65);
-      display: grid; place-items: center;
-      cursor: pointer; transform: translateX(-50%);
-      transition: background 0.22s ease, border-color 0.22s ease,
-                  opacity 0.5s ease, bottom 0.5s ease;
-    }
-    .action-button:hover { background: rgba(200,160,106,0.14); border-color: #c8a06a; }
-    .action-button-icon {
-      color: #c8a06a; font-size: 1.25rem; line-height: 1;
-      position: relative; top: 1px; user-select: none;
-    }
-    .action-button.active { bottom: 18vh; opacity: 1; pointer-events: auto; }
-    .action-button.inactive { bottom: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.12s ease, bottom 0.12s ease; }
 
     /* ── CATEGORY VIEW ───────────────────────────────────────────── */
     #cat-view {
@@ -261,9 +244,6 @@
     <p id="sphere-hint">Arraste para explorar &nbsp;·&nbsp; Clique para ver</p>
     <h2 id="face-title" class="face-title inactive"></h2>
     <p  id="face-desc"  class="face-description inactive"></p>
-    <div id="action-btn" class="action-button inactive">
-      <p class="action-button-icon">&#x2197;</p>
-    </div>
   </div>
 
   <!-- ── CATEGORY VIEW ───────────────────────────────────────── -->
@@ -931,7 +911,6 @@ void main() {
     ════════════════════════════════════════════════════════════ */
     const titleEl  = document.getElementById('face-title');
     const descEl   = document.getElementById('face-desc');
-    const btnEl    = document.getElementById('action-btn');
     const hintEl   = document.getElementById('sphere-hint');
     let hintDismissed = false;
 
@@ -940,14 +919,12 @@ void main() {
       titleEl.textContent  = item.title;
       descEl.textContent   = item.description;
       titleEl.dataset.link = item.link;
-      btnEl.dataset.link   = item.link;
     }
 
     function setMoving(moving) {
       const s = moving ? 'inactive' : 'active';
       titleEl.className = `face-title ${s}`;
       descEl.className  = `face-description ${s}`;
-      btnEl.className   = `action-button ${s}`;
       if (!hintDismissed) { hintDismissed = true; hintEl.classList.add('gone'); }
     }
 
@@ -958,7 +935,6 @@ void main() {
 
     titleEl.addEventListener('click', openCategory);
     descEl.addEventListener('click',  openCategory);
-    btnEl.addEventListener('click',   openCategory);
 
     const canvas = document.getElementById('infinite-grid-menu-canvas');
     canvas.addEventListener('click', openCategory);
