@@ -291,7 +291,7 @@
       /* Clip only the stage so off-screen cards don't scroll the page */
       #carousel-stage   { overflow: hidden !important; }
       /* Make stage height square so there's no dead space on mobile */
-      #carousel-stage   { height: 92vw !important; }
+      #carousel-stage   { height: 78vw !important; }
       /* Section 2 stays sticky on mobile too; height auto so it hugs its content */
       #carousel-section { height: auto !important; overflow: visible !important;
                           position: sticky !important; top: 0 !important;
@@ -308,10 +308,10 @@
       #main-text {
         font-size: clamp(1.8rem, 6.5vw, 2.8rem) !important;
       }
-      /* Spice image: restored to original overlap position */
+      /* Spice image: below text, into plate area on mobile */
       #spice-img {
-        top: -28vh !important;
-        width: 80% !important;
+        top: 12vh !important;
+        width: 75% !important;
         left: -8% !important;
       }
       /* Bottom panel: auto height so it hugs content */
@@ -356,7 +356,7 @@
       <div class="desktop-links" style="display:flex;align-items:center;gap:2.5rem;">
         <a href="menu.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Menu</a>
         <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a>
-        <a href="#" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Eventos</a>
+        <a href="events.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Eventos</a>
       </div>
 
       <!-- Spacer on mobile so logo stays centred -->
@@ -425,7 +425,7 @@
                 width:100%;padding:1.2rem 2.5rem 0;">
       <a href="menu.html" class="mob-link" onclick="closeMenu()">Menu</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Sobre</a>
-      <a href="#" class="mob-link" onclick="closeMenu()">Eventos</a>
+      <a href="events.html" class="mob-link" onclick="closeMenu()">Eventos</a>
       <a href="#" class="mob-link" onclick="closeMenu()">Contacto</a>
     </nav>
 
@@ -447,10 +447,10 @@
            style="position:sticky;top:0;z-index:1;width:100%;
                   background:#fff;overflow:visible;">
 
-    <!-- Feature text — in flow, same spacing as before the section merge -->
+    <!-- Feature text — in flow, compact top so plates stay in viewport -->
     <div style="position:relative;z-index:2;
                 display:flex;flex-direction:column;align-items:center;
-                padding:11rem 2rem 8rem;">
+                padding:4rem 2rem 1.5rem;">
       <div id="feature-text"
            style="text-align:center;max-width:760px;overflow:visible;position:relative;z-index:2;">
         <p id="main-text" style="
@@ -465,15 +465,15 @@
       </div>
     </div>
 
-    <!-- Spice image — original position: extends upward from the plate boundary -->
+    <!-- Spice image — below the text, overlapping into the plate area -->
     <img id="spice-img" src="falafel-bowl-bg.webp"
-         style="position:absolute;top:-10vh;left:-2%;width:47%;height:auto;
+         style="position:absolute;top:18vh;left:-2%;width:47%;height:auto;
                 pointer-events:none;z-index:0;display:block;"
          alt="" />
 
     <!-- ── PLATE STAGE ─────────────────────────────────────────────── -->
     <div id="carousel-stage"
-         style="position:relative;width:100%;height:68vh;overflow:visible;perspective:1400px;z-index:2;">
+         style="position:relative;width:100%;height:58vh;overflow:visible;perspective:1400px;z-index:2;">
 
       <div class="dish-card" id="card-0">
         <img class="dish-card-img" src="dish-1.webp" alt="Dish 1" />
@@ -490,8 +490,8 @@
 
     </div><!-- /stage -->
 
-    <!-- ── BOTTOM PANEL (32vh) ─────────────────────────────────────── -->
-    <div style="position:relative;width:100%;height:32vh;padding:0 3.5rem;
+    <!-- ── BOTTOM PANEL ─────────────────────────────────────────── -->
+    <div style="position:relative;width:100%;height:26vh;padding:0 3.5rem;
                 display:flex;flex-direction:column;justify-content:center;gap:1.4rem;
                 z-index:30;
                 background:linear-gradient(to top,rgba(255,255,255,1) 55%,rgba(255,255,255,0) 100%);">
@@ -553,16 +553,18 @@
   <section id="dining-section"
            style="position:relative;width:100%;background:#1a1008;z-index:2;">
 
-    <!-- Logo — top left -->
-    <div style="position:absolute;top:2rem;left:1.5rem;z-index:5;">
+    <!-- Sticky header bar — stays fixed to top of viewport as user scrolls weekly specials -->
+    <div style="position:sticky;top:0;z-index:10;width:100%;
+                display:flex;align-items:center;padding:0.9rem 1.8rem;
+                background:#1a1008;border-bottom:1px solid rgba(200,160,106,0.12);">
       <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
-           style="height:52px;width:auto;display:block;" />
+           style="height:44px;width:auto;max-width:none;display:block;opacity:0.9;" />
     </div>
 
     <div style="display:flex;width:100%;align-items:flex-start;">
 
       <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
-      <div style="flex:1;min-width:0;padding:7.5rem 1.6rem 5rem 1.6rem;">
+      <div style="flex:1;min-width:0;padding:4rem 1.6rem 5rem 1.6rem;">
 
         <!-- Item 0: Segunda -->
         <article class="dining-item" data-period="0">

@@ -131,7 +131,7 @@
       color: #c8a06a; font-size: 1.25rem; line-height: 1;
       position: relative; top: 1px; user-select: none;
     }
-    .action-button.active { bottom: 4rem; opacity: 1; pointer-events: auto; }
+    .action-button.active { bottom: 18vh; opacity: 1; pointer-events: auto; }
     .action-button.inactive { bottom: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.12s ease, bottom 0.12s ease; }
 
     /* ── CATEGORY VIEW ───────────────────────────────────────────── */
@@ -229,6 +229,19 @@
 </head>
 <body>
 
+  <!-- Inline: immediately hide sphere if deep-linking into a category (prevents flash) -->
+  <script>
+    (function(){
+      var h = location.hash.replace('#','');
+      var valid = {entradas:1,pratos:1,sobremesas:1,bebidas:1};
+      if (valid[h]) { document.documentElement.dataset.directCat = h; }
+    })();
+  </script>
+  <style>
+    html[data-direct-cat] #sphere-view { opacity:0!important; pointer-events:none!important; }
+    html[data-direct-cat] #cat-view    { opacity:1!important; transform:none!important; pointer-events:auto!important; }
+  </style>
+
   <!-- ── TOP NAV ─────────────────────────────────────────────── -->
   <nav id="top-nav">
     <a href="index.html" class="back-link" id="nav-back">
@@ -264,6 +277,99 @@
     <div id="cat-items"></div>
   </div>
 
+  <!-- ── CLASSIC SCRIPT: view-switching + MENU data (runs synchronously, no flash) ── -->
+  <script>
+  (function() {
+    var MENU = {
+      entradas: { title:'Entradas', sub:'Para começar', items:[
+        {name:'Caldo de Amendoim',   desc:'Caldo tradicional angolano com amendoim tostado e coentros frescos',          price:'1 500 Kz'},
+        {name:'Camarão ao Alho',     desc:'Camarões salteados em azeite, alho laminado e piri-piri da casa',             price:'3 500 Kz'},
+        {name:'Polvo Grelhado',      desc:'Polvo grelhado sobre puré de batata-doce com azeite de ervas',                price:'4 200 Kz'},
+        {name:'Salada da Casa',      desc:'Folhas frescas, tomate, pepino, azeitona e vinagrete de limão',               price:'2 000 Kz'},
+        {name:'Tábua de Fumados',    desc:'Seleção de enchidos artesanais com queijos curados e acompanhamentos',        price:'5 000 Kz'},
+      ]},
+      pratos: { title:'Pratos Principais', sub:'Mar & Terra', items:[
+        {name:'Costela Premium',     desc:'Costela maturada 72 horas, fumada ao carvão com especiarias da casa',         price:'8 500 Kz'},
+        {name:'Lagosta Grelhada',    desc:'Lagosta fresca grelhada com manteiga de ervas e limão galego',                price:'12 000 Kz'},
+        {name:'Entrecosto Wagyu',    desc:'Wagyu A4 ao ponto, molho de vinho tinto e batata rústica assada',             price:'15 500 Kz'},
+        {name:'Camarão Flambado',    desc:'Camarão jumbo flambado em aguardente com arroz de tomate e coentros',         price:'9 500 Kz'},
+        {name:'Frango na Brasa',     desc:'Frango campestre marinado 24 horas, grelhado na brasa com piri-piri',         price:'6 000 Kz'},
+      ]},
+      sobremesas: { title:'Sobremesas', sub:'Doces finais', items:[
+        {name:'Pudim de Coco',       desc:'Pudim cremoso de coco com calda de caramelo salgado e flor de sal',          price:'1 800 Kz'},
+        {name:'Tarte de Chocolate',  desc:'Tarte de chocolate amargo com gelado de baunilha Madagascar',                price:'2 200 Kz'},
+        {name:'Mousse de Maracujá',  desc:'Mousse aerada de maracujá fresco com coulis de frutas tropicais',            price:'1 600 Kz'},
+        {name:'Frutos da Época',     desc:'Seleção de frutos tropicais frescos com mel de abelha e hortelã',            price:'1 400 Kz'},
+        {name:'Semifrio de Amendoim',desc:'Semifrio artesanal com crocante de caramelo e amendoim tostado',             price:'2 000 Kz'},
+      ]},
+      bebidas: { title:'Bebidas', sub:'Bar & Carta de Vinhos', items:[
+        {name:'Caipirinha da Casa',  desc:'Limão, açúcar mascavado e cachaça premium — clássica ou com fruta da época', price:'2 500 Kz'},
+        {name:'Cocktail do Chefe',   desc:'Criação semanal exclusiva com destilados artesanais e frutas frescas',       price:'3 200 Kz'},
+        {name:'Vinho Tinto da Casa', desc:'Seleção mensal de adegas parceiras — pergunte ao nosso sommelier',           price:'4 500 Kz / garrafa'},
+        {name:'Cerveja Brava',       desc:'Cerveja angolana gelada, a escolha perfeita para as nossas costelas',        price:'1 200 Kz'},
+        {name:'Sumos Naturais',      desc:'Espremidos na hora: maracujá, manga, laranja ou papaia',                     price:'1 000 Kz'},
+      ]},
+    };
+
+    function renderItems(key) {
+      var data = MENU[key]; if (!data) return;
+      document.getElementById('cat-title').textContent = data.title;
+      document.getElementById('cat-sub').textContent   = data.sub;
+      document.getElementById('cat-items').innerHTML   = data.items.map(function(it){
+        return '<div class="menu-item"><div class="menu-item-left">' +
+          '<p class="menu-item-name">'+it.name+'</p>' +
+          '<p class="menu-item-desc">'+it.desc+'</p></div>' +
+          '<p class="menu-item-price">'+it.price+'</p></div>';
+      }).join('');
+    }
+
+    function _showCatDOM(key) {
+      if (!MENU[key]) return;
+      renderItems(key);
+      document.getElementById('cat-view').classList.add('visible');
+      document.getElementById('sphere-view').classList.add('fading');
+      document.getElementById('top-nav').classList.add('cat-active');
+      document.documentElement.removeAttribute('data-direct-cat');
+      var nb = document.getElementById('nav-back');
+      nb.removeEventListener('click', nb._h || function(){});
+      nb._h = function(e){ e.preventDefault(); history.back(); };
+      nb.addEventListener('click', nb._h);
+    }
+
+    function _backToSphereDOM() {
+      document.getElementById('cat-view').classList.remove('visible');
+      document.getElementById('sphere-view').classList.remove('fading');
+      document.getElementById('top-nav').classList.remove('cat-active');
+      var nb = document.getElementById('nav-back');
+      nb.removeEventListener('click', nb._h || function(){});
+      nb._h = null; nb.href = 'index.html';
+      history.replaceState(null, '', location.pathname);
+    }
+
+    window.showCategory = function(key) {
+      if (!MENU[key]) return;
+      if (location.hash !== '#'+key) history.pushState({cat:key}, '', '#'+key);
+      _showCatDOM(key);
+    };
+    window.backToSphere    = function(){ _backToSphereDOM(); };
+    window._showCatDOM     = _showCatDOM;
+    window._backToSphereDOM = _backToSphereDOM;
+
+    window.addEventListener('popstate', function(){
+      if (document.getElementById('cat-view').classList.contains('visible')) {
+        _backToSphereDOM();
+      }
+    });
+    document.getElementById('cat-back').addEventListener('click', function(e){
+      e.preventDefault(); history.back();
+    });
+
+    // Immediate deep-link: runs synchronously, no module delay, zero flash
+    var h = (location.hash||'').replace('#','');
+    if (h && MENU[h]) { _showCatDOM(h); }
+  })();
+  </script>
+
   <!-- ── GL-MATRIX ────────────────────────────────────────────── -->
   <script type="importmap">
   {"imports":{"gl-matrix":"https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/esm/index.js"}}
@@ -272,56 +378,6 @@
   <script type="module">
     import { mat4, quat, vec2, vec3 } from 'gl-matrix';
 
-    /* ════════════════════════════════════════════════════════════
-       MENU DATA
-    ════════════════════════════════════════════════════════════ */
-    const MENU = {
-      entradas: {
-        title: 'Entradas',
-        sub: 'Para começar',
-        items: [
-          { name: 'Caldo de Amendoim',    desc: 'Caldo tradicional angolano com amendoim tostado e coentros frescos',           price: '1 500 Kz' },
-          { name: 'Camarão ao Alho',      desc: 'Camarões salteados em azeite, alho laminado e piri-piri da casa',              price: '3 500 Kz' },
-          { name: 'Polvo Grelhado',       desc: 'Polvo grelhado sobre puré de batata-doce com azeite de ervas',                 price: '4 200 Kz' },
-          { name: 'Salada da Casa',       desc: 'Folhas frescas, tomate, pepino, azeitona e vinagrete de limão',                price: '2 000 Kz' },
-          { name: 'Tábua de Fumados',     desc: 'Seleção de enchidos artesanais com queijos curados e acompanhamentos',         price: '5 000 Kz' },
-        ]
-      },
-      pratos: {
-        title: 'Pratos Principais',
-        sub: 'Mar & Terra',
-        items: [
-          { name: 'Costela Premium',       desc: 'Costela maturada 72 horas, fumada ao carvão com especiarias da casa',         price: '8 500 Kz' },
-          { name: 'Lagosta Grelhada',      desc: 'Lagosta fresca grelhada com manteiga de ervas e limão galego',                price: '12 000 Kz' },
-          { name: 'Entrecosto Wagyu',      desc: 'Wagyu A4 ao ponto, molho de vinho tinto e batata rústica assada',             price: '15 500 Kz' },
-          { name: 'Camarão Flambado',      desc: 'Camarão jumbo flambado em aguardente com arroz de tomate e coentros',         price: '9 500 Kz' },
-          { name: 'Frango na Brasa',       desc: 'Frango campestre marinado 24 horas, grelhado na brasa com piri-piri',         price: '6 000 Kz' },
-        ]
-      },
-      sobremesas: {
-        title: 'Sobremesas',
-        sub: 'Doces finais',
-        items: [
-          { name: 'Pudim de Coco',         desc: 'Pudim cremoso de coco com calda de caramelo salgado e flor de sal',           price: '1 800 Kz' },
-          { name: 'Tarte de Chocolate',    desc: 'Tarte de chocolate amargo com gelado de baunilha Madagascar',                 price: '2 200 Kz' },
-          { name: 'Mousse de Maracujá',    desc: 'Mousse aerada de maracujá fresco com coulis de frutas tropicais',             price: '1 600 Kz' },
-          { name: 'Frutos da Época',       desc: 'Seleção de frutos tropicais frescos com mel de abelha e hortelã',             price: '1 400 Kz' },
-          { name: 'Semifrio de Amendoim',  desc: 'Semifrio artesanal com crocante de caramelo e amendoim tostado',              price: '2 000 Kz' },
-        ]
-      },
-      bebidas: {
-        title: 'Bebidas',
-        sub: 'Bar & Carta de Vinhos',
-        items: [
-          { name: 'Caipirinha da Casa',    desc: 'Limão, açúcar mascavado e cachaça premium — clássica ou com fruta da época',  price: '2 500 Kz' },
-          { name: 'Cocktail do Chefe',     desc: 'Criação semanal exclusiva com destilados artesanais e frutas frescas',        price: '3 200 Kz' },
-          { name: 'Vinho Tinto da Casa',   desc: 'Seleção mensal de adegas parceiras — pergunte ao nosso sommelier',            price: '4 500 Kz / garrafa' },
-          { name: 'Cerveja Brava',         desc: 'Cerveja angolana gelada, a escolha perfeita para as nossas costelas',         price: '1 200 Kz' },
-          { name: 'Sumos Naturais',        desc: 'Espremidos na hora: maracujá, manga, laranja ou papaia',                      price: '1 000 Kz' },
-        ]
-      }
-    };
-
     const SPHERE_ITEMS = [
       { image: 'dining-1.webp', link: 'entradas',   title: 'Entradas',          description: 'Petiscos & Sopas'   },
       { image: 'dining-2.webp', link: 'pratos',      title: 'Pratos Principais', description: 'Mar & Terra'        },
@@ -329,52 +385,8 @@
       { image: 'dining-friday.png', link: 'bebidas', title: 'Bebidas',           description: 'Vinhos & Cocktails' },
     ];
 
-    /* ════════════════════════════════════════════════════════════
-       VIEW SWITCHING
-    ════════════════════════════════════════════════════════════ */
-    let activeLink = null;
-
-    function showCategory(key) {
-      const data = MENU[key];
-      if (!data) return;
-
-      document.getElementById('cat-title').textContent = data.title;
-      document.getElementById('cat-sub').textContent   = data.sub;
-
-      const list = document.getElementById('cat-items');
-      list.innerHTML = data.items.map(it => `
-        <div class="menu-item">
-          <div class="menu-item-left">
-            <p class="menu-item-name">${it.name}</p>
-            <p class="menu-item-desc">${it.desc}</p>
-          </div>
-          <p class="menu-item-price">${it.price}</p>
-        </div>
-      `).join('');
-
-      document.getElementById('cat-view').classList.add('visible');
-      document.getElementById('sphere-view').classList.add('fading');
-      document.getElementById('top-nav').classList.add('cat-active');
-
-      // Switch nav back button to go back to sphere
-      const navBack = document.getElementById('nav-back');
-      navBack.removeEventListener('click', navBack._handler || (() => {}));
-      navBack._handler = (e) => { e.preventDefault(); backToSphere(); };
-      navBack.addEventListener('click', navBack._handler);
-    }
-
-    function backToSphere() {
-      document.getElementById('cat-view').classList.remove('visible');
-      document.getElementById('sphere-view').classList.remove('fading');
-      document.getElementById('top-nav').classList.remove('cat-active');
-
-      // Restore nav back link to index.html
-      const navBack = document.getElementById('nav-back');
-      navBack.removeEventListener('click', navBack._handler || (() => {}));
-      navBack.href = 'index.html';
-    }
-
-    document.getElementById('cat-back').addEventListener('click', backToSphere);
+    // View switching & MENU data handled by classic script above.
+    // showCategory, backToSphere, _showCatDOM, _backToSphereDOM are on window.
 
     /* ════════════════════════════════════════════════════════════
        INFINITE MENU — WEBGL COMPONENT (ported from React Bits)
@@ -941,7 +953,7 @@ void main() {
 
     function openCategory() {
       const key = titleEl.dataset.link;
-      if (key) showCategory(key);
+      if (key) window.showCategory(key);
     }
 
     titleEl.addEventListener('click', openCategory);
@@ -951,15 +963,16 @@ void main() {
     const canvas = document.getElementById('infinite-grid-menu-canvas');
     canvas.addEventListener('click', openCategory);
 
-    const sketch = new InfiniteGridMenu(canvas, SPHERE_ITEMS, setActive, setMoving, sk => {
-      setActive(0);
-      setMoving(false);
-      sk.run();
-      // Deep-link: if URL hash matches a category key, open it immediately
-      const hash = window.location.hash.replace('#', '');
-      if (hash && MENU[hash]) { showCategory(hash); }
-    });
-    window.addEventListener('resize', () => sketch.resize());
+    // Deep-link handled synchronously by classic script above.
+    // If category is already visible, skip WebGL entirely.
+    if (!document.getElementById('cat-view').classList.contains('visible')) {
+      const sketch = new InfiniteGridMenu(canvas, SPHERE_ITEMS, setActive, setMoving, sk => {
+        setActive(0);
+        setMoving(false);
+        sk.run();
+      });
+      window.addEventListener('resize', () => sketch.resize());
+    }
   </script>
 </body>
 </html>

@@ -27,8 +27,9 @@
     #top-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.5rem 2.4rem;
-      background: linear-gradient(to bottom, rgba(14,9,4,0.9) 0%, rgba(14,9,4,0) 100%);
+      padding: 1rem 2.4rem;
+      background: #1a1008;
+      border-bottom: 1px solid rgba(200,160,106,0.12);
     }
     .nav-voltar {
       display: inline-flex; align-items: center; gap: 0.55rem;
@@ -137,6 +138,85 @@
       background: linear-gradient(to right, #c8a06a44, transparent);
     }
 
+    /* ── UPCOMING EVENT ────────────────────────────────────────── */
+    #upcoming {
+      padding: 5rem 2.4rem 0;
+    }
+    .upcoming-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      margin-top: 2.5rem; overflow: hidden; cursor: pointer;
+      min-height: 80vh;
+    }
+    .upcoming-inner:hover .upcoming-img-wrap img { transform: scale(1.04); }
+    .upcoming-img-wrap {
+      position: relative; overflow: hidden;
+    }
+    .upcoming-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .upcoming-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(14,9,4,0.15) 0%, rgba(14,9,4,0) 100%);
+    }
+    .upcoming-content {
+      background: #1a1008; padding: 4rem 3.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+      border: 1px solid rgba(200,160,106,0.1); border-left: none;
+      position: relative; overflow: hidden;
+    }
+    .upcoming-content::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 100% 50%, rgba(200,160,106,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .upcoming-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Montserrat', sans-serif; font-size: 0.44rem;
+      font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+      color: #1a1008; background: #c8a06a;
+      padding: 0.4rem 1rem; margin-bottom: 2.5rem; align-self: flex-start;
+    }
+    .upcoming-date-block { margin-bottom: 2rem; }
+    .upcoming-date-day {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(4rem, 9vw, 8rem); line-height: 1;
+      color: #f5f0e8; letter-spacing: -0.03em;
+    }
+    .upcoming-date-rest {
+      font-family: 'Montserrat', sans-serif; font-size: 0.55rem;
+      font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(245,240,232,0.45); margin-top: 0.3rem;
+    }
+    .upcoming-divider {
+      width: 36px; height: 1px; background: #c8a06a; margin: 1.5rem 0;
+    }
+    .upcoming-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1;
+      color: #f5f0e8; margin-bottom: 1.2rem;
+    }
+    .upcoming-title em { font-style: italic; color: #c8a06a; }
+    .upcoming-desc {
+      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-weight: 300; line-height: 1.8; letter-spacing: 0.04em;
+      color: rgba(245,240,232,0.5); margin-bottom: 2.5rem; max-width: 360px;
+    }
+    .upcoming-cta {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-family: 'Montserrat', sans-serif; font-size: 0.5rem;
+      font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
+      color: #c8a06a; border: none; background: none; cursor: pointer;
+      transition: gap 0.3s ease, opacity 0.3s ease;
+      padding: 0; align-self: flex-start;
+    }
+    .upcoming-cta:hover { gap: 1.2rem; opacity: 0.8; }
+    .upcoming-cta-line {
+      width: 28px; height: 1px; background: #c8a06a;
+      transition: width 0.3s ease;
+    }
+    .upcoming-cta:hover .upcoming-cta-line { width: 44px; }
+
     /* ── FEATURED EVENT STRIP ──────────────────────────────────── */
     #featured {
       padding: 6rem 2.4rem 0;
@@ -239,8 +319,9 @@
     #ev-overlay-nav {
       position: sticky; top: 0; z-index: 10;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.5rem 2.4rem;
-      background: linear-gradient(to bottom, rgba(14,9,4,0.95) 0%, rgba(14,9,4,0) 100%);
+      padding: 1rem 2.4rem;
+      background: #1a1008;
+      border-bottom: 1px solid rgba(200,160,106,0.12);
     }
 
     /* overlay hero */
@@ -290,7 +371,7 @@
       color: rgba(245,240,232,0.55);
     }
 
-    /* ── TESTIMONIALS ──────────────────────────────────────────── */
+    /* ── TESTIMONIALS SLIDER ───────────────────────────────────── */
     #ev-testimonials {
       padding: 5rem 2.4rem;
       background: #1a1008;
@@ -301,13 +382,15 @@
       background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(200,160,106,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
-    .test-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2rem; margin-top: 3rem;
+    .test-slider-wrap {
+      margin-top: 3rem; position: relative; overflow: hidden;
+    }
+    .test-slider-track {
+      display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
     }
     .test-card {
-      padding: 2rem; border: 1px solid rgba(200,160,106,0.15);
-      position: relative;
+      min-width: 100%; padding: 2.5rem 2rem 2rem; border: 1px solid rgba(200,160,106,0.15);
+      position: relative; flex-shrink: 0;
     }
     .test-card::before {
       content: '\201C';
@@ -317,19 +400,36 @@
     }
     .test-quote {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 300;
-      line-height: 1.7; color: rgba(245,240,232,0.75);
+      font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300;
+      line-height: 1.7; color: rgba(245,240,232,0.82);
       margin-top: 1.5rem;
     }
     .test-author {
       font-family: 'Montserrat', sans-serif; font-size: 0.5rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-      color: #c8a06a; margin-top: 1.5rem;
+      color: #c8a06a; margin-top: 1.8rem;
     }
     .test-stars {
       color: #c8a06a; font-size: 0.65rem; letter-spacing: 0.1em;
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
     }
+    .test-slider-controls {
+      display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem;
+    }
+    .test-btn {
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(200,160,106,0.3);
+      background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.25s ease, background 0.25s ease;
+      flex-shrink: 0;
+    }
+    .test-btn:hover { border-color: #c8a06a; background: rgba(200,160,106,0.08); }
+    .test-dots { display: flex; gap: 0.5rem; align-items: center; }
+    .test-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(200,160,106,0.25);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .test-dot.active { background: #c8a06a; transform: scale(1.4); }
 
     /* ── GALLERY ───────────────────────────────────────────────── */
     #ev-gallery { padding: 5rem 2.4rem 7rem; }
@@ -395,7 +495,6 @@
       .ev-wide   { grid-column: span 12; height: 50vw; }
       .ev-slim   { grid-column: span 12; height: 50vw; }
       .ev-third  { grid-column: span 12; height: 50vw; }
-      .test-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-auto-rows: 140px; }
       .g-tall  { grid-column: span 6; grid-row: span 2; }
       .g-wide  { grid-column: span 6; grid-row: span 1; }
@@ -404,9 +503,13 @@
       .g-full  { grid-column: span 12; }
       #ev-body { padding: 2rem 1.2rem 4rem; }
       #ev-hero { height: 65vh; }
+      #upcoming { padding: 3rem 1.2rem 0; }
+      .upcoming-inner { grid-template-columns: 1fr; min-height: auto; }
+      .upcoming-img-wrap { height: 55vw; }
+      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(200,160,106,0.1); border-top: none; }
       #featured { padding: 4rem 1.2rem 0; }
       .mag-divider { padding: 0 1.2rem; }
-      #top-nav { padding: 1.2rem 1.5rem; }
+      #top-nav { padding: 0.8rem 1.5rem; }
     }
   </style>
 </head>
@@ -450,9 +553,37 @@
     </div>
   </section>
 
-  <!-- ── FEATURED ───────────────────────────────────────────────── -->
+  <!-- ── UPCOMING EVENT ────────────────────────────────────────── -->
+  <section id="upcoming">
+    <div class="section-label">Próximo evento</div>
+    <div class="upcoming-inner" onclick="openEvent('sextas')">
+      <div class="upcoming-img-wrap">
+        <img src="dining-friday.png" alt="Sextas com RYBAY" />
+        <div class="upcoming-img-overlay"></div>
+      </div>
+      <div class="upcoming-content">
+        <span class="upcoming-badge">
+          <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1a1008"/></svg>
+          Esta semana
+        </span>
+        <div class="upcoming-date-block">
+          <div class="upcoming-date-day">25</div>
+          <div class="upcoming-date-rest">Abril 2026 &nbsp;·&nbsp; Sexta-feira &nbsp;·&nbsp; 20h00</div>
+        </div>
+        <div class="upcoming-divider"></div>
+        <h2 class="upcoming-title">Sextas com<br><em>RYBAY</em></h2>
+        <p class="upcoming-desc">Música ao vivo com RYBAY, menu especial À Moda do Chef e a energia única das sextas no Espaço Luanda. A noite perfeita para entrar no fim de semana com estilo.</p>
+        <button class="upcoming-cta">
+          <span class="upcoming-cta-line"></span>
+          Ver detalhes do evento
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED (past events) ───────────────────────────────── -->
   <section id="featured">
-    <div class="section-label" style="margin-bottom:2rem;">Em destaque</div>
+    <div class="section-label" style="margin-bottom:2rem;">Edições passadas</div>
 
     <div class="ev-card ev-full" onclick="openEvent('jazz')">
       <img class="ev-card-img" src="dining-1.webp" alt="Wine &amp; Jazz" />
@@ -629,10 +760,27 @@
         <p id="ev-detail-text"></p>
       </div>
 
-      <!-- Testimonials -->
+      <!-- Testimonials slider -->
       <section id="ev-testimonials">
         <div class="section-label">O que dizem</div>
-        <div class="test-grid" id="test-grid"></div>
+        <div class="test-slider-wrap">
+          <div class="test-slider-track" id="test-track"></div>
+        </div>
+        <div class="test-slider-controls">
+          <button class="test-btn" id="test-prev" aria-label="Anterior">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <line x1="13" y1="5" x2="1" y2="5" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="5,1 1,5 5,9" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="test-dots" id="test-dots"></div>
+          <button class="test-btn" id="test-next" aria-label="Próximo">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <line x1="1" y1="5" x2="13" y2="5" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="9,1 13,5 9,9" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </section>
 
       <!-- Gallery -->
@@ -800,15 +948,22 @@
       document.getElementById('ev-desc').textContent = ev.desc;
       document.getElementById('ev-detail-text').textContent = ev.detail;
 
-      // Testimonials
-      const tg = document.getElementById('test-grid');
-      tg.innerHTML = ev.testimonials.map(t => `
+      // Testimonials slider
+      const track = document.getElementById('test-track');
+      const dots  = document.getElementById('test-dots');
+      track.innerHTML = ev.testimonials.map(t => `
         <div class="test-card">
           <p class="test-quote">${t.quote}</p>
           <p class="test-author">${t.author}</p>
           <p class="test-stars">${t.stars}</p>
         </div>
       `).join('');
+      dots.innerHTML = ev.testimonials.map((_,i) =>
+        `<div class="test-dot${i===0?' active':''}"></div>`
+      ).join('');
+      track._idx = 0;
+      track._total = ev.testimonials.length;
+      track.style.transform = 'translateX(0)';
 
       // Gallery
       const gg = document.getElementById('gal-grid');
@@ -825,18 +980,55 @@
         </div>`;
       }).join('');
 
-      // Open overlay
+      // Open overlay — push history so browser back closes it
       overlay.scrollTop = 0;
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+      history.pushState({ event: key }, '', '#' + key);
     }
 
-    function closeEvent() {
+    function _closeOverlayDOM() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
     }
 
+    function closeEvent() {
+      // Go back in history (popstate will call _closeOverlayDOM)
+      if (history.state && history.state.event) {
+        history.back();
+      } else {
+        _closeOverlayDOM();
+        history.replaceState(null, '', location.pathname);
+      }
+    }
+
+    // Browser back: if overlay is open, just close it
+    window.addEventListener('popstate', () => {
+      if (overlay.classList.contains('open')) {
+        _closeOverlayDOM();
+      }
+    });
+
     evClose.addEventListener('click', closeEvent);
+
+    // Testimonial slider controls
+    function sliderGoTo(idx) {
+      const track = document.getElementById('test-track');
+      const dotEls = document.querySelectorAll('.test-dot');
+      if (!track || !track._total) return;
+      idx = (idx + track._total) % track._total;
+      track._idx = idx;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dotEls.forEach((d,i) => d.classList.toggle('active', i === idx));
+    }
+    document.getElementById('test-prev').addEventListener('click', () => {
+      const t = document.getElementById('test-track');
+      if (t) sliderGoTo((t._idx || 0) - 1);
+    });
+    document.getElementById('test-next').addEventListener('click', () => {
+      const t = document.getElementById('test-track');
+      if (t) sliderGoTo((t._idx || 0) + 1);
+    });
 
     // Close on Escape
     document.addEventListener('keydown', e => {
