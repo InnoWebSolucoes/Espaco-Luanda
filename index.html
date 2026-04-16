@@ -785,37 +785,24 @@
       const isMobileView = window.innerWidth < 768;
 
       if (isMobileView) {
-        /* Mobile: word-by-word GSAP stagger triggered by IntersectionObserver.
-           Words (not chars) are the split units so line breaks only happen at
-           word boundaries — no mid-word wraps during the animation.            */
+        /* Mobile: word-by-word stagger, fires once then disconnects.
+           Sticky positioning makes reversal unreliable — text stays visible. */
         const words = splitWords(mainTextEl);
         gsap.set(words, { opacity: 0, y: 36, rotateZ: -2 });
-        /* Keep observing (no disconnect) so the animation re-plays every time
-           the element enters the viewport and reverses when it leaves.           */
         const obs = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
-            /* Scroll INTO view — play forward */
             gsap.to(words, {
               opacity: 1, y: 0, rotateZ: 0,
               stagger: 0.09,
               duration: 0.75,
               ease: 'power3.out',
-              overwrite: 'auto'
             });
-          } else {
-            /* Scroll OUT of view — reverse */
-            gsap.to(words, {
-              opacity: 0, y: 36, rotateZ: -2,
-              stagger: { each: 0.04, from: 'end' },
-              duration: 0.45,
-              ease: 'power2.in',
-              overwrite: 'auto'
-            });
+            obs.disconnect();
           }
-        }, { threshold: 0.15 });
+        }, { threshold: 0.05 });
         obs.observe(mainTextEl);
       } else {
-        /* Desktop: GSAP char-by-char stagger with ScrollTrigger */
+        /* Desktop: char-by-char stagger, plays once, never reverses. */
         const chars = splitChars(mainTextEl);
         gsap.fromTo(chars,
           { opacity: 0, y: 40, rotateZ: -3 },
@@ -826,8 +813,8 @@
             ease: 'power3.out',
             scrollTrigger: {
               trigger: '#main-text',
-              start: 'top 88%',
-              toggleActions: 'play reverse play reverse'
+              start: 'top 90%',
+              toggleActions: 'play none none none'
             }
           }
         );
