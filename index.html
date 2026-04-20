@@ -438,6 +438,10 @@
         border-left: none !important;
         border-top: 1px solid rgba(193,123,5,0.12) !important;
       }
+      /* Push hero logo down on mobile */
+      #hero-logo-wrap { top: 4.5rem !important; }
+      /* Spacer that delays section 3 from overlaying section 2 */
+      #sec2-spacer { display: block !important; height: 55vh !important; }
     }
   </style>
 </head>
@@ -482,7 +486,7 @@
       <div class="desktop-spacer" style="width:44px;"></div>
 
       <!-- Logo (always centred, absolute) -->
-      <div style="position:absolute;left:50%;transform:translateX(-50%);width:max-content;">
+      <div id="hero-logo-wrap" style="position:absolute;left:50%;transform:translateX(-50%);width:max-content;">
         <img src="Brand Reasources/logo.png" alt="Okulya Café"
              style="height:72px;width:auto;max-width:none;display:block;" />
       </div>
@@ -664,6 +668,9 @@
 
     </div>
 
+    <!-- Mobile-only spacer: forces more scroll before section 3 overlays -->
+    <div id="sec2-spacer" style="display:none;"></div>
+
   </section>
 
   <!-- ═══════════════════════════════════════════════ DINING TIMES SECTION ═══
@@ -686,59 +693,87 @@
       <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
       <div id="dining-left-col" style="flex:1;min-width:0;padding:4rem 1.6rem 5rem 1.6rem;">
 
-        <!-- Item 0: Segunda -->
+        <!-- Item 0: Coffee -->
         <article class="dining-item" data-period="0">
           <div class="dining-item-img-col" style="overflow:hidden;">
-            <img src="dining-monday.jpg" alt="Segundas sem lei"
+            <img src="https://placehold.co/600x800/3d2314/c8a06a?text=coffee" alt="Coffee"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
           <div class="dining-item-text-col">
-            <h2 class="dining-title">Segundas</h2>
-            <p class="dining-sub">Segundas a partir das 18h</p>
-            <p class="dining-desc">Aproveita a Segunda-feira Sem Lei com 20% de desconto nas nossas carnes premium. Vem relaxar, brindar e começar a semana do jeito certo... Sem regras, sem pressa, só boas vibes! Segunda é o novo sábado. Venha Viver sem lei...</p>
-            <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+            <h2 class="dining-title">coffee</h2>
+            <p class="dining-sub">from 10:00</p>
+            <p class="dining-desc">Our coffee program is built around balance and clarity. Beans are selected for their character and roasted to highlight their natural expression. From a quick espresso to a slower cappuccino, mornings at Okulya are relaxed and according to your pace.</p>
+            <a href="menu.html" class="dining-btn">view our coffee menu</a>
           </div>
         </article>
 
-        <!-- Item 1: Terça -->
+        <!-- Item 1: Pastries -->
         <article class="dining-item" data-period="1">
           <div class="dining-item-img-col" style="overflow:hidden;">
-            <img src="dining-tuesday.jpg" alt="Terça do Chefe"
+            <img src="https://placehold.co/600x800/f0ebe0/47331f?text=pastries" alt="Pastries"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
           <div class="dining-item-text-col">
-            <h2 class="dining-title">Terças</h2>
-            <p class="dining-sub">Terças a partir das 19h00</p>
-            <p class="dining-desc">As terças-feiras ganharam um novo sabor no Okulya Café! Venha viver uma experiência gastronômica única com o menu exclusivo preparado pelo nosso Chefe. E para começar a noite da melhor forma, oferecemos uma rodada de caipirinha por nossa conta (por cliente!)</p>
-            <a href="menu.html#bebidas" class="dining-btn">Ver Mais</a>
+            <h2 class="dining-title">pastries</h2>
+            <p class="dining-sub">from 10:00</p>
+            <p class="dining-desc">Pastries are baked fresh each morning using classic techniques and seasonal ingredients. Croissants, sweet breads, and daily specials offer a simple and thoughtful start to the day. Everything is prepared with care and quiet attention to craft.</p>
+            <a href="menu.html" class="dining-btn">view our pastries menu</a>
           </div>
         </article>
 
-        <!-- Item 2: Quinta -->
+        <!-- Item 2: Light Lunch -->
         <article class="dining-item" data-period="2">
           <div class="dining-item-img-col" style="overflow:hidden;">
-            <img src="dining-thursday.jpg" alt="Quintas"
+            <img src="https://placehold.co/600x800/1a1a1a/c8a06a?text=light+lunch" alt="Light Lunch"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
           <div class="dining-item-text-col">
-            <h2 class="dining-title">Quintas</h2>
-            <p class="dining-sub">Todas as quintas</p>
-            <p class="dining-desc">Pediste a nossa costela premium? Então prepara-te: tens direito a 2 horas de cerveja Brava por nossa conta! Sabor, suculência e o brinde perfeito para animar a tua quinta com costelas e cerveja.</p>
-            <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+            <h2 class="dining-title">light lunch</h2>
+            <p class="dining-sub">from 12:30</p>
+            <p class="dining-desc">Our lunch menu is light, seasonal, and relaxed. Dishes are simple and generous, inspired by neighbourhood cafés and wine bars. Ingredients change with the season and the ideas of the kitchen.</p>
+            <a href="menu.html" class="dining-btn">view our light lunch menu</a>
           </div>
         </article>
 
-        <!-- Item 3: Sexta -->
+        <!-- Item 3: Snacks -->
         <article class="dining-item" data-period="3">
           <div class="dining-item-img-col" style="overflow:hidden;">
-            <img src="dining-friday.png" alt="Sextas"
+            <img src="https://placehold.co/600x800/222222/c8a06a?text=snacks" alt="Snacks"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
           <div class="dining-item-text-col">
-            <h2 class="dining-title">Sextas</h2>
-            <p class="dining-sub">Todas as sextas</p>
-            <p class="dining-desc">Música ao vivo com RYBAY e um menu especial À Moda do Chef. A combinação perfeita para entrar no fim de semana com estilo e sabor. Reserva a tua mesa e vem curtir uma noite vibrante, deliciosa e com som ao vivo!</p>
-            <a href="events.html" class="dining-btn">Ver Mais</a>
+            <h2 class="dining-title">snacks</h2>
+            <p class="dining-sub">from 5 pm</p>
+            <p class="dining-desc">Our snacks are designed for grazing and sharing. The menu brings together relaxed, seasonal dishes that pair naturally with wine or cocktails. Some reflect local traditions, while others explore flavours gathered from further afield.</p>
+            <a href="menu.html" class="dining-btn">view our snacks menu</a>
+          </div>
+        </article>
+
+        <!-- Item 4: Wine -->
+        <article class="dining-item" data-period="4">
+          <div class="dining-item-img-col" style="overflow:hidden;">
+            <img src="https://placehold.co/600x800/1a0a0a/c8a06a?text=wine" alt="Wine"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">wine</h2>
+            <p class="dining-sub">served all day</p>
+            <p class="dining-desc">Our wine list is shaped by curiosity and conversation. We seek out soulful, small-scale producers and focus on wines that feel relaxed but thoughtful. Every bottle is chosen for its freshness, character, and ability to surprise.</p>
+            <a href="menu.html" class="dining-btn">view our wine list</a>
+          </div>
+        </article>
+
+        <!-- Item 5: Cocktails -->
+        <article class="dining-item" data-period="5">
+          <div class="dining-item-img-col" style="overflow:hidden;">
+            <img src="https://placehold.co/600x800/0a0a0a/c8a06a?text=cocktails" alt="Cocktails"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
+          </div>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">cocktails</h2>
+            <p class="dining-sub">served all day</p>
+            <p class="dining-desc">Our cocktails celebrate the seasons and the character of each ingredient. We work closely with local producers and build the menu around what is fresh and available in the region. Using techniques such as rotary evaporation, we capture pure flavours and create drinks that are simple, expressive, and quietly inventive.</p>
+            <a href="menu.html" class="dining-btn">view our drinks menu</a>
           </div>
         </article>
 
@@ -780,15 +815,15 @@
 
           <!-- Moving dot on the line -->
           <div id="dining-dot"
-               style="position:absolute;right:-4px;top:15%;
+               style="position:absolute;right:-4px;top:10%;
                       width:9px;height:9px;border-radius:50%;
                       background:#47331F;border:1.5px solid #C17B05;
                       transform:translateY(-50%);
                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
 
-          <!-- Tick 0 — Segunda (active by default) -->
+          <!-- Tick 0 — Coffee (active by default) -->
           <div class="dining-tick" data-idx="0"
-               style="position:absolute;top:15%;right:0;height:1px;
+               style="position:absolute;top:10%;right:0;height:1px;
                       width:26px;background:#C17B05;
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -798,12 +833,12 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:#C17B05;
-                         transition:opacity 0.4s ease,color 0.4s ease;">segunda</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">coffee</span>
           </div>
 
-          <!-- Tick 1 — Terça (inactive) -->
+          <!-- Tick 1 — Pastries (inactive) -->
           <div class="dining-tick" data-idx="1"
-               style="position:absolute;top:38%;right:0;height:1px;
+               style="position:absolute;top:26%;right:0;height:1px;
                       width:12px;background:rgba(255,255,255,0.2);
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -813,12 +848,12 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
-                         transition:opacity 0.4s ease,color 0.4s ease;">terça</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">pastries</span>
           </div>
 
-          <!-- Tick 2 — Quinta (inactive) -->
+          <!-- Tick 2 — Light Lunch (inactive) -->
           <div class="dining-tick" data-idx="2"
-               style="position:absolute;top:62%;right:0;height:1px;
+               style="position:absolute;top:42%;right:0;height:1px;
                       width:12px;background:rgba(255,255,255,0.2);
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -828,12 +863,12 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
-                         transition:opacity 0.4s ease,color 0.4s ease;">quinta</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">lunch</span>
           </div>
 
-          <!-- Tick 3 — Sexta (inactive) -->
+          <!-- Tick 3 — Snacks (inactive) -->
           <div class="dining-tick" data-idx="3"
-               style="position:absolute;top:84%;right:0;height:1px;
+               style="position:absolute;top:58%;right:0;height:1px;
                       width:12px;background:rgba(255,255,255,0.2);
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
@@ -843,7 +878,37 @@
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
-                         transition:opacity 0.4s ease,color 0.4s ease;">sexta</span>
+                         transition:opacity 0.4s ease,color 0.4s ease;">snacks</span>
+          </div>
+
+          <!-- Tick 4 — Wine (inactive) -->
+          <div class="dining-tick" data-idx="4"
+               style="position:absolute;top:74%;right:0;height:1px;
+                      width:12px;background:rgba(255,255,255,0.2);
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Lato',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:rgba(255,255,255,0.3);opacity:0;
+                         transition:opacity 0.4s ease,color 0.4s ease;">wine</span>
+          </div>
+
+          <!-- Tick 5 — Cocktails (inactive) -->
+          <div class="dining-tick" data-idx="5"
+               style="position:absolute;top:90%;right:0;height:1px;
+                      width:12px;background:rgba(255,255,255,0.2);
+                      transition:width 0.4s ease,background 0.4s ease;">
+            <span class="dining-tick-label"
+                  style="position:absolute;right:calc(100% + 8px);top:50%;
+                         transform:translateY(-50%);white-space:nowrap;
+                         font-family:'Lato',sans-serif;
+                         font-size:0.42rem;font-weight:500;
+                         letter-spacing:0.18em;text-transform:uppercase;
+                         color:rgba(255,255,255,0.3);opacity:0;
+                         transition:opacity 0.4s ease,color 0.4s ease;">cocktails</span>
           </div>
 
         </div><!-- /dining-track -->
@@ -958,21 +1023,32 @@
       const isMobileView = window.innerWidth < 768;
 
       if (isMobileView) {
-        /* Mobile: word-by-word stagger, fires once then disconnects.
-           Sticky positioning makes reversal unreliable — text stays visible. */
+        /* Mobile: word-by-word stagger.
+           Replays every time the element enters the viewport,
+           reverses (last-word-first) when it exits. */
         const words = splitWords(mainTextEl);
         gsap.set(words, { opacity: 0, y: 36, rotateZ: -2 });
+        let seenOnce = false;
         const obs = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
+            seenOnce = true;
+            gsap.killTweensOf(words);
             gsap.to(words, {
               opacity: 1, y: 0, rotateZ: 0,
               stagger: 0.09,
               duration: 0.75,
               ease: 'power3.out',
             });
-            obs.disconnect();
+          } else if (seenOnce) {
+            gsap.killTweensOf(words);
+            gsap.to(words, {
+              opacity: 0, y: 36, rotateZ: -2,
+              stagger: { each: 0.06, from: 'end' },
+              duration: 0.45,
+              ease: 'power2.in',
+            });
           }
-        }, { threshold: 0.05 });
+        }, { threshold: 0.08 });
         obs.observe(mainTextEl);
       } else {
         /* Desktop: char-by-char stagger, plays once, never reverses. */
@@ -1203,7 +1279,7 @@
       if (!dot || !ticks.length || !items.length) return;
 
       /* % position along the track for each period */
-      const positions = ['15%', '38%', '62%', '84%'];
+      const positions = ['10%', '26%', '42%', '58%', '74%', '90%'];
 
       function activate(idx) {
         dot.style.top = positions[idx];
