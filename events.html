@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eventos — Espaço Luanda</title>
+  <title>Eventos — Okulya Café</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: #0e0904;
+      background: #2D1B0E;
       color: #f5f0e8;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       overflow-x: clip;
     }
 
     /* ── SCROLLBAR ─────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #0e0904; }
-    ::-webkit-scrollbar-thumb { background: #c8a06a44; border-radius: 2px; }
+    ::-webkit-scrollbar-track { background: #2D1B0E; }
+    ::-webkit-scrollbar-thumb { background: #C17B0544; border-radius: 2px; }
 
     /* ── NAV ───────────────────────────────────────────────────── */
     #top-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.4rem;
-      background: #1a1008;
-      border-bottom: 1px solid rgba(200,160,106,0.12);
+      background: #47331F;
+      border-bottom: 1px solid rgba(193,123,5,0.12);
     }
     .nav-voltar {
       display: inline-flex; align-items: center; gap: 0.55rem;
-      font-family: 'Montserrat', sans-serif; font-size: 0.75rem;
+      font-family: 'Lato', sans-serif; font-size: 0.75rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
       color: #f5f0e8; background: none; border: none; cursor: pointer;
       padding: 1rem 0 1rem 0; margin: -1rem 0 -1rem 0;
@@ -50,7 +50,7 @@
     }
     #masthead-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, #1a1008 0%, #2a1a08 40%, #0e0904 100%);
+      background: linear-gradient(160deg, #47331F 0%, #3D2510 40%, #2D1B0E 100%);
     }
     /* grain texture */
     #masthead-bg::after {
@@ -68,7 +68,7 @@
     /* gold radial glow */
     #masthead-glow {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 55% at 65% 60%, rgba(200,160,106,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 55% at 65% 60%, rgba(193,123,5,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -78,32 +78,32 @@
       display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem;
     }
     .masthead-meta {
-      font-family: 'Montserrat', sans-serif; font-size: 0.7rem;
+      font-family: 'Lato', sans-serif; font-size: 0.7rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #c8a06a; margin-bottom: 1.2rem;
+      color: #C17B05; margin-bottom: 1.2rem;
     }
     .masthead-issue {
-      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-family: 'Lato', sans-serif; font-size: 0.65rem;
       font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(245,240,232,0.4); margin-bottom: 3rem;
     }
     .masthead-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(5.5rem, 16vw, 13rem);
       font-weight: 300; letter-spacing: -0.02em; line-height: 0.88;
       color: #f5f0e8;
     }
     .masthead-title em {
-      font-style: italic; color: #c8a06a;
+      font-style: italic; color: #C17B05;
     }
     .masthead-tagline {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-family: 'Playfair Display', serif; font-style: italic;
       font-size: clamp(1.1rem, 2.8vw, 1.55rem); font-weight: 300;
       color: rgba(245,240,232,0.65); margin-top: 1.8rem; max-width: 480px;
       line-height: 1.6;
     }
     .masthead-divider {
-      width: 48px; height: 1px; background: #c8a06a;
+      width: 48px; height: 1px; background: #C17B05;
       margin: 2rem 0;
     }
     .masthead-side {
@@ -111,14 +111,14 @@
       padding-bottom: 0.4rem;
     }
     .masthead-side-label {
-      font-family: 'Montserrat', sans-serif; font-size: 0.62rem;
+      font-family: 'Lato', sans-serif; font-size: 0.62rem;
       font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(200,160,106,0.6); writing-mode: vertical-rl;
+      color: rgba(193,123,5,0.6); writing-mode: vertical-rl;
       transform: rotate(180deg);
     }
     .masthead-scroll-hint {
       display: flex; align-items: center; gap: 0.8rem;
-      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-family: 'Lato', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(245,240,232,0.3); margin-top: 4rem;
     }
@@ -129,13 +129,13 @@
 
     /* ── SECTION LABEL ─────────────────────────────────────────── */
     .section-label {
-      font-family: 'Montserrat', sans-serif; font-size: 0.68rem;
+      font-family: 'Lato', sans-serif; font-size: 0.68rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #c8a06a; display: flex; align-items: center; gap: 1.2rem;
+      color: #C17B05; display: flex; align-items: center; gap: 1.2rem;
     }
     .section-label::after {
       content: ''; flex: 1; height: 1px;
-      background: linear-gradient(to right, #c8a06a44, transparent);
+      background: linear-gradient(to right, #C17B0544, transparent);
     }
 
     /* ── UPCOMING EVENT ────────────────────────────────────────── */
@@ -160,59 +160,59 @@
       background: linear-gradient(to right, rgba(14,9,4,0.15) 0%, rgba(14,9,4,0) 100%);
     }
     .upcoming-content {
-      background: #1a1008; padding: 4rem 3.5rem;
+      background: #47331F; padding: 4rem 3.5rem;
       display: flex; flex-direction: column; justify-content: center;
-      border: 1px solid rgba(200,160,106,0.1); border-left: none;
+      border: 1px solid rgba(193,123,5,0.1); border-left: none;
       position: relative; overflow: hidden;
     }
     .upcoming-content::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 100% 50%, rgba(200,160,106,0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 100% 50%, rgba(193,123,5,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
     .upcoming-badge {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-family: 'Lato', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #1a1008; background: #c8a06a;
+      color: #47331F; background: #C17B05;
       padding: 0.4rem 1rem; margin-bottom: 2.5rem; align-self: flex-start;
     }
     .upcoming-date-block { margin-bottom: 2rem; }
     .upcoming-date-day {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-family: 'Playfair Display', serif; font-weight: 300;
       font-size: clamp(4rem, 9vw, 8rem); line-height: 1;
       color: #f5f0e8; letter-spacing: -0.03em;
     }
     .upcoming-date-rest {
-      font-family: 'Montserrat', sans-serif; font-size: 0.78rem;
+      font-family: 'Lato', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(245,240,232,0.45); margin-top: 0.3rem;
     }
     .upcoming-divider {
-      width: 36px; height: 1px; background: #c8a06a; margin: 1.5rem 0;
+      width: 36px; height: 1px; background: #C17B05; margin: 1.5rem 0;
     }
     .upcoming-title {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-family: 'Playfair Display', serif; font-weight: 300;
       font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1;
       color: #f5f0e8; margin-bottom: 1.2rem;
     }
-    .upcoming-title em { font-style: italic; color: #c8a06a; }
+    .upcoming-title em { font-style: italic; color: #C17B05; }
     .upcoming-desc {
-      font-family: 'Montserrat', sans-serif; font-size: 0.88rem;
+      font-family: 'Lato', sans-serif; font-size: 0.88rem;
       font-weight: 300; line-height: 1.8; letter-spacing: 0.04em;
       color: rgba(245,240,232,0.5); margin-bottom: 2.5rem; max-width: 360px;
     }
     .upcoming-cta {
       display: inline-flex; align-items: center; gap: 0.8rem;
-      font-family: 'Montserrat', sans-serif; font-size: 0.72rem;
+      font-family: 'Lato', sans-serif; font-size: 0.72rem;
       font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
-      color: #c8a06a; border: none; background: none; cursor: pointer;
+      color: #C17B05; border: none; background: none; cursor: pointer;
       transition: gap 0.3s ease, opacity 0.3s ease;
       padding: 0; align-self: flex-start;
     }
     .upcoming-cta:hover { gap: 1.2rem; opacity: 0.8; }
     .upcoming-cta-line {
-      width: 28px; height: 1px; background: #c8a06a;
+      width: 28px; height: 1px; background: #C17B05;
       transition: width 0.3s ease;
     }
     .upcoming-cta:hover .upcoming-cta-line { width: 44px; }
@@ -233,7 +233,7 @@
     /* ── EVENT CARD ────────────────────────────────────────────── */
     .ev-card {
       position: relative; overflow: hidden; cursor: pointer;
-      background: #1a1008;
+      background: #47331F;
     }
     .ev-card::before {
       content: ''; position: absolute; inset: 0; z-index: 2;
@@ -251,28 +251,28 @@
       padding: 2rem 1.8rem 1.8rem;
     }
     .ev-card-tag {
-      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-family: 'Lato', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-      color: #c8a06a; margin-bottom: 0.7rem;
+      color: #C17B05; margin-bottom: 0.7rem;
     }
     .ev-card-title {
-      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-family: 'Playfair Display', serif; font-weight: 400;
       color: #f5f0e8; line-height: 1.15;
     }
     .ev-card-sub {
-      font-family: 'Montserrat', sans-serif; font-size: 0.78rem;
+      font-family: 'Lato', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.1em;
       color: rgba(245,240,232,0.5); margin-top: 0.5rem;
     }
     .ev-card-arrow {
       position: absolute; bottom: 1.8rem; right: 1.8rem; z-index: 3;
       width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid rgba(200,160,106,0.3);
+      border: 1px solid rgba(193,123,5,0.3);
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.3s ease, background 0.3s ease;
     }
     .ev-card:hover .ev-card-arrow {
-      border-color: #c8a06a; background: rgba(200,160,106,0.1);
+      border-color: #C17B05; background: rgba(193,123,5,0.1);
     }
 
     /* card size classes */
@@ -295,17 +295,17 @@
       display: flex; align-items: center; gap: 2rem;
       padding: 0 2.4rem; margin-bottom: 2rem;
     }
-    .mag-divider-line { flex: 1; height: 1px; background: rgba(200,160,106,0.15); }
+    .mag-divider-line { flex: 1; height: 1px; background: rgba(193,123,5,0.15); }
     .mag-divider-text {
-      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      font-family: 'Lato', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: rgba(200,160,106,0.4);
+      color: rgba(193,123,5,0.4);
     }
 
     /* ── EVENT DETAIL OVERLAY ──────────────────────────────────── */
     #ev-overlay {
       position: fixed; inset: 0; z-index: 1000;
-      background: #0e0904;
+      background: #2D1B0E;
       overflow-y: auto;
       opacity: 0; pointer-events: none;
       transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
@@ -320,8 +320,8 @@
       position: sticky; top: 0; z-index: 10;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.4rem;
-      background: #1a1008;
-      border-bottom: 1px solid rgba(200,160,106,0.12);
+      background: #47331F;
+      border-bottom: 1px solid rgba(193,123,5,0.12);
     }
 
     /* overlay hero */
@@ -340,18 +340,18 @@
       padding: 4rem 2.4rem 3rem;
     }
     #ev-tag {
-      font-family: 'Montserrat', sans-serif; font-size: 0.68rem;
+      font-family: 'Lato', sans-serif; font-size: 0.68rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #c8a06a; margin-bottom: 1rem;
+      color: #C17B05; margin-bottom: 1rem;
     }
     #ev-title {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-family: 'Playfair Display', serif; font-weight: 300;
       font-size: clamp(3rem, 8vw, 6rem); line-height: 1; color: #f5f0e8;
     }
-    #ev-title em { font-style: italic; color: #c8a06a; }
+    #ev-title em { font-style: italic; color: #C17B05; }
     #ev-meta {
       display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem;
-      font-family: 'Montserrat', sans-serif; font-size: 0.78rem;
+      font-family: 'Lato', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.14em;
       color: rgba(245,240,232,0.5);
     }
@@ -360,13 +360,13 @@
     /* overlay body */
     #ev-body { padding: 4rem 2.4rem 6rem; max-width: 900px; }
     #ev-desc {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-family: 'Playfair Display', serif; font-style: italic;
       font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 300;
       line-height: 1.75; color: rgba(245,240,232,0.85);
       margin-bottom: 3rem;
     }
     #ev-detail-text {
-      font-family: 'Montserrat', sans-serif; font-size: 0.95rem;
+      font-family: 'Lato', sans-serif; font-size: 0.95rem;
       font-weight: 300; line-height: 1.85;
       color: rgba(245,240,232,0.55);
     }
@@ -374,12 +374,12 @@
     /* ── TESTIMONIALS SLIDER ───────────────────────────────────── */
     #ev-testimonials {
       padding: 5rem 2.4rem;
-      background: #1a1008;
+      background: #47331F;
       position: relative;
     }
     #ev-testimonials::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(200,160,106,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(193,123,5,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .test-slider-wrap {
@@ -389,47 +389,47 @@
       display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
     }
     .test-card {
-      flex: 0 0 100%; padding: 2.5rem 2rem 2rem; border: 1px solid rgba(200,160,106,0.15);
+      flex: 0 0 100%; padding: 2.5rem 2rem 2rem; border: 1px solid rgba(193,123,5,0.15);
       position: relative; box-sizing: border-box;
     }
     .test-card::before {
       content: '\201C';
-      font-family: 'Cormorant Garamond', serif; font-size: 5rem;
-      font-weight: 300; color: rgba(200,160,106,0.2);
+      font-family: 'Playfair Display', serif; font-size: 5rem;
+      font-weight: 300; color: rgba(193,123,5,0.2);
       position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1;
     }
     .test-quote {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-family: 'Playfair Display', serif; font-style: italic;
       font-size: clamp(1.2rem, 2.5vw, 1.55rem); font-weight: 300;
       line-height: 1.7; color: rgba(245,240,232,0.82);
       margin-top: 1.5rem;
     }
     .test-author {
-      font-family: 'Montserrat', sans-serif; font-size: 0.72rem;
+      font-family: 'Lato', sans-serif; font-size: 0.72rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-      color: #c8a06a; margin-top: 1.8rem;
+      color: #C17B05; margin-top: 1.8rem;
     }
     .test-stars {
-      color: #c8a06a; font-size: 0.88rem; letter-spacing: 0.1em;
+      color: #C17B05; font-size: 0.88rem; letter-spacing: 0.1em;
       margin-top: 0.4rem;
     }
     .test-slider-controls {
       display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem;
     }
     .test-btn {
-      width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(200,160,106,0.3);
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(193,123,5,0.3);
       background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
       transition: border-color 0.25s ease, background 0.25s ease;
       flex-shrink: 0;
     }
-    .test-btn:hover { border-color: #c8a06a; background: rgba(200,160,106,0.08); }
+    .test-btn:hover { border-color: #C17B05; background: rgba(193,123,5,0.08); }
     .test-dots { display: flex; gap: 0.5rem; align-items: center; }
     .test-dot {
       width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(200,160,106,0.25);
+      background: rgba(193,123,5,0.25);
       transition: background 0.3s ease, transform 0.3s ease;
     }
-    .test-dot.active { background: #c8a06a; transform: scale(1.4); }
+    .test-dot.active { background: #C17B05; transform: scale(1.4); }
 
     /* ── GALLERY ───────────────────────────────────────────────── */
     #ev-gallery { padding: 5rem 2.4rem 7rem; }
@@ -441,7 +441,7 @@
     }
     .gal-item {
       position: relative; overflow: hidden;
-      background: #1a1008;
+      background: #47331F;
     }
     .gal-item img {
       width: 100%; height: 100%; object-fit: cover; display: block;
@@ -458,13 +458,13 @@
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%); z-index: 2;
       width: 52px; height: 52px; border-radius: 50%;
-      border: 1.5px solid rgba(200,160,106,0.7);
+      border: 1.5px solid rgba(193,123,5,0.7);
       display: flex; align-items: center; justify-content: center;
       background: rgba(14,9,4,0.5);
       transition: background 0.3s ease, border-color 0.3s ease;
     }
     .gal-item:hover .play-btn {
-      background: rgba(200,160,106,0.2); border-color: #c8a06a;
+      background: rgba(193,123,5,0.2); border-color: #C17B05;
     }
     .g-tall  { grid-column: span 4; grid-row: span 2; }
     .g-wide  { grid-column: span 8; grid-row: span 1; }
@@ -495,7 +495,7 @@
       #upcoming { padding: 3rem 1.2rem 0; }
       .upcoming-inner { grid-template-columns: 1fr; min-height: auto; }
       .upcoming-img-wrap { height: 55vw; }
-      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(200,160,106,0.1); border-top: none; }
+      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(193,123,5,0.1); border-top: none; }
       #featured { padding: 4rem 1.2rem 0; }
       .mag-divider { padding: 0 1.2rem; }
       #top-nav { padding: 0.8rem 1.5rem; }
@@ -513,20 +513,20 @@
     }
     .contact-col { padding: 2rem 0; }
     .contact-col + .contact-col {
-      border-left: 1px solid rgba(200,160,106,0.12);
+      border-left: 1px solid rgba(193,123,5,0.12);
     }
     .contact-label {
-      font-family: 'Montserrat', sans-serif; font-size: 0.6rem;
+      font-family: 'Lato', sans-serif; font-size: 0.6rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #c8a06a; margin-bottom: 1rem; display: block;
+      color: #C17B05; margin-bottom: 1rem; display: block;
     }
     .contact-val {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
       font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.72);
     }
     @media (max-width: 768px) {
       .contact-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
-      .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(200,160,106,0.12) !important; }
+      .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(193,123,5,0.12) !important; }
     }
   </style>
 </head>
@@ -541,12 +541,12 @@
       </svg>
       Voltar
     </button>
-    <img src="Brand Reasources/logo.png" alt="Espaço Luanda" class="nav-logo" />
+    <img src="Brand Reasources/logo.png" alt="Okulya Café" class="nav-logo" />
     <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;"
-       style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:500;
+       style="font-family:'Lato',sans-serif;font-size:0.62rem;font-weight:500;
               letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,240,232,0.55);
               text-decoration:none;transition:color 0.22s ease;"
-       onmouseover="this.style.color='#c8a06a'" onmouseout="this.style.color='rgba(245,240,232,0.55)'">Contacto</a>
+       onmouseover="this.style.color='#C17B05'" onmouseout="this.style.color='rgba(245,240,232,0.55)'">Contacto</a>
   </nav>
 
   <!-- ── MASTHEAD ───────────────────────────────────────────────── -->
@@ -557,7 +557,7 @@
 
     <div class="masthead-inner">
       <div>
-        <p class="masthead-meta">Espaço Luanda — Steak & Sea</p>
+        <p class="masthead-meta">Okulya Café</p>
         <p class="masthead-issue">Vol. I &nbsp;·&nbsp; Edição Abril 2026 &nbsp;·&nbsp; Luanda, Angola</p>
         <h1 class="masthead-title">
           Even<em>tos</em>
@@ -585,7 +585,7 @@
       </div>
       <div class="upcoming-content">
         <span class="upcoming-badge">
-          <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1a1008"/></svg>
+          <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#47331F"/></svg>
           Esta semana
         </span>
         <div class="upcoming-date-block">
@@ -594,7 +594,7 @@
         </div>
         <div class="upcoming-divider"></div>
         <h2 class="upcoming-title">Sextas com<br><em>RYBAY</em></h2>
-        <p class="upcoming-desc">Música ao vivo com RYBAY, menu especial À Moda do Chef e a energia única das sextas no Espaço Luanda. A noite perfeita para entrar no fim de semana com estilo.</p>
+        <p class="upcoming-desc">Música ao vivo com RYBAY, menu especial À Moda do Chef e a energia única das sextas no Okulya Café. A noite perfeita para entrar no fim de semana com estilo.</p>
         <button class="upcoming-cta">
           <span class="upcoming-cta-line"></span>
           Ver detalhes do evento
@@ -611,12 +611,12 @@
       <img class="ev-card-img" src="dining-1.webp" alt="Wine &amp; Jazz" />
       <div class="ev-card-body">
         <p class="ev-card-tag">Todas as quartas &nbsp;·&nbsp; 19h00</p>
-        <h2 class="ev-card-title">Wine &amp; Jazz<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#c8a06a;">Night</em></h2>
+        <h2 class="ev-card-title">Wine &amp; Jazz<br><em style="font-family:'Playfair Display',serif;font-style:italic;color:#C17B05;">Night</em></h2>
         <p class="ev-card-sub">Carta de vinhos curada · Música ao vivo · Mesa do Chef</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -635,7 +635,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -649,16 +649,16 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
 
     <!-- Mag divider inside grid -->
     <div style="grid-column:span 12; display:flex; align-items:center; gap:2rem; margin: 0.5rem 0;">
-      <div style="flex:1;height:1px;background:rgba(200,160,106,0.12);"></div>
-      <span style="font-family:'Montserrat',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(200,160,106,0.35);">Agenda mensal</span>
-      <div style="flex:1;height:1px;background:rgba(200,160,106,0.12);"></div>
+      <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
+      <span style="font-family:'Lato',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(193,123,5,0.35);">Agenda mensal</span>
+      <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
     </div>
 
     <!-- Row 2: three equal -->
@@ -671,7 +671,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -685,7 +685,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -699,7 +699,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -714,7 +714,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -728,7 +728,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#c8a06a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -737,8 +737,8 @@
 
   <!-- ══════════════════════════════════════════════════ CONTACT FOOTER ══════ -->
   <footer id="contact" style="
-    background:#0e0904;
-    border-top:1px solid rgba(200,160,106,0.12);
+    background:#2D1B0E;
+    border-top:1px solid rgba(193,123,5,0.12);
     padding:7rem 2.4rem 4rem;
     position:relative;
     z-index:2;
@@ -748,7 +748,7 @@
     <!-- Radial glow -->
     <div style="position:absolute;inset:0;pointer-events:none;
                 background:radial-gradient(ellipse 70% 60% at 50% 0%,
-                  rgba(200,160,106,0.06) 0%, transparent 70%);"></div>
+                  rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
 
     <!-- Info grid -->
     <div class="contact-grid">
@@ -767,15 +767,15 @@
     </div>
 
     <!-- Divider -->
-    <div style="width:48px;height:1px;background:rgba(200,160,106,0.22);
+    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);
                 margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
 
     <!-- Copyright -->
-    <p style="font-family:'Montserrat',sans-serif;font-size:0.52rem;font-weight:300;
+    <p style="font-family:'Lato',sans-serif;font-size:0.52rem;font-weight:300;
               letter-spacing:0.2em;text-transform:uppercase;
               color:rgba(245,240,232,0.18);text-align:center;
               position:relative;z-index:1;">
-      &copy; 2026 Espaço Luanda &nbsp;&middot;&nbsp; Luanda, Angola
+      &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Luanda, Angola
     </p>
 
   </footer>
@@ -796,7 +796,7 @@
           </svg>
           Voltar
         </button>
-        <img src="Brand Reasources/logo.png" alt="Espaço Luanda" class="nav-logo" />
+        <img src="Brand Reasources/logo.png" alt="Okulya Café" class="nav-logo" />
       </nav>
 
       <!-- Hero image -->
@@ -809,7 +809,7 @@
           <div id="ev-meta">
             <span id="ev-when"></span>
             <span id="ev-time"></span>
-            <span id="ev-loc">Espaço Luanda, Luanda</span>
+            <span id="ev-loc">Okulya Café, Luanda</span>
           </div>
         </div>
       </div>
@@ -829,15 +829,15 @@
         <div class="test-slider-controls">
           <button class="test-btn" id="test-prev" aria-label="Anterior">
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-              <line x1="13" y1="5" x2="1" y2="5" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round"/>
-              <polyline points="5,1 1,5 5,9" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="13" y1="5" x2="1" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="5,1 1,5 5,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="test-dots" id="test-dots"></div>
           <button class="test-btn" id="test-next" aria-label="Próximo">
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-              <line x1="1" y1="5" x2="13" y2="5" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round"/>
-              <polyline points="9,1 13,5 9,9" stroke="#c8a06a" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="1" y1="5" x2="13" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="9,1 13,5 9,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
@@ -863,7 +863,7 @@
         time: '19h00 — encerramento',
         img: 'dining-1.webp',
         desc: 'Uma noite construída em torno do silêncio que só o jazz pode criar — quebrado pelas notas certas, pelo vinho certo, pelo prato certo.',
-        detail: 'Cada quarta-feira, o Espaço Luanda transforma-se num palco intimista para os melhores músicos de jazz de Luanda e convidados internacionais. A nossa carta de vinhos, curada pelo sommelier da casa, apresenta mais de 40 rótulos seleccionados. O menu do Chef muda a cada semana, reflectindo o melhor do mercado local e a visão criativa da nossa cozinha. Mesas limitadas — reserva antecipada recomendada.',
+        detail: 'Cada quarta-feira, o Okulya Café transforma-se num palco intimista para os melhores músicos de jazz de Luanda e convidados internacionais. A nossa carta de vinhos, curada pelo sommelier da casa, apresenta mais de 40 rótulos seleccionados. O menu do Chef muda a cada semana, reflectindo o melhor do mercado local e a visão criativa da nossa cozinha. Mesas limitadas — reserva antecipada recomendada.',
         testimonials: [
           { quote: 'A melhor noite de jazz que já vivi fora de Lisboa. O ambiente, a comida, o vinho — tudo numa sintonia perfeita.', author: 'Maria C.', stars: '★★★★★' },
           { quote: 'Vim pela primeira vez numa quarta e não consigo parar de voltar. O trio de jazz e o risotto de marisco são incomparáveis.', author: 'João A.', stars: '★★★★★' },
@@ -879,7 +879,7 @@
         time: '20h00 — encerramento',
         img: 'dining-friday.png',
         desc: 'O fim de semana começa quando RYBAY pega na guitarra e o Chef abre o seu menu mais ousado da semana.',
-        detail: 'As sextas no Espaço Luanda têm uma energia única. RYBAY, um dos artistas mais talentosos da cena musical de Luanda, toca ao vivo enquanto a cozinha serve o Menu Especial À Moda do Chef — um percurso de 5 momentos que celebra a fusão entre a cozinha angolana e técnicas de alta gastronomia. Ambiente vibrante, mas elegante. A noite perfeita para entrar no fim de semana com estilo.',
+        detail: 'As sextas no Okulya Café têm uma energia única. RYBAY, um dos artistas mais talentosos da cena musical de Luanda, toca ao vivo enquanto a cozinha serve o Menu Especial À Moda do Chef — um percurso de 5 momentos que celebra a fusão entre a cozinha angolana e técnicas de alta gastronomia. Ambiente vibrante, mas elegante. A noite perfeita para entrar no fim de semana com estilo.',
         testimonials: [
           { quote: 'RYBAY ao vivo é uma experiência que não se descreve. E a costela do Chef? Absurda — no bom sentido.', author: 'Pedro L.', stars: '★★★★★' },
           { quote: 'Trouxe clientes de Lisboa para jantar e ficaram boquiabertos. Disseram que era melhor do que qualquer restaurante europeu que frequentam.', author: 'Ana B.', stars: '★★★★★' },
@@ -895,11 +895,11 @@
         time: 'Edição limitada',
         img: 'dining-2.webp',
         desc: 'Uma celebração que mistura os sabores mais profundos de Angola com a euforia da época mais colorida do ano.',
-        detail: 'A Festa de Carnaval do Espaço Luanda é o evento mais aguardado do ano. Durante a época de Carnaval, o restaurante veste-se de cor e energia com um programa especial de 3 noites: música ao vivo com bandas convidadas, menu temático com pratos tradicionais angolanos reinterpretados, cocktails exclusivos criados para a ocasião e actuações de dança. Uma imersão total na cultura e gastronomia angolana.',
+        detail: 'A Festa de Carnaval do Okulya Café é o evento mais aguardado do ano. Durante a época de Carnaval, o restaurante veste-se de cor e energia com um programa especial de 3 noites: música ao vivo com bandas convidadas, menu temático com pratos tradicionais angolanos reinterpretados, cocktails exclusivos criados para a ocasião e actuações de dança. Uma imersão total na cultura e gastronomia angolana.',
         testimonials: [
           { quote: 'Nunca tinha visto o Carnaval desta forma. Comi, dancei e saí com lágrimas nos olhos de tanta emoção. Que noite!', author: 'Luísa F.', stars: '★★★★★' },
           { quote: 'O muamba que serviram nessa noite fez-me lembrar a comida da minha avó. Perfeito. Absolutamente perfeito.', author: 'Eduardo K.', stars: '★★★★★' },
-          { quote: 'Vim com um grupo de 12 pessoas e toda a gente ainda fala no jantar de Carnaval do Espaço Luanda.', author: 'Sofia N.', stars: '★★★★★' },
+          { quote: 'Vim com um grupo de 12 pessoas e toda a gente ainda fala no jantar de Carnaval do Okulya Café.', author: 'Sofia N.', stars: '★★★★★' },
         ],
         galleryImgs: ['dining-2.webp','dining-1.webp','dining-3.webp','dining-tuesday.jpg','dish-3.webp','dish-4.webp'],
         galleryTypes: ['photo','video','photo','photo','photo','video'],
@@ -911,7 +911,7 @@
         time: '19h00 — encerramento',
         img: 'dining-tuesday.jpg',
         desc: 'Uma mesa para os curiosos — onde o Chef partilha a sua visão sem filtros, com ingredientes que chegaram nessa manhã ao mercado.',
-        detail: 'As terças pertencem ao Chef. É a noite em que a criatividade da cozinha do Espaço Luanda não tem limites. O menu é surpresa e muda todas as semanas, mas uma coisa é certa: começa sempre com uma rodada de caipirinha por nossa conta para cada cliente. Ingredientes locais, técnica internacional, resultado imprevisível — mas sempre extraordinário. Para reservas de grupo, é possível solicitar uma visita à cozinha.',
+        detail: 'As terças pertencem ao Chef. É a noite em que a criatividade da cozinha do Okulya Café não tem limites. O menu é surpresa e muda todas as semanas, mas uma coisa é certa: começa sempre com uma rodada de caipirinha por nossa conta para cada cliente. Ingredientes locais, técnica internacional, resultado imprevisível — mas sempre extraordinário. Para reservas de grupo, é possível solicitar uma visita à cozinha.',
         testimonials: [
           { quote: 'Nunca sei o que vai aparecer na mesa, mas sei sempre que vai ser incrível. É a minha noite favorita da semana.', author: 'Ricardo A.', stars: '★★★★★' },
           { quote: 'A caipirinha de boas-vindas já devia ser lei em todos os restaurantes. E o menu? Teatro puro na mesa.', author: 'Cristina V.', stars: '★★★★★' },
@@ -927,7 +927,7 @@
         time: '18h00 — encerramento',
         img: 'dining-monday.jpg',
         desc: 'Porque a segunda-feira não precisa de ser o dia mais duro da semana. Comece a semana como se fosse um sábado.',
-        detail: 'A Segunda Sem Lei é a forma do Espaço Luanda dizer que a semana merece começar com alegria. Todos os clientes que jantem às segundas beneficiam de 20% de desconto em toda a carta de carnes premium — dos cortes americanos aged aos medalhões da costa angolana. Sem código de desconto, sem complicações. Só boa carne, bom vinho e boa energia.',
+        detail: 'A Segunda Sem Lei é a forma do Okulya Café dizer que a semana merece começar com alegria. Todos os clientes que jantem às segundas beneficiam de 20% de desconto em toda a carta de carnes premium — dos cortes americanos aged aos medalhões da costa angolana. Sem código de desconto, sem complicações. Só boa carne, bom vinho e boa energia.',
         testimonials: [
           { quote: 'Descobri as Segundas Sem Lei há 3 meses e desde então raramente janto segunda em casa. O desconto nas carnes é real e a qualidade ainda melhor.', author: 'Carlos M.', stars: '★★★★★' },
           { quote: 'O entrecôte com 20% foi literalmente o melhor jantar de segunda que tive na vida.', author: 'Patrícia L.', stars: '★★★★★' },
@@ -942,11 +942,11 @@
         when: 'Toda quinta-feira',
         time: 'A partir das 19h00',
         img: 'dining-thursday.jpg',
-        desc: 'A costela premium do Espaço Luanda com 2 horas de cerveja Brava incluída. Noite de generosidade pura.',
+        desc: 'A costela premium do Okulya Café com 2 horas de cerveja Brava incluída. Noite de generosidade pura.',
         detail: 'Na quinta-feira, a costela é rainha. O nosso corte de costela premium — marinado por 24 horas e assado lentamente — vem acompanhado por 2 horas de cerveja Brava por nossa conta para cada cliente que pedir o prato. Uma promoção que celebra a generosidade angolana e a nossa paixão por grandes cortes. Disponível enquanto houver stock — chegue cedo.',
         testimonials: [
           { quote: 'A costela desfaz-se na boca. Já comi costela em muitos sítios mas esta tem qualquer coisa diferente. E a Brava de brinde? Perfeito.', author: 'Tiago R.', stars: '★★★★★' },
-          { quote: 'A minha quinta perfeita: costela, cerveja, boa conversa. O Espaço Luanda percebeu o que a vida deve ser.', author: 'Daniela C.', stars: '★★★★★' },
+          { quote: 'A minha quinta perfeita: costela, cerveja, boa conversa. O Okulya Café percebeu o que a vida deve ser.', author: 'Daniela C.', stars: '★★★★★' },
           { quote: 'Marquei com amigos às 20h e já não havia mais costela. Aprendi a chegar mais cedo. Mas valeu a pena a espera por outra noite.', author: 'Alexandre M.', stars: '★★★★★' },
         ],
         galleryImgs: ['dining-thursday.jpg','dish-1.webp','dish-3.webp','dining-1.webp','dish-2.webp','dining-2.webp'],
@@ -958,12 +958,12 @@
         when: 'Mensal — ver calendário',
         time: 'Horário variável',
         img: 'dining-3.webp',
-        desc: 'Um mês, uma agenda. Arte, música e gastronomia em diálogo permanente — o Espaço Luanda como palco da cultura angolana.',
-        detail: 'A Agenda Cultural do Espaço Luanda é um programa mensal que convida artistas, músicos, escritores e chefs convidados a partilhar a sua visão com os nossos clientes. Cada edição é diferente: pode ser um jantar com um artista plástico cujas obras decoram a sala durante a noite, uma sessão de poesia ao vivo acompanhada de cocktails, ou um showcooking com um chef convidado de outro país africano. Consulte a agenda do mês nas nossas redes sociais.',
+        desc: 'Um mês, uma agenda. Arte, música e gastronomia em diálogo permanente — o Okulya Café como palco da cultura angolana.',
+        detail: 'A Agenda Cultural do Okulya Café é um programa mensal que convida artistas, músicos, escritores e chefs convidados a partilhar a sua visão com os nossos clientes. Cada edição é diferente: pode ser um jantar com um artista plástico cujas obras decoram a sala durante a noite, uma sessão de poesia ao vivo acompanhada de cocktails, ou um showcooking com um chef convidado de outro país africano. Consulte a agenda do mês nas nossas redes sociais.',
         testimonials: [
           { quote: 'Fui à edição de Março com uma exposição fotográfica. Fiquei uma hora a olhar para as fotos entre pratos. Arte e comida — que combinação.', author: 'Beatriz A.', stars: '★★★★★' },
           { quote: 'A edição com o chef moçambicano foi extraordinária. Fusão real, sem artificialidade. Esperamos mais.', author: 'Henrique S.', stars: '★★★★★' },
-          { quote: 'É raro um restaurante ter esta visão cultural. O Espaço Luanda não é só um restaurante — é um espaço de cultura mesmo.', author: 'Inês M.', stars: '★★★★★' },
+          { quote: 'É raro um restaurante ter esta visão cultural. O Okulya Café não é só um restaurante — é um espaço de cultura mesmo.', author: 'Inês M.', stars: '★★★★★' },
         ],
         galleryImgs: ['dining-3.webp','dining-1.webp','falafel-bowl-bg.webp','dining-2.webp','dish-1.webp','dining-friday.png'],
         galleryTypes: ['photo','video','photo','photo','photo','photo'],
@@ -974,8 +974,8 @@
         when: 'Mediante disponibilidade',
         time: 'Horário personalizado',
         img: 'dining-2.webp',
-        desc: 'O Espaço Luanda a tempo inteiro, para celebrar os seus momentos mais importantes com a mesma excelência que nos define.',
-        detail: 'Aniversários, jantares corporativos, lançamentos de produto, celebrações de casamento — o Espaço Luanda está disponível para eventos privados de 20 a 120 pessoas em regime exclusivo. A nossa equipa de eventos trabalha consigo na criação de um menu personalizado, decoração temática e programação musical. Contacte-nos para receber uma proposta à medida.',
+        desc: 'O Okulya Café a tempo inteiro, para celebrar os seus momentos mais importantes com a mesma excelência que nos define.',
+        detail: 'Aniversários, jantares corporativos, lançamentos de produto, celebrações de casamento — o Okulya Café está disponível para eventos privados de 20 a 120 pessoas em regime exclusivo. A nossa equipa de eventos trabalha consigo na criação de um menu personalizado, decoração temática e programação musical. Contacte-nos para receber uma proposta à medida.',
         testimonials: [
           { quote: 'Organizei o jantar de aniversário da empresa aqui e foi o evento corporativo mais elogiado que já organizámos. A equipa cuidou de tudo.', author: 'Directora RH, Empresa Luanda', stars: '★★★★★' },
           { quote: 'Celebrei os meus 40 anos com família e amigos. O Chef criou um menu especial com os meus pratos favoritos. Nunca me senti tão especial.', author: 'Fernanda C.', stars: '★★★★★' },
@@ -1032,7 +1032,7 @@
         const cls  = layout[i % layout.length];
         const type = ev.galleryTypes[i];
         const playBtn = type === 'video'
-          ? `<div class="play-btn"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#c8a06a"/></svg></div>`
+          ? `<div class="play-btn"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#C17B05"/></svg></div>`
           : '';
         return `<div class="gal-item ${cls} ${type === 'video' ? 'video-item' : ''}">
           <img src="${img}" alt="" loading="lazy" />

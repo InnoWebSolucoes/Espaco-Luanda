@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Espaço Luanda — Steak & Sea</title>
+  <title>Okulya Café</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +27,7 @@
       position: absolute;
       bottom: -1px;
       left: 50%;
-      /* ornamental SVG: line ─── • ○◆○ • ─── line, coloured #c8a06a */
+      /* ornamental SVG: line ─── • ○◆○ • ─── line, coloured #C17B05 */
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='4' x2='26' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3Ccircle cx='28.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Ccircle cx='32.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Cpolygon points='40,1.2 44,4 40,6.8 36,4' fill='none' stroke='%23c8a06a' stroke-width='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.3' fill='%23c8a06a'/%3E%3Ccircle cx='47.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Ccircle cx='51.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Cline x1='54' y1='4' x2='80' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
@@ -62,7 +62,7 @@
     }
     .slot-btn:hover .slot-track { transform: translateY(-14px); }
     .slot-word {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.58rem; font-weight: 500;
       letter-spacing: 0.18em; text-transform: uppercase;
       line-height: 14px; height: 14px;
@@ -71,7 +71,7 @@
 
     /* ─── Hero tagline ──────────────────────────────────────────────────────── */
     .tagline {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic; font-weight: 300;
       font-size: clamp(2rem,4.5vw,4rem);
       color: #fff;
@@ -103,11 +103,11 @@
       left: 0; right: 0;
       top: 0;
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 500;
       font-style: normal;
       font-size: clamp(2rem, 3.2vw, 3rem);
-      color: #1a1008;
+      color: #47331F;
       letter-spacing: -0.01em;
       line-height: 1.1;
       will-change: transform, opacity;
@@ -156,7 +156,7 @@
     #mobile-overlay {
       position: fixed;
       inset: 0;
-      background: #1a1008;
+      background: #47331F;
       z-index: 200;
       display: flex;
       flex-direction: column;
@@ -171,7 +171,7 @@
       pointer-events: all;
     }
     .mob-link {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-weight: 300;
       font-size: 2.4rem;
@@ -187,10 +187,10 @@
       transition: color 0.22s ease;
     }
     .mob-link:last-child { border-bottom: none; }
-    .mob-link:hover { color: #c8a06a; }
+    .mob-link:hover { color: #C17B05; }
     /* Contact info in overlay */
     .mob-contact {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.56rem;
       font-weight: 400;
       letter-spacing: 0.18em;
@@ -204,7 +204,7 @@
     .dining-item:last-child { margin-bottom: 4rem; }
     .dining-item img { border-radius: 14px; }
     .dining-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: normal;
       font-weight: 300;
       font-size: clamp(2.6rem, 8vw, 5rem);
@@ -214,16 +214,16 @@
       letter-spacing: -0.02em;
     }
     .dining-sub {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.6rem;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #c8a06a;
+      color: #C17B05;
       margin-top: 0.75rem;
     }
     .dining-desc {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.78rem;
       font-weight: 300;
       line-height: 1.85;
@@ -233,18 +233,18 @@
     .dining-btn {
       display: inline-block;
       margin-top: 1.6rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.58rem;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: rgba(250,248,244,0.85);
       text-decoration: none;
-      border-bottom: 1px solid #c8a06a;
+      border-bottom: 1px solid #C17B05;
       padding-bottom: 3px;
       transition: color 0.22s ease;
     }
-    .dining-btn:hover { color: #c8a06a; }
+    .dining-btn:hover { color: #C17B05; }
     .mob-close-btn {
       background: none;
       border: none;
@@ -260,7 +260,7 @@
     .mob-ornament {
       width: 56px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #c8a06a, transparent);
+      background: linear-gradient(90deg, transparent, #C17B05, transparent);
       margin: 1.8rem auto;
     }
 
@@ -276,16 +276,102 @@
     }
     .contact-col { padding: 2rem 0; }
     .contact-col + .contact-col {
-      border-left: 1px solid rgba(200,160,106,0.12);
+      border-left: 1px solid rgba(193,123,5,0.12);
     }
     .contact-label {
-      font-family: 'Montserrat', sans-serif; font-size: 0.6rem;
+      font-family: 'Lato', sans-serif; font-size: 0.6rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #c8a06a; margin-bottom: 1rem; display: block;
+      color: #C17B05; margin-bottom: 1rem; display: block;
     }
     .contact-val {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
       font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.72);
+    }
+
+    /* ─── Desktop overrides (min-width: 769px) ─────────────────────────────── */
+    @media (min-width: 769px) {
+
+      /* Section 2: tighten feature-text padding so bottom panel stays in viewport */
+      #section2-feature-text {
+        padding: 1.5rem 2rem !important;
+      }
+      /* Reduce stage height so stage + bottom panel fit within the viewport
+         when the section is sticky at top:-15vh */
+      #carousel-stage {
+        height: 64vh !important;
+      }
+
+      /* Section 3 dining — alternating image / text layout ───────────────────── */
+      #dining-content-wrapper {
+        display: block !important;
+        width: 100% !important;
+        align-items: unset !important;
+      }
+      #dining-left-col {
+        flex: unset !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+      }
+      #dining-timeline-col {
+        display: none !important;
+      }
+
+      .dining-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        margin-bottom: 0 !important;
+        padding: 6rem 9% !important;
+        gap: 7% !important;
+        border-bottom: 1px solid rgba(193,123,5,0.07) !important;
+      }
+      .dining-item:last-child {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+        padding-bottom: 7rem !important;
+      }
+
+      .dining-item-img-col {
+        flex: 0 0 44% !important;
+        order: 1 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+      }
+      .dining-item-img-col img {
+        width: 100% !important;
+        aspect-ratio: 3/4 !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 0 !important;
+      }
+
+      .dining-item-text-col {
+        flex: 1 !important;
+        order: 2 !important;
+        padding: 2rem 1rem !important;
+      }
+
+      /* Even items: image on the right */
+      .dining-item:nth-child(even) .dining-item-img-col {
+        order: 2 !important;
+      }
+      .dining-item:nth-child(even) .dining-item-text-col {
+        order: 1 !important;
+      }
+
+      /* Desktop: radius lives on container, not img */
+      .dining-item img {
+        border-radius: 0 !important;
+      }
+
+      /* Larger title + generous line-height on desktop */
+      .dining-title {
+        font-size: clamp(3rem, 5vw, 5.5rem) !important;
+        margin-top: 0.4rem !important;
+      }
+      .dining-desc {
+        max-width: 40ch !important;
+      }
     }
 
     /* ─── Mobile breakpoint overrides ────────────────────────────────────────── */
@@ -350,7 +436,7 @@
       }
       .contact-col + .contact-col {
         border-left: none !important;
-        border-top: 1px solid rgba(200,160,106,0.12) !important;
+        border-top: 1px solid rgba(193,123,5,0.12) !important;
       }
     }
   </style>
@@ -360,7 +446,7 @@
   <!-- ═══════════════════════════════════════════════════════ HERO SECTION ═══ -->
   <section style="position:relative;width:100%;height:100vh;min-height:600px;">
 
-    <div style="position:absolute;inset:0;background:#1a1008;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:#47331F;overflow:hidden;">
       <video id="hero-video" autoplay muted loop playsinline
              style="position:absolute;inset:0;width:100%;height:100%;
                     object-fit:cover;object-position:center;">
@@ -387,9 +473,9 @@
 
       <!-- Left links (desktop only) -->
       <div class="desktop-links" style="display:flex;align-items:center;gap:2.5rem;">
-        <a href="menu.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Menu</a>
-        <a href="sobre.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a>
-        <a href="events.html" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Eventos</a>
+        <a href="menu.html" class="nav-link" style="font-family:'Lato',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Menu</a>
+        <a href="sobre.html" class="nav-link" style="font-family:'Lato',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Sobre</a>
+        <a href="events.html" class="nav-link" style="font-family:'Lato',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Eventos</a>
       </div>
 
       <!-- Spacer on mobile so logo stays centred -->
@@ -397,14 +483,14 @@
 
       <!-- Logo (always centred, absolute) -->
       <div style="position:absolute;left:50%;transform:translateX(-50%);width:max-content;">
-        <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+        <img src="Brand Reasources/logo.png" alt="Okulya Café"
              style="height:72px;width:auto;max-width:none;display:block;" />
       </div>
 
       <!-- Right: desktop links + mobile hamburger -->
       <div style="display:flex;align-items:center;gap:2.5rem;">
         <div class="desktop-links" style="display:flex;align-items:center;gap:2.5rem;">
-          <a href="#contact" class="nav-link" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Contacto</a>
+          <a href="#contact" class="nav-link" style="font-family:'Lato',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#fff;">Contacto</a>
         </div>
         <!-- Hamburger (mobile only) -->
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu">
@@ -421,7 +507,7 @@
                 display:flex;flex-direction:column;align-items:center;
                 justify-content:center;gap:2.5rem;
                 text-align:center;padding:0 2rem;">
-      <h1 class="tagline">Uma captura além. Um corte acima.</h1>
+      <h1 class="tagline">O sabor de casa. A alma de Luanda.</h1>
       <a href="menu.html" class="slot-btn">
         <div class="slot-inner">
           <div class="slot-track">
@@ -441,7 +527,7 @@
                 width:100%;padding:1.6rem 2rem;">
       <button class="mob-close-btn" id="close-overlay" aria-label="Fechar menu"
               style="display:inline-flex;align-items:center;gap:0.55rem;
-                     font-family:'Montserrat',sans-serif;font-size:0.56rem;
+                     font-family:'Lato',sans-serif;font-size:0.56rem;
                      font-weight:500;letter-spacing:0.2em;text-transform:uppercase;">
         <svg width="15" height="10" viewBox="0 0 15 10" fill="none" style="flex-shrink:0;">
           <line x1="14" y1="5" x2="1" y2="5" stroke="currentColor" stroke-width="0.85" stroke-linecap="round"/>
@@ -449,7 +535,7 @@
         </svg>
         Voltar
       </button>
-      <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+      <img src="Brand Reasources/logo.png" alt="Okulya Café"
            style="height:44px;width:auto;display:block;opacity:0.88;" />
     </div>
 
@@ -481,20 +567,21 @@
                   background:#fff;overflow:visible;">
 
     <!-- Feature text — in flow, compact top so plates stay in viewport -->
-    <div style="position:relative;z-index:2;
+    <div id="section2-feature-text"
+         style="position:relative;z-index:2;
                 display:flex;flex-direction:column;align-items:center;
                 padding:4rem 2rem 6rem;">
       <div id="feature-text"
            style="text-align:center;max-width:760px;overflow:visible;position:relative;z-index:2;">
         <p id="main-text" style="
-          font-family:'Cormorant Garamond',serif;
+          font-family:'Playfair Display',serif;
           font-style:italic;
           font-weight:300;
           font-size:clamp(2.2rem,3.4vw,3.8rem);
-          color:#1a1008;
+          color:#47331F;
           line-height:1.4;
           letter-spacing:0.01em;
-        ">O restaurante mais sofisticado em Luanda de carnes e mariscos onde a arte, a cultura e a gastronomia se encontram</p>
+        ">O café mais acolhedor em Luanda, onde os sabores africanos, a cultura e o ambiente vibrante se encontram</p>
       </div>
     </div>
 
@@ -535,16 +622,16 @@
         <!-- Number + total -->
         <div style="display:flex;align-items:baseline;gap:0.3rem;flex-shrink:0;">
           <span id="counter-current"
-                style="font-family:'Cormorant Garamond',serif;font-style:italic;
-                       font-size:2.1rem;font-weight:400;color:#1a1008;line-height:1;">01</span>
-          <span style="font-family:'Montserrat',sans-serif;font-size:0.52rem;
-                       font-weight:400;color:#b89060;letter-spacing:0.12em;">04</span>
+                style="font-family:'Playfair Display',serif;font-style:italic;
+                       font-size:2.1rem;font-weight:400;color:#47331F;line-height:1;">01</span>
+          <span style="font-family:'Lato',sans-serif;font-size:0.52rem;
+                       font-weight:400;color:#A06804;letter-spacing:0.12em;">04</span>
         </div>
 
         <!-- Progress bar (grows to fill space between number and arrows) -->
         <div style="flex:1;position:relative;height:1px;background:rgba(26,16,8,0.1);">
           <div id="progress-bar"
-               style="position:absolute;left:0;top:0;height:100%;background:#c8a06a;
+               style="position:absolute;left:0;top:0;height:100%;background:#C17B05;
                       width:25%;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
         </div>
 
@@ -552,13 +639,13 @@
         <div style="display:flex;gap:1.4rem;align-items:center;flex-shrink:0;">
           <button class="carousel-btn" onclick="carouselAdvance(-1)" aria-label="Previous">
             <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-              <polyline points="13 1 3 9 13 17" stroke="#1a1008" stroke-width="0.9"
+              <polyline points="13 1 3 9 13 17" stroke="#47331F" stroke-width="0.9"
                         stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <button class="carousel-btn" onclick="carouselAdvance(1)" aria-label="Next">
             <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-              <polyline points="9 1 19 9 9 17" stroke="#1a1008" stroke-width="0.9"
+              <polyline points="9 1 19 9 9 17" stroke="#47331F" stroke-width="0.9"
                         stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -584,86 +671,94 @@
        horizontal ticks extending left, label at active stop, sun/moon at ends
   ══════════════════════════════════════════════════════════════════════════ -->
   <section id="dining-section"
-           style="position:relative;width:100%;background:#1a1008;z-index:2;">
+           style="position:relative;width:100%;background:#47331F;z-index:2;">
 
     <!-- Sticky header bar — stays fixed to top of viewport as user scrolls weekly specials -->
     <div style="position:sticky;top:0;z-index:10;width:100%;
                 display:flex;align-items:center;padding:0.9rem 1.8rem;
-                background:#1a1008;border-bottom:1px solid rgba(200,160,106,0.12);">
-      <img src="Brand Reasources/logo.png" alt="Espaço Luanda"
+                background:#47331F;border-bottom:1px solid rgba(193,123,5,0.12);">
+      <img src="Brand Reasources/logo.png" alt="Okulya Café"
            style="height:44px;width:auto;max-width:none;display:block;opacity:0.9;" />
     </div>
 
-    <div style="display:flex;width:100%;align-items:flex-start;">
+    <div id="dining-content-wrapper" style="display:flex;width:100%;align-items:flex-start;">
 
       <!-- ── LEFT: scrollable dining content ──────────────────────────── -->
-      <div style="flex:1;min-width:0;padding:4rem 1.6rem 5rem 1.6rem;">
+      <div id="dining-left-col" style="flex:1;min-width:0;padding:4rem 1.6rem 5rem 1.6rem;">
 
         <!-- Item 0: Segunda -->
         <article class="dining-item" data-period="0">
-          <div style="overflow:hidden;">
+          <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-monday.jpg" alt="Segundas sem lei"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Segundas</h2>
-          <p class="dining-sub">Segundas a partir das 18h</p>
-          <p class="dining-desc">Aproveita a Segunda-feira Sem Lei com 20% de desconto nas nossas carnes premium. Vem relaxar, brindar e começar a semana do jeito certo... Sem regras, sem pressa, só boas vibes! Segunda é o novo sábado. Venha Viver sem lei...</p>
-          <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">Segundas</h2>
+            <p class="dining-sub">Segundas a partir das 18h</p>
+            <p class="dining-desc">Aproveita a Segunda-feira Sem Lei com 20% de desconto nas nossas carnes premium. Vem relaxar, brindar e começar a semana do jeito certo... Sem regras, sem pressa, só boas vibes! Segunda é o novo sábado. Venha Viver sem lei...</p>
+            <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+          </div>
         </article>
 
         <!-- Item 1: Terça -->
         <article class="dining-item" data-period="1">
-          <div style="overflow:hidden;">
+          <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-tuesday.jpg" alt="Terça do Chefe"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Terças</h2>
-          <p class="dining-sub">Terças a partir das 19h00</p>
-          <p class="dining-desc">As terças-feiras ganharam um novo sabor no Espaço Luanda! Venha viver uma experiência gastronômica única com o menu exclusivo preparado pelo nosso Chefe. E para começar a noite da melhor forma, oferecemos uma rodada de caipirinha por nossa conta (por cliente!)</p>
-          <a href="menu.html#bebidas" class="dining-btn">Ver Mais</a>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">Terças</h2>
+            <p class="dining-sub">Terças a partir das 19h00</p>
+            <p class="dining-desc">As terças-feiras ganharam um novo sabor no Okulya Café! Venha viver uma experiência gastronômica única com o menu exclusivo preparado pelo nosso Chefe. E para começar a noite da melhor forma, oferecemos uma rodada de caipirinha por nossa conta (por cliente!)</p>
+            <a href="menu.html#bebidas" class="dining-btn">Ver Mais</a>
+          </div>
         </article>
 
         <!-- Item 2: Quinta -->
         <article class="dining-item" data-period="2">
-          <div style="overflow:hidden;">
+          <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-thursday.jpg" alt="Quintas"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Quintas</h2>
-          <p class="dining-sub">Todas as quintas</p>
-          <p class="dining-desc">Pediste a nossa costela premium? Então prepara-te: tens direito a 2 horas de cerveja Brava por nossa conta! Sabor, suculência e o brinde perfeito para animar a tua quinta com costelas e cerveja.</p>
-          <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">Quintas</h2>
+            <p class="dining-sub">Todas as quintas</p>
+            <p class="dining-desc">Pediste a nossa costela premium? Então prepara-te: tens direito a 2 horas de cerveja Brava por nossa conta! Sabor, suculência e o brinde perfeito para animar a tua quinta com costelas e cerveja.</p>
+            <a href="menu.html#pratos" class="dining-btn">Ver Mais</a>
+          </div>
         </article>
 
         <!-- Item 3: Sexta -->
         <article class="dining-item" data-period="3">
-          <div style="overflow:hidden;">
+          <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-friday.png" alt="Sextas"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
           </div>
-          <h2 class="dining-title">Sextas</h2>
-          <p class="dining-sub">Todas as sextas</p>
-          <p class="dining-desc">Música ao vivo com RYBAY e um menu especial À Moda do Chef. A combinação perfeita para entrar no fim de semana com estilo e sabor. Reserva a tua mesa e vem curtir uma noite vibrante, deliciosa e com som ao vivo!</p>
-          <a href="events.html" class="dining-btn">Ver Mais</a>
+          <div class="dining-item-text-col">
+            <h2 class="dining-title">Sextas</h2>
+            <p class="dining-sub">Todas as sextas</p>
+            <p class="dining-desc">Música ao vivo com RYBAY e um menu especial À Moda do Chef. A combinação perfeita para entrar no fim de semana com estilo e sabor. Reserva a tua mesa e vem curtir uma noite vibrante, deliciosa e com som ao vivo!</p>
+            <a href="events.html" class="dining-btn">Ver Mais</a>
+          </div>
         </article>
 
       </div>
 
       <!-- ── RIGHT: sticky timeline — vertical line RIGHT, ticks extend LEFT ── -->
-      <div style="width:84px;flex-shrink:0;position:sticky;top:0;height:100vh;">
+      <div id="dining-timeline-col" style="width:84px;flex-shrink:0;position:sticky;top:0;height:100vh;">
 
         <!-- Sun — top right -->
         <div style="position:absolute;top:2.8rem;right:14px;">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="2.9" stroke="#c8a06a" stroke-width="0.85"/>
-            <line x1="7" y1="0.4" x2="7" y2="2.2" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="7" y1="11.8" x2="7" y2="13.6" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="0.4" y1="7" x2="2.2" y2="7" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="11.8" y1="7" x2="13.6" y2="7" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="2.5" y1="2.5" x2="3.8" y2="3.8" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="10.2" y1="10.2" x2="11.5" y2="11.5" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="11.5" y1="2.5" x2="10.2" y2="3.8" stroke="#c8a06a" stroke-width="0.8"/>
-            <line x1="3.8" y1="10.2" x2="2.5" y2="11.5" stroke="#c8a06a" stroke-width="0.8"/>
+            <circle cx="7" cy="7" r="2.9" stroke="#C17B05" stroke-width="0.85"/>
+            <line x1="7" y1="0.4" x2="7" y2="2.2" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="7" y1="11.8" x2="7" y2="13.6" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="0.4" y1="7" x2="2.2" y2="7" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="11.8" y1="7" x2="13.6" y2="7" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="2.5" y1="2.5" x2="3.8" y2="3.8" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="10.2" y1="10.2" x2="11.5" y2="11.5" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="11.5" y1="2.5" x2="10.2" y2="3.8" stroke="#C17B05" stroke-width="0.8"/>
+            <line x1="3.8" y1="10.2" x2="2.5" y2="11.5" stroke="#C17B05" stroke-width="0.8"/>
           </svg>
         </div>
 
@@ -674,7 +769,7 @@
                      c1.7 0 3.2-.9 4-2.3-0.7.3-1.5.5-2.3.5
                      C5.6 9 3.5 6.9 3.5 4.3c0-1.3.5-2.4 1.4-3.2
                      A4.8 4.8 0 006.5 1.2z"
-                  stroke="#c8a06a" stroke-width="0.85" stroke-linecap="round" fill="none"/>
+                  stroke="#C17B05" stroke-width="0.85" stroke-linecap="round" fill="none"/>
           </svg>
         </div>
 
@@ -687,22 +782,22 @@
           <div id="dining-dot"
                style="position:absolute;right:-4px;top:15%;
                       width:9px;height:9px;border-radius:50%;
-                      background:#1a1008;border:1.5px solid #c8a06a;
+                      background:#47331F;border:1.5px solid #C17B05;
                       transform:translateY(-50%);
                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
 
           <!-- Tick 0 — Segunda (active by default) -->
           <div class="dining-tick" data-idx="0"
                style="position:absolute;top:15%;right:0;height:1px;
-                      width:26px;background:#c8a06a;
+                      width:26px;background:#C17B05;
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
                   style="position:absolute;right:calc(100% + 8px);top:50%;
                          transform:translateY(-50%);white-space:nowrap;
-                         font-family:'Montserrat',sans-serif;
+                         font-family:'Lato',sans-serif;
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
-                         color:#c8a06a;
+                         color:#C17B05;
                          transition:opacity 0.4s ease,color 0.4s ease;">segunda</span>
           </div>
 
@@ -714,7 +809,7 @@
             <span class="dining-tick-label"
                   style="position:absolute;right:calc(100% + 8px);top:50%;
                          transform:translateY(-50%);white-space:nowrap;
-                         font-family:'Montserrat',sans-serif;
+                         font-family:'Lato',sans-serif;
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
@@ -729,7 +824,7 @@
             <span class="dining-tick-label"
                   style="position:absolute;right:calc(100% + 8px);top:50%;
                          transform:translateY(-50%);white-space:nowrap;
-                         font-family:'Montserrat',sans-serif;
+                         font-family:'Lato',sans-serif;
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
@@ -744,7 +839,7 @@
             <span class="dining-tick-label"
                   style="position:absolute;right:calc(100% + 8px);top:50%;
                          transform:translateY(-50%);white-space:nowrap;
-                         font-family:'Montserrat',sans-serif;
+                         font-family:'Lato',sans-serif;
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
                          color:rgba(255,255,255,0.3);opacity:0;
@@ -761,8 +856,8 @@
 
   <!-- ══════════════════════════════════════════════════ CONTACT FOOTER ══════ -->
   <footer id="contact" style="
-    background:#0e0904;
-    border-top:1px solid rgba(200,160,106,0.12);
+    background:#2D1B0E;
+    border-top:1px solid rgba(193,123,5,0.12);
     padding:7rem 2.4rem 4rem;
     position:relative;
     z-index:2;
@@ -772,7 +867,7 @@
     <!-- Radial glow -->
     <div style="position:absolute;inset:0;pointer-events:none;
                 background:radial-gradient(ellipse 70% 60% at 50% 0%,
-                  rgba(200,160,106,0.06) 0%, transparent 70%);"></div>
+                  rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
 
     <!-- Info grid -->
     <div class="contact-grid">
@@ -791,15 +886,15 @@
     </div>
 
     <!-- Divider -->
-    <div style="width:48px;height:1px;background:rgba(200,160,106,0.22);
+    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);
                 margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
 
     <!-- Copyright -->
-    <p style="font-family:'Montserrat',sans-serif;font-size:0.52rem;font-weight:300;
+    <p style="font-family:'Lato',sans-serif;font-size:0.52rem;font-weight:300;
               letter-spacing:0.2em;text-transform:uppercase;
               color:rgba(245,240,232,0.18);text-align:center;
               position:relative;z-index:1;">
-      &copy; 2026 Espaço Luanda &nbsp;&middot;&nbsp; Luanda, Angola
+      &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Luanda, Angola
     </p>
 
   </footer>
@@ -1116,8 +1211,8 @@
           const lbl = tick.querySelector('.dining-tick-label');
           if (i === idx) {
             tick.style.width      = '26px';
-            tick.style.background = '#c8a06a';
-            if (lbl) { lbl.style.opacity = '1'; lbl.style.color = '#c8a06a'; }
+            tick.style.background = '#C17B05';
+            if (lbl) { lbl.style.opacity = '1'; lbl.style.color = '#C17B05'; }
           } else {
             tick.style.width      = '12px';
             tick.style.background = 'rgba(255,255,255,0.2)';

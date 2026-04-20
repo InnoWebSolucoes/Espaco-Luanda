@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Menu — Espaço Luanda</title>
+  <title>Menu — Okulya Café</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body {
-      background: #1a1008;
+      background: #47331F;
       overflow: hidden;
       width: 100vw;
       height: 100svh;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
     }
 
     /* ── TOP NAV ─────────────────────────────────────────────────── */
@@ -31,7 +31,7 @@
     .back-link {
       display: inline-flex; align-items: center; gap: 0.55rem;
       color: rgba(250,248,244,0.5); text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.56rem; font-weight: 500;
       letter-spacing: 0.2em; text-transform: uppercase;
       transition: color 0.22s ease;
@@ -40,7 +40,7 @@
       padding: 1rem 1.4rem 1rem 0;
       margin: -1rem -1.4rem -1rem 0;
     }
-    .back-link:hover { color: #c8a06a; }
+    .back-link:hover { color: #C17B05; }
     .nav-logo {
       height: 40px; width: auto; display: block;
       opacity: 0; pointer-events: none;
@@ -64,7 +64,7 @@
     #sphere-hint {
       position: absolute; bottom: 3rem; left: 50%;
       transform: translateX(-50%);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.48rem; font-weight: 400;
       letter-spacing: 0.24em; text-transform: uppercase;
       color: rgba(250,248,244,0.3);
@@ -76,7 +76,7 @@
     /* ── SPHERE ITEM OVERLAYS ────────────────────────────────────── */
     .face-title {
       position: absolute; left: 50%; top: 22%;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic; font-weight: 300;
       font-size: clamp(2.6rem, 7vw, 4.2rem);
       color: #faf8f4; line-height: 1.05;
@@ -98,7 +98,7 @@
 
     .face-description {
       position: absolute; left: 50%; top: 73%;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.68rem; font-weight: 400;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: rgba(250,248,244,0.55);
@@ -120,7 +120,7 @@
     /* ── CATEGORY VIEW ───────────────────────────────────────────── */
     #cat-view {
       position: fixed; inset: 0; z-index: 200;
-      background: #1a1008;
+      background: #47331F;
       opacity: 0; transform: translateY(28px);
       pointer-events: none;
       transition: opacity 0.55s ease, transform 0.55s ease;
@@ -133,12 +133,12 @@
 
     #cat-header {
       padding: 5rem 2.4rem 2.4rem;
-      border-bottom: 1px solid rgba(200,160,106,0.14);
+      border-bottom: 1px solid rgba(193,123,5,0.14);
       position: relative;
     }
     #cat-back {
       background: none; border: none; padding: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.54rem; font-weight: 500;
       letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(250,248,244,0.38);
@@ -149,24 +149,24 @@
       transition: color 0.22s ease;
       user-select: none; -webkit-user-select: none;
     }
-    #cat-back:hover { color: #c8a06a; }
+    #cat-back:hover { color: #C17B05; }
 
     #cat-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic; font-weight: 300;
       font-size: clamp(2.8rem, 10vw, 5rem);
       color: #faf8f4; line-height: 0.95;
       letter-spacing: -0.02em;
     }
     #cat-sub {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.54rem; font-weight: 500;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: #c8a06a; margin-top: 1rem;
+      color: #C17B05; margin-top: 1rem;
     }
     .cat-orn {
       width: 30px; height: 1px;
-      background: linear-gradient(to right, #c8a06a, transparent);
+      background: linear-gradient(to right, #C17B05, transparent);
       margin-top: 2rem;
     }
 
@@ -183,21 +183,21 @@
 
     .menu-item-left { flex: 1; }
     .menu-item-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 300; font-size: 1.55rem;
       color: #faf8f4; line-height: 1.1;
       letter-spacing: -0.01em;
     }
     .menu-item-desc {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.64rem; font-weight: 300;
       line-height: 1.8; color: rgba(250,248,244,0.42);
       margin-top: 0.45rem;
     }
     .menu-item-price {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 0.58rem; font-weight: 500;
-      letter-spacing: 0.1em; color: #c8a06a;
+      letter-spacing: 0.1em; color: #C17B05;
       white-space: nowrap; padding-top: 0.35rem;
       flex-shrink: 0;
     }
@@ -234,13 +234,13 @@
       </svg>
       Voltar
     </a>
-    <img src="Brand Reasources/logo.png" class="nav-logo" alt="Espaço Luanda"
+    <img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café"
          style="height:44px;width:auto;display:block;opacity:0.88;" />
     <a href="index.html#contact"
-       style="font-family:'Montserrat',sans-serif;font-size:0.56rem;font-weight:500;
+       style="font-family:'Lato',sans-serif;font-size:0.56rem;font-weight:500;
               letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.45);
               text-decoration:none;transition:color 0.22s ease;pointer-events:auto;"
-       onmouseover="this.style.color='#c8a06a'" onmouseout="this.style.color='rgba(250,248,244,0.45)'">Contacto</a>
+       onmouseover="this.style.color='#C17B05'" onmouseout="this.style.color='rgba(250,248,244,0.45)'">Contacto</a>
   </nav>
 
   <!-- ── SPHERE VIEW ─────────────────────────────────────────── -->
@@ -942,7 +942,27 @@ void main() {
     descEl.addEventListener('click',  openCategory);
 
     const canvas = document.getElementById('infinite-grid-menu-canvas');
-    canvas.addEventListener('click', openCategory);
+
+    /* Distinguish a genuine click from a drag-release.
+       Track total pointer travel distance; only open on click if < threshold. */
+    let _dragDist = 0;
+    let _dragOrigin = null;
+    canvas.addEventListener('pointerdown', e => {
+      _dragOrigin = { x: e.clientX, y: e.clientY };
+      _dragDist = 0;
+    });
+    canvas.addEventListener('pointermove', e => {
+      if (_dragOrigin) {
+        const dx = e.clientX - _dragOrigin.x;
+        const dy = e.clientY - _dragOrigin.y;
+        _dragDist = Math.sqrt(dx * dx + dy * dy);
+      }
+    });
+    canvas.addEventListener('click', () => {
+      if (_dragDist < 8) openCategory();
+      _dragDist = 0;
+      _dragOrigin = null;
+    });
 
     // Deep-link handled synchronously by classic script above.
     // If category is already visible, skip WebGL entirely.
