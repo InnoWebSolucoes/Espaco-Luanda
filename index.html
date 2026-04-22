@@ -444,6 +444,8 @@
       }
       #main-text {
         font-size: clamp(1.5rem, 5.5vw, 2.4rem) !important;
+        text-align: justify !important;
+        hyphens: none !important;
       }
       /* Panel: auto height on mobile (content is shorter) */
       #sec2-bottom-panel {
@@ -473,7 +475,7 @@
       /* Push hero logo down on mobile */
       #hero-logo-wrap { top: 4.5rem !important; }
       /* Spacer that delays section 3 from overlaying section 2 */
-      #sec2-spacer { display: block !important; height: 280vh !important; }
+      #sec2-spacer { display: block !important; height: 230vh !important; }
       /* Sidebar: sticky within dining section — confined, never bleeds into hero or footer */
       #dining-timeline-col {
         position: sticky !important;
@@ -1065,32 +1067,28 @@
       const isMobileView = window.innerWidth < 768;
 
       if (isMobileView) {
-        /* Mobile: word-by-word stagger.
-           Replays every time the element enters the viewport,
-           reverses (last-word-first) when it exits. */
+        /* Mobile: only the last 2 words animate in; rest are always visible.
+           Triggers as soon as the element enters the viewport (threshold:0). */
         const words = splitWords(mainTextEl);
-        gsap.set(words, { opacity: 0, y: 36, rotateZ: -2 });
+        const lastTwo = words.slice(-2);
+        gsap.set(words.slice(0, -2), { opacity: 1, y: 0, rotateZ: 0 });
+        gsap.set(lastTwo, { opacity: 0, y: 28, rotateZ: -2 });
         let seenOnce = false;
         const obs = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
             seenOnce = true;
-            gsap.killTweensOf(words);
-            gsap.to(words, {
+            gsap.killTweensOf(lastTwo);
+            gsap.to(lastTwo, {
               opacity: 1, y: 0, rotateZ: 0,
-              stagger: 0.09,
-              duration: 0.75,
+              stagger: 0.12,
+              duration: 0.65,
               ease: 'power3.out',
             });
           } else if (seenOnce) {
-            gsap.killTweensOf(words);
-            gsap.to(words, {
-              opacity: 0, y: 36, rotateZ: -2,
-              stagger: { each: 0.06, from: 'end' },
-              duration: 0.45,
-              ease: 'power2.in',
-            });
+            gsap.killTweensOf(lastTwo);
+            gsap.set(lastTwo, { opacity: 0, y: 28, rotateZ: -2 });
           }
-        }, { threshold: 0.08 });
+        }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
         obs.observe(mainTextEl);
       } else {
         /* Desktop: char-by-char stagger, plays once, never reverses. */
