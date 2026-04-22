@@ -444,8 +444,6 @@
       }
       #main-text {
         font-size: clamp(1.5rem, 5.5vw, 2.4rem) !important;
-        text-align: justify !important;
-        hyphens: none !important;
       }
       /* Panel: auto height on mobile (content is shorter) */
       #sec2-bottom-panel {
@@ -1067,28 +1065,25 @@
       const isMobileView = window.innerWidth < 768;
 
       if (isMobileView) {
-        /* Mobile: only the last 2 words animate in; rest are always visible.
-           Triggers as soon as the element enters the viewport (threshold:0). */
+        /* Mobile: all words animate in, triggers 250px before text enters viewport. */
         const words = splitWords(mainTextEl);
-        const lastTwo = words.slice(-2);
-        gsap.set(words.slice(0, -2), { opacity: 1, y: 0, rotateZ: 0 });
-        gsap.set(lastTwo, { opacity: 0, y: 28, rotateZ: -2 });
+        gsap.set(words, { opacity: 0, y: 28, rotateZ: -2 });
         let seenOnce = false;
         const obs = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
             seenOnce = true;
-            gsap.killTweensOf(lastTwo);
-            gsap.to(lastTwo, {
+            gsap.killTweensOf(words);
+            gsap.to(words, {
               opacity: 1, y: 0, rotateZ: 0,
-              stagger: 0.12,
-              duration: 0.65,
+              stagger: 0.07,
+              duration: 0.6,
               ease: 'power3.out',
             });
           } else if (seenOnce) {
-            gsap.killTweensOf(lastTwo);
-            gsap.set(lastTwo, { opacity: 0, y: 28, rotateZ: -2 });
+            gsap.killTweensOf(words);
+            gsap.set(words, { opacity: 0, y: 28, rotateZ: -2 });
           }
-        }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+        }, { threshold: 0, rootMargin: '0px 0px 250px 0px' });
         obs.observe(mainTextEl);
       } else {
         /* Desktop: char-by-char stagger, plays once, never reverses. */
