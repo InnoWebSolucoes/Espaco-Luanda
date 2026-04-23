@@ -12,30 +12,30 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: #2D1B0E;
-      color: #f5f0e8;
+      background: #0D1108;
+      color: #EEEEE8;
       font-family: 'ABeeZee', sans-serif;
       overflow-x: clip;
     }
 
     /* ── SCROLLBAR ─────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #2D1B0E; }
-    ::-webkit-scrollbar-thumb { background: #C17B0544; border-radius: 2px; }
+    ::-webkit-scrollbar-track { background: #0D1108; }
+    ::-webkit-scrollbar-thumb { background: #8aab3e44; border-radius: 2px; }
 
     /* ── NAV ───────────────────────────────────────────────────── */
     #top-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.4rem;
-      background: #47331F;
-      border-bottom: 1px solid rgba(193,123,5,0.12);
+      background: #1C2210;
+      border-bottom: 1px solid rgba(138,171,62,0.12);
     }
     .nav-voltar {
       display: inline-flex; align-items: center; gap: 0.55rem;
       font-family: 'ABeeZee', sans-serif; font-size: 0.75rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-      color: #f5f0e8; background: none; border: none; cursor: pointer;
+      color: #EEEEE8; background: none; border: none; cursor: pointer;
       padding: 1rem 0 1rem 0; margin: -1rem 0 -1rem 0;
       transition: opacity 0.25s ease;
     }
@@ -50,7 +50,7 @@
     }
     #masthead-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, #47331F 0%, #3D2510 40%, #2D1B0E 100%);
+      background: linear-gradient(160deg, #1C2210 0%, #1A2010 40%, #0D1108 100%);
     }
     #masthead-bg::after {
       content: '';
@@ -66,7 +66,7 @@
     }
     #masthead-glow {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 55% at 65% 60%, rgba(193,123,5,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 55% at 65% 60%, rgba(138,171,62,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -78,27 +78,27 @@
     .masthead-meta {
       font-family: 'ABeeZee', sans-serif; font-size: 0.7rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 1.2rem;
+      color: #8aab3e; margin-bottom: 1.2rem;
     }
     .masthead-issue {
       font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
       font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(245,240,232,0.4); margin-bottom: 3rem;
+      color: rgba(238,238,230,0.4); margin-bottom: 3rem;
     }
     .masthead-title {
       font-family: 'Agbalumo', cursive;
       font-size: clamp(4.5rem, 14vw, 11rem);
       font-weight: 300; letter-spacing: -0.02em; line-height: 0.88;
-      color: #f5f0e8;
+      color: #EEEEE8;
     }
-    .masthead-title em { font-style: italic; color: #C17B05; }
+    .masthead-title em { font-style: italic; color: #8aab3e; }
     .masthead-tagline {
       font-family: 'Agbalumo', cursive; font-style: italic;
       font-size: clamp(1.1rem, 2.8vw, 1.55rem); font-weight: 300;
-      color: rgba(245,240,232,0.65); margin-top: 1.8rem; max-width: 520px;
+      color: rgba(238,238,230,0.65); margin-top: 1.8rem; max-width: 520px;
       line-height: 1.6;
     }
-    .masthead-divider { width: 48px; height: 1px; background: #C17B05; margin: 2rem 0; }
+    .masthead-divider { width: 48px; height: 1px; background: #8aab3e; margin: 2rem 0; }
     .masthead-side {
       display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
       padding-bottom: 0.4rem;
@@ -106,29 +106,29 @@
     .masthead-side-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.62rem;
       font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(193,123,5,0.6); writing-mode: vertical-rl;
+      color: rgba(138,171,62,0.6); writing-mode: vertical-rl;
       transform: rotate(180deg);
     }
     .masthead-scroll-hint {
       display: flex; align-items: center; gap: 0.8rem;
       font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(245,240,232,0.3); margin-top: 4rem;
+      color: rgba(238,238,230,0.3); margin-top: 4rem;
     }
     .masthead-scroll-hint::before {
       content: ''; display: block; width: 24px; height: 1px;
-      background: rgba(245,240,232,0.2);
+      background: rgba(238,238,230,0.2);
     }
 
     /* ── SECTION LABEL ─────────────────────────────────────────── */
     .section-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.68rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #C17B05; display: flex; align-items: center; gap: 1.2rem;
+      color: #8aab3e; display: flex; align-items: center; gap: 1.2rem;
     }
     .section-label::after {
       content: ''; flex: 1; height: 1px;
-      background: linear-gradient(to right, #C17B0544, transparent);
+      background: linear-gradient(to right, #8aab3e44, transparent);
     }
 
     /* ── UPCOMING EVENT ────────────────────────────────────────── */
@@ -146,59 +146,59 @@
     }
     .upcoming-img-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(14,9,4,0.15) 0%, rgba(14,9,4,0) 100%);
+      background: linear-gradient(to right, rgba(8,11,4,0.15) 0%, rgba(8,11,4,0) 100%);
     }
     .upcoming-content {
-      background: #47331F; padding: 4rem 3.5rem;
+      background: #1C2210; padding: 4rem 3.5rem;
       display: flex; flex-direction: column; justify-content: center;
-      border: 1px solid rgba(193,123,5,0.1); border-left: none;
+      border: 1px solid rgba(138,171,62,0.1); border-left: none;
       position: relative; overflow: hidden;
     }
     .upcoming-content::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 100% 50%, rgba(193,123,5,0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 100% 50%, rgba(138,171,62,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
     .upcoming-badge {
       display: inline-flex; align-items: center; gap: 0.6rem;
       font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #47331F; background: #C17B05;
+      color: #F0F0E8; background: #1C2210;
       padding: 0.4rem 1rem; margin-bottom: 2.5rem; align-self: flex-start;
     }
     .upcoming-date-block { margin-bottom: 2rem; }
     .upcoming-date-day {
       font-family: 'Agbalumo', cursive; font-weight: 300;
       font-size: clamp(4rem, 9vw, 8rem); line-height: 1;
-      color: #f5f0e8; letter-spacing: -0.03em;
+      color: #EEEEE8; letter-spacing: -0.03em;
     }
     .upcoming-date-rest {
       font-family: 'ABeeZee', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(245,240,232,0.45); margin-top: 0.3rem;
+      color: rgba(238,238,230,0.45); margin-top: 0.3rem;
     }
-    .upcoming-divider { width: 36px; height: 1px; background: #C17B05; margin: 1.5rem 0; }
+    .upcoming-divider { width: 36px; height: 1px; background: #8aab3e; margin: 1.5rem 0; }
     .upcoming-title {
       font-family: 'Agbalumo', cursive; font-weight: 300;
       font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1;
-      color: #f5f0e8; margin-bottom: 1.2rem;
+      color: #EEEEE8; margin-bottom: 1.2rem;
     }
-    .upcoming-title em { font-style: italic; color: #C17B05; }
+    .upcoming-title em { font-style: italic; color: #8aab3e; }
     .upcoming-desc {
       font-family: 'ABeeZee', sans-serif; font-size: 0.88rem;
       font-weight: 300; line-height: 1.8; letter-spacing: 0.04em;
-      color: rgba(245,240,232,0.5); margin-bottom: 2.5rem; max-width: 360px;
+      color: rgba(238,238,230,0.5); margin-bottom: 2.5rem; max-width: 360px;
     }
     .upcoming-cta {
       display: inline-flex; align-items: center; gap: 0.8rem;
       font-family: 'ABeeZee', sans-serif; font-size: 0.72rem;
       font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
-      color: #C17B05; border: none; background: none; cursor: pointer;
+      color: #8aab3e; border: none; background: none; cursor: pointer;
       transition: gap 0.3s ease, opacity 0.3s ease;
       padding: 0; align-self: flex-start;
     }
     .upcoming-cta:hover { gap: 1.2rem; opacity: 0.8; }
-    .upcoming-cta-line { width: 28px; height: 1px; background: #C17B05; transition: width 0.3s ease; }
+    .upcoming-cta-line { width: 28px; height: 1px; background: #8aab3e; transition: width 0.3s ease; }
     .upcoming-cta:hover .upcoming-cta-line { width: 44px; }
 
     /* ── FEATURED EVENT STRIP ──────────────────────────────────── */
@@ -215,11 +215,11 @@
     /* ── EVENT CARD ────────────────────────────────────────────── */
     .ev-card {
       position: relative; overflow: hidden; cursor: pointer;
-      background: #47331F;
+      background: #1C2210;
     }
     .ev-card::before {
       content: ''; position: absolute; inset: 0; z-index: 2;
-      background: linear-gradient(to top, rgba(14,9,4,0.92) 0%, rgba(14,9,4,0.2) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(8,11,4,0.92) 0%, rgba(8,11,4,0.2) 60%, transparent 100%);
       transition: opacity 0.4s ease;
     }
     .ev-card:hover::before { opacity: 0.75; }
@@ -235,25 +235,25 @@
     .ev-card-tag {
       font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 0.7rem;
+      color: #8aab3e; margin-bottom: 0.7rem;
     }
     .ev-card-title {
       font-family: 'Agbalumo', cursive; font-weight: 400;
-      color: #f5f0e8; line-height: 1.15;
+      color: #EEEEE8; line-height: 1.15;
     }
     .ev-card-sub {
       font-family: 'ABeeZee', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.1em;
-      color: rgba(245,240,232,0.5); margin-top: 0.5rem;
+      color: rgba(238,238,230,0.5); margin-top: 0.5rem;
     }
     .ev-card-arrow {
       position: absolute; bottom: 1.8rem; right: 1.8rem; z-index: 3;
       width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid rgba(193,123,5,0.3);
+      border: 1px solid rgba(138,171,62,0.3);
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.3s ease, background 0.3s ease;
     }
-    .ev-card:hover .ev-card-arrow { border-color: #C17B05; background: rgba(193,123,5,0.1); }
+    .ev-card:hover .ev-card-arrow { border-color: #8aab3e; background: rgba(138,171,62,0.1); }
 
     .ev-full   { grid-column: span 12; height: 70vh; min-height: 480px; }
     .ev-large  { grid-column: span 7;  height: 60vh; min-height: 400px; }
@@ -274,17 +274,17 @@
       display: flex; align-items: center; gap: 2rem;
       padding: 0 2.4rem; margin-bottom: 2rem;
     }
-    .mag-divider-line { flex: 1; height: 1px; background: rgba(193,123,5,0.15); }
+    .mag-divider-line { flex: 1; height: 1px; background: rgba(138,171,62,0.15); }
     .mag-divider-text {
       font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: rgba(193,123,5,0.4);
+      color: rgba(138,171,62,0.4);
     }
 
     /* ── EVENT DETAIL OVERLAY ──────────────────────────────────── */
     #ev-overlay {
       position: fixed; inset: 0; z-index: 1000;
-      background: #2D1B0E;
+      background: #0D1108;
       overflow-y: auto;
       opacity: 0; pointer-events: none;
       transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
@@ -296,32 +296,32 @@
       position: sticky; top: 0; z-index: 10;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.4rem;
-      background: #47331F;
-      border-bottom: 1px solid rgba(193,123,5,0.12);
+      background: #1C2210;
+      border-bottom: 1px solid rgba(138,171,62,0.12);
     }
 
     #ev-hero { position: relative; width: 100%; height: 85vh; overflow: hidden; }
     #ev-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
     #ev-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(14,9,4,1) 0%, rgba(14,9,4,0.5) 40%, rgba(14,9,4,0.1) 100%);
+      background: linear-gradient(to top, rgba(8,11,4,1) 0%, rgba(8,11,4,0.5) 40%, rgba(8,11,4,0.1) 100%);
     }
     #ev-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 4rem 2.4rem 3rem; }
     #ev-tag {
       font-family: 'ABeeZee', sans-serif; font-size: 0.68rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 1rem;
+      color: #8aab3e; margin-bottom: 1rem;
     }
     #ev-title {
       font-family: 'Agbalumo', cursive; font-weight: 300;
-      font-size: clamp(3rem, 8vw, 6rem); line-height: 1; color: #f5f0e8;
+      font-size: clamp(3rem, 8vw, 6rem); line-height: 1; color: #EEEEE8;
     }
-    #ev-title em { font-style: italic; color: #C17B05; }
+    #ev-title em { font-style: italic; color: #8aab3e; }
     #ev-meta {
       display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem;
       font-family: 'ABeeZee', sans-serif; font-size: 0.78rem;
       font-weight: 300; letter-spacing: 0.14em;
-      color: rgba(245,240,232,0.5);
+      color: rgba(238,238,230,0.5);
     }
     #ev-meta span { display: flex; align-items: center; gap: 0.5rem; }
 
@@ -329,67 +329,67 @@
     #ev-desc {
       font-family: 'Agbalumo', cursive; font-style: italic;
       font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 300;
-      line-height: 1.75; color: rgba(245,240,232,0.85);
+      line-height: 1.75; color: rgba(238,238,230,0.85);
       margin-bottom: 3rem;
     }
     #ev-detail-text {
       font-family: 'ABeeZee', sans-serif; font-size: 0.95rem;
       font-weight: 300; line-height: 1.85;
-      color: rgba(245,240,232,0.55);
+      color: rgba(238,238,230,0.55);
     }
 
     /* ── TESTIMONIALS SLIDER ───────────────────────────────────── */
     #ev-testimonials {
       padding: 5rem 2.4rem;
-      background: #47331F;
+      background: #1C2210;
       position: relative;
     }
     #ev-testimonials::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(193,123,5,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(138,171,62,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .test-slider-wrap { margin-top: 3rem; position: relative; overflow: hidden; }
     .test-slider-track { display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
     .test-card {
       flex: 0 0 100%; padding: 2.5rem 2rem 2rem;
-      border: 1px solid rgba(193,123,5,0.15);
+      border: 1px solid rgba(138,171,62,0.15);
       position: relative; box-sizing: border-box;
     }
     .test-card::before {
       content: '\201C';
       font-family: 'Agbalumo', cursive; font-size: 5rem;
-      font-weight: 300; color: rgba(193,123,5,0.2);
+      font-weight: 300; color: rgba(138,171,62,0.2);
       position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1;
     }
     .test-quote {
       font-family: 'Agbalumo', cursive; font-style: italic;
       font-size: clamp(1.2rem, 2.5vw, 1.55rem); font-weight: 300;
-      line-height: 1.7; color: rgba(245,240,232,0.82);
+      line-height: 1.7; color: rgba(238,238,230,0.82);
       margin-top: 1.5rem;
     }
     .test-author {
       font-family: 'ABeeZee', sans-serif; font-size: 0.72rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-      color: #C17B05; margin-top: 1.8rem;
+      color: #8aab3e; margin-top: 1.8rem;
     }
-    .test-stars { color: #C17B05; font-size: 0.88rem; letter-spacing: 0.1em; margin-top: 0.4rem; }
+    .test-stars { color: #8aab3e; font-size: 0.88rem; letter-spacing: 0.1em; margin-top: 0.4rem; }
     .test-slider-controls { display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem; }
     .test-btn {
       width: 40px; height: 40px; border-radius: 50%;
-      border: 1px solid rgba(193,123,5,0.3);
+      border: 1px solid rgba(138,171,62,0.3);
       background: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.25s ease, background 0.25s ease; flex-shrink: 0;
     }
-    .test-btn:hover { border-color: #C17B05; background: rgba(193,123,5,0.08); }
+    .test-btn:hover { border-color: #8aab3e; background: rgba(138,171,62,0.08); }
     .test-dots { display: flex; gap: 0.5rem; align-items: center; }
     .test-dot {
       width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(193,123,5,0.25);
+      background: rgba(138,171,62,0.25);
       transition: background 0.3s ease, transform 0.3s ease;
     }
-    .test-dot.active { background: #C17B05; transform: scale(1.4); }
+    .test-dot.active { background: #8aab3e; transform: scale(1.4); }
 
     /* ── GALLERY ───────────────────────────────────────────────── */
     #ev-gallery { padding: 5rem 2.4rem 7rem; }
@@ -399,7 +399,7 @@
       grid-auto-rows: 200px;
       gap: 1rem; margin-top: 3rem;
     }
-    .gal-item { position: relative; overflow: hidden; background: #47331F; }
+    .gal-item { position: relative; overflow: hidden; background: #1C2210; }
     .gal-item img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform 0.6s ease;
@@ -407,18 +407,18 @@
     .gal-item:hover img { transform: scale(1.04); }
     .gal-item.video-item::after {
       content: ''; position: absolute; inset: 0;
-      background: rgba(14,9,4,0.45);
+      background: rgba(8,11,4,0.45);
     }
     .play-btn {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%); z-index: 2;
       width: 52px; height: 52px; border-radius: 50%;
-      border: 1.5px solid rgba(193,123,5,0.7);
+      border: 1.5px solid rgba(138,171,62,0.7);
       display: flex; align-items: center; justify-content: center;
-      background: rgba(14,9,4,0.5);
+      background: rgba(8,11,4,0.5);
       transition: background 0.3s ease, border-color 0.3s ease;
     }
-    .gal-item:hover .play-btn { background: rgba(193,123,5,0.2); border-color: #C17B05; }
+    .gal-item:hover .play-btn { background: rgba(138,171,62,0.2); border-color: #8aab3e; }
     .g-tall  { grid-column: span 4; grid-row: span 2; }
     .g-wide  { grid-column: span 8; grid-row: span 1; }
     .g-half  { grid-column: span 4; grid-row: span 1; }
@@ -442,7 +442,7 @@
       #upcoming { padding: 3rem 1.2rem 0; }
       .upcoming-inner { grid-template-columns: 1fr; min-height: auto; }
       .upcoming-img-wrap { height: 55vw; }
-      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(193,123,5,0.1); border-top: none; }
+      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(138,171,62,0.1); border-top: none; }
       #featured { padding: 4rem 1.2rem 0; }
       .mag-divider { padding: 0 1.2rem; }
       #top-nav { padding: 0.8rem 1.5rem; }
@@ -457,19 +457,19 @@
       position: relative; z-index: 1; text-align: center;
     }
     .contact-col { padding: 2rem 0; }
-    .contact-col + .contact-col { border-left: 1px solid rgba(193,123,5,0.12); }
+    .contact-col + .contact-col { border-left: 1px solid rgba(138,171,62,0.12); }
     .contact-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.6rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 1rem; display: block;
+      color: #8aab3e; margin-bottom: 1rem; display: block;
     }
     .contact-val {
       font-family: 'Agbalumo', cursive; font-size: 1.2rem;
-      font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.72);
+      font-weight: 300; line-height: 1.7; color: rgba(238,238,230,0.72);
     }
     @media (max-width: 768px) {
       .contact-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
-      .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(193,123,5,0.12) !important; }
+      .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(138,171,62,0.12) !important; }
     }
   </style>
 </head>
@@ -487,9 +487,9 @@
     <img src="Brand Reasources/logo.png" alt="Okulya Café" class="nav-logo" />
     <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;"
        style="font-family:'ABeeZee',sans-serif;font-size:0.62rem;font-weight:500;
-              letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,240,232,0.55);
+              letter-spacing:0.22em;text-transform:uppercase;color:rgba(238,238,230,0.55);
               text-decoration:none;transition:color 0.22s ease;"
-       onmouseover="this.style.color='#C17B05'" onmouseout="this.style.color='rgba(245,240,232,0.55)'">Contacto</a>
+       onmouseover="this.style.color='#8aab3e'" onmouseout="this.style.color='rgba(238,238,230,0.55)'">Contacto</a>
   </nav>
 
   <!-- ── MASTHEAD ───────────────────────────────────────────────── -->
@@ -525,7 +525,7 @@
       </div>
       <div class="upcoming-content">
         <span class="upcoming-badge">
-          <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#47331F"/></svg>
+          <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#8aab3e"/></svg>
           Esta semana
         </span>
         <div class="upcoming-date-block">
@@ -551,12 +551,12 @@
       <img class="ev-card-img" src="dining-salad.webp" alt="Prato do Dia" />
       <div class="ev-card-body">
         <p class="ev-card-tag">Disponível todos os dias &nbsp;·&nbsp; Apenas 5.000 Kz</p>
-        <h2 class="ev-card-title">Prato do <em style="font-family:'Agbalumo',cursive;font-style:italic;color:#C17B05;">Dia</em></h2>
+        <h2 class="ev-card-title">Prato do <em style="font-family:'Agbalumo',cursive;font-style:italic;color:#8aab3e;">Dia</em></h2>
         <p class="ev-card-sub">Sabor, qualidade e rapidez · Ingredientes frescos diários · Para levar ou no espaço</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -575,7 +575,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -589,16 +589,16 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
 
     <!-- Divider -->
     <div style="grid-column:span 12; display:flex; align-items:center; gap:2rem; margin: 0.5rem 0;">
-      <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
-      <span style="font-family:'ABeeZee',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(193,123,5,0.35);">Agenda mensal</span>
-      <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
+      <div style="flex:1;height:1px;background:rgba(138,171,62,0.12);"></div>
+      <span style="font-family:'ABeeZee',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(138,171,62,0.35);">Agenda mensal</span>
+      <div style="flex:1;height:1px;background:rgba(138,171,62,0.12);"></div>
     </div>
 
     <!-- Row 2: three equal -->
@@ -611,7 +611,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -625,7 +625,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -639,7 +639,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -654,7 +654,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -668,7 +668,7 @@
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#8aab3e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -676,8 +676,8 @@
   </section>
 
   <!-- ── CONTACT FOOTER ─────────────────────────────────────────── -->
-  <footer id="contact" style="background:#2D1B0E;border-top:1px solid rgba(193,123,5,0.12);padding:7rem 2.4rem 4rem;position:relative;z-index:2;overflow:hidden;">
-    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
+  <footer id="contact" style="background:#0D1108;border-top:1px solid rgba(138,171,62,0.12);padding:7rem 2.4rem 4rem;position:relative;z-index:2;overflow:hidden;">
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(138,171,62,0.06) 0%, transparent 70%);"></div>
     <div class="contact-grid">
       <div class="contact-col">
         <span class="contact-label">Morada</span>
@@ -692,8 +692,8 @@
         <p class="contact-val">Seg – Dom<br>18h00 – 00h00</p>
       </div>
     </div>
-    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
-    <p style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.18);text-align:center;position:relative;z-index:1;">
+    <div style="width:48px;height:1px;background:rgba(138,171,62,0.22);margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
+    <p style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(238,238,230,0.18);text-align:center;position:relative;z-index:1;">
       &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Luanda, Angola
     </p>
   </footer>
@@ -742,15 +742,15 @@
         <div class="test-slider-controls">
           <button class="test-btn" id="test-prev" aria-label="Anterior">
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-              <line x1="13" y1="5" x2="1" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
-              <polyline points="5,1 1,5 5,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="13" y1="5" x2="1" y2="5" stroke="#8aab3e" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="5,1 1,5 5,9" stroke="#8aab3e" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="test-dots" id="test-dots"></div>
           <button class="test-btn" id="test-next" aria-label="Próximo">
             <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-              <line x1="1" y1="5" x2="13" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
-              <polyline points="9,1 13,5 9,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="1" y1="5" x2="13" y2="5" stroke="#8aab3e" stroke-width="0.9" stroke-linecap="round"/>
+              <polyline points="9,1 13,5 9,9" stroke="#8aab3e" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
@@ -941,7 +941,7 @@
         const cls  = layout[i % layout.length];
         const type = ev.galleryTypes[i];
         const playBtn = type === 'video'
-          ? `<div class="play-btn"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#C17B05"/></svg></div>`
+          ? `<div class="play-btn"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#8aab3e"/></svg></div>`
           : '';
         return `<div class="gal-item ${cls} ${type==='video'?'video-item':''}">
           <img src="${img}" alt="" loading="lazy" />

@@ -27,8 +27,8 @@
       position: absolute;
       bottom: -1px;
       left: 50%;
-      /* ornamental SVG: line ─── • ○◆○ • ─── line, coloured #C17B05 */
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='4' x2='26' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3Ccircle cx='28.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Ccircle cx='32.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Cpolygon points='40,1.2 44,4 40,6.8 36,4' fill='none' stroke='%23c8a06a' stroke-width='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.3' fill='%23c8a06a'/%3E%3Ccircle cx='47.5' cy='4' r='1.6' fill='none' stroke='%23c8a06a' stroke-width='0.75'/%3E%3Ccircle cx='51.5' cy='4' r='1' fill='%23c8a06a'/%3E%3Cline x1='54' y1='4' x2='80' y2='4' stroke='%23c8a06a' stroke-width='0.7'/%3E%3C/svg%3E");
+      /* ornamental SVG: line ─── • ○◆○ • ─── line, coloured #8aab3e */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='4' x2='26' y2='4' stroke='%238daa46' stroke-width='0.7'/%3E%3Ccircle cx='28.5' cy='4' r='1' fill='%238daa46'/%3E%3Ccircle cx='32.5' cy='4' r='1.6' fill='none' stroke='%238daa46' stroke-width='0.75'/%3E%3Cpolygon points='40,1.2 44,4 40,6.8 36,4' fill='none' stroke='%238daa46' stroke-width='0.9'/%3E%3Ccircle cx='40' cy='4' r='1.3' fill='%238daa46'/%3E%3Ccircle cx='47.5' cy='4' r='1.6' fill='none' stroke='%238daa46' stroke-width='0.75'/%3E%3Ccircle cx='51.5' cy='4' r='1' fill='%238daa46'/%3E%3Cline x1='54' y1='4' x2='80' y2='4' stroke='%238daa46' stroke-width='0.7'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -107,7 +107,7 @@
       font-weight: 500;
       font-style: normal;
       font-size: clamp(2rem, 3.2vw, 3rem);
-      color: #47331F;
+      color: #1C2210;
       letter-spacing: -0.01em;
       line-height: 1.1;
       will-change: transform, opacity;
@@ -156,7 +156,7 @@
     #mobile-overlay {
       position: fixed;
       inset: 0;
-      background: #47331F;
+      background: #1C2210;
       z-index: 200;
       display: flex;
       flex-direction: column;
@@ -187,7 +187,7 @@
       transition: color 0.22s ease;
     }
     .mob-link:last-child { border-bottom: none; }
-    .mob-link:hover { color: #C17B05; }
+    .mob-link:hover { color: #8aab3e; }
     /* Contact info in overlay */
     .mob-contact {
       font-family: 'ABeeZee', sans-serif;
@@ -208,7 +208,7 @@
       font-style: normal;
       font-weight: 300;
       font-size: clamp(2.6rem, 8vw, 5rem);
-      color: #faf8f4;
+      color: #F0F0E8;
       line-height: 1;
       margin-top: 1.2rem;
       letter-spacing: -0.02em;
@@ -219,7 +219,7 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #C17B05;
+      color: #8aab3e;
       margin-top: 0.75rem;
     }
     .dining-desc {
@@ -227,7 +227,7 @@
       font-size: 0.78rem;
       font-weight: 300;
       line-height: 1.85;
-      color: rgba(250,248,244,0.72);
+      color: rgba(240,240,232,0.72);
       margin-top: 1.1rem;
     }
     .dining-btn {
@@ -238,13 +238,13 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(250,248,244,0.85);
+      color: rgba(240,240,232,0.85);
       text-decoration: none;
-      border-bottom: 1px solid #C17B05;
+      border-bottom: 1px solid #8aab3e;
       padding-bottom: 3px;
       transition: color 0.22s ease;
     }
-    .dining-btn:hover { color: #C17B05; }
+    .dining-btn:hover { color: #8aab3e; }
     .mob-close-btn {
       background: none;
       border: none;
@@ -260,7 +260,7 @@
     .mob-ornament {
       width: 56px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #C17B05, transparent);
+      background: linear-gradient(90deg, transparent, #8aab3e, transparent);
       margin: 1.8rem auto;
     }
 
@@ -276,16 +276,16 @@
     }
     .contact-col { padding: 2rem 0; }
     .contact-col + .contact-col {
-      border-left: 1px solid rgba(193,123,5,0.12);
+      border-left: 1px solid rgba(138,171,62,0.12);
     }
     .contact-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.6rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 1rem; display: block;
+      color: #8aab3e; margin-bottom: 1rem; display: block;
     }
     .contact-val {
       font-family: 'Agbalumo', cursive; font-size: 1.2rem;
-      font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.72);
+      font-weight: 300; line-height: 1.7; color: rgba(238,238,230,0.72);
     }
 
     /* ─── Desktop overrides (min-width: 769px) ─────────────────────────────── */
@@ -347,7 +347,7 @@
         margin-bottom: 0 !important;
         padding: 6rem 9% !important;
         gap: 7% !important;
-        border-bottom: 1px solid rgba(193,123,5,0.07) !important;
+        border-bottom: 1px solid rgba(138,171,62,0.07) !important;
       }
       .dining-item:last-child {
         margin-bottom: 0 !important;
@@ -469,7 +469,7 @@
       }
       .contact-col + .contact-col {
         border-left: none !important;
-        border-top: 1px solid rgba(193,123,5,0.12) !important;
+        border-top: 1px solid rgba(138,171,62,0.12) !important;
       }
       /* Push hero logo down on mobile */
       #hero-logo-wrap { top: 4.5rem !important; }
@@ -493,7 +493,7 @@
   <!-- ═══════════════════════════════════════════════════════ HERO SECTION ═══ -->
   <section style="position:relative;width:100%;height:100vh;min-height:600px;">
 
-    <div style="position:absolute;inset:0;background:#47331F;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:#1C2210;overflow:hidden;">
       <video id="hero-video" autoplay muted loop playsinline
              style="position:absolute;inset:0;width:100%;height:100%;
                     object-fit:cover;object-position:center;">
@@ -625,7 +625,7 @@
           font-style:italic;
           font-weight:400;
           font-size:clamp(2.2rem,3.4vw,3.8rem);
-          color:#47331F;
+          color:#1C2210;
           line-height:1.4;
           letter-spacing:0.01em;
         ">O café mais acolhedor em Luanda, onde os sabores africanos, a cultura e o ambiente vibrante se encontram</p>
@@ -670,15 +670,15 @@
         <div style="display:flex;align-items:baseline;gap:0.3rem;flex-shrink:0;">
           <span id="counter-current"
                 style="font-family:'Agbalumo',cursive;font-style:italic;
-                       font-size:2.1rem;font-weight:400;color:#47331F;line-height:1;">01</span>
+                       font-size:2.1rem;font-weight:400;color:#1C2210;line-height:1;">01</span>
           <span style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;
-                       font-weight:400;color:#A06804;letter-spacing:0.12em;">04</span>
+                       font-weight:400;color:#5A7A22;letter-spacing:0.12em;">04</span>
         </div>
 
         <!-- Progress bar (grows to fill space between number and arrows) -->
-        <div style="flex:1;position:relative;height:1px;background:rgba(26,16,8,0.1);">
+        <div style="flex:1;position:relative;height:1px;background:rgba(13,17,8,0.1);">
           <div id="progress-bar"
-               style="position:absolute;left:0;top:0;height:100%;background:#C17B05;
+               style="position:absolute;left:0;top:0;height:100%;background:#8aab3e;
                       width:25%;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
         </div>
 
@@ -686,13 +686,13 @@
         <div style="display:flex;gap:1.4rem;align-items:center;flex-shrink:0;">
           <button class="carousel-btn" onclick="carouselAdvance(-1)" aria-label="Previous">
             <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-              <polyline points="13 1 3 9 13 17" stroke="#47331F" stroke-width="0.9"
+              <polyline points="13 1 3 9 13 17" stroke="#1C2210" stroke-width="0.9"
                         stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <button class="carousel-btn" onclick="carouselAdvance(1)" aria-label="Next">
             <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
-              <polyline points="9 1 19 9 9 17" stroke="#47331F" stroke-width="0.9"
+              <polyline points="9 1 19 9 9 17" stroke="#1C2210" stroke-width="0.9"
                         stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -721,12 +721,12 @@
        horizontal ticks extending left, label at active stop, sun/moon at ends
   ══════════════════════════════════════════════════════════════════════════ -->
   <section id="dining-section"
-           style="position:relative;width:100%;background:#47331F;z-index:2;">
+           style="position:relative;width:100%;background:#1C2210;z-index:2;">
 
     <!-- Sticky header bar — stays fixed to top of viewport as user scrolls weekly specials -->
     <div style="position:sticky;top:0;z-index:10;width:100%;
                 display:flex;align-items:center;padding:0.9rem 1.8rem;
-                background:#47331F;border-bottom:1px solid rgba(193,123,5,0.12);">
+                background:#1C2210;border-bottom:1px solid rgba(138,171,62,0.12);">
       <img src="Brand Reasources/logo.png" alt="Okulya Café"
            style="height:72px;width:auto;max-width:none;display:block;opacity:0.9;" />
     </div>
@@ -828,15 +828,15 @@
         <!-- Sun — top right -->
         <div style="position:absolute;top:2.8rem;right:14px;">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="2.9" stroke="#C17B05" stroke-width="0.85"/>
-            <line x1="7" y1="0.4" x2="7" y2="2.2" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="7" y1="11.8" x2="7" y2="13.6" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="0.4" y1="7" x2="2.2" y2="7" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="11.8" y1="7" x2="13.6" y2="7" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="2.5" y1="2.5" x2="3.8" y2="3.8" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="10.2" y1="10.2" x2="11.5" y2="11.5" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="11.5" y1="2.5" x2="10.2" y2="3.8" stroke="#C17B05" stroke-width="0.8"/>
-            <line x1="3.8" y1="10.2" x2="2.5" y2="11.5" stroke="#C17B05" stroke-width="0.8"/>
+            <circle cx="7" cy="7" r="2.9" stroke="#8aab3e" stroke-width="0.85"/>
+            <line x1="7" y1="0.4" x2="7" y2="2.2" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="7" y1="11.8" x2="7" y2="13.6" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="0.4" y1="7" x2="2.2" y2="7" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="11.8" y1="7" x2="13.6" y2="7" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="2.5" y1="2.5" x2="3.8" y2="3.8" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="10.2" y1="10.2" x2="11.5" y2="11.5" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="11.5" y1="2.5" x2="10.2" y2="3.8" stroke="#8aab3e" stroke-width="0.8"/>
+            <line x1="3.8" y1="10.2" x2="2.5" y2="11.5" stroke="#8aab3e" stroke-width="0.8"/>
           </svg>
         </div>
 
@@ -847,7 +847,7 @@
                      c1.7 0 3.2-.9 4-2.3-0.7.3-1.5.5-2.3.5
                      C5.6 9 3.5 6.9 3.5 4.3c0-1.3.5-2.4 1.4-3.2
                      A4.8 4.8 0 006.5 1.2z"
-                  stroke="#C17B05" stroke-width="0.85" stroke-linecap="round" fill="none"/>
+                  stroke="#8aab3e" stroke-width="0.85" stroke-linecap="round" fill="none"/>
           </svg>
         </div>
 
@@ -860,14 +860,14 @@
           <div id="dining-dot"
                style="position:absolute;right:-4px;top:10%;
                       width:9px;height:9px;border-radius:50%;
-                      background:#47331F;border:1.5px solid #C17B05;
+                      background:#F0F0E8;border:1.5px solid #8aab3e;
                       transform:translateY(-50%);
                       transition:top 0.65s cubic-bezier(0.4,0,0.2,1);"></div>
 
           <!-- Tick 0 — Coffee (active by default) -->
           <div class="dining-tick" data-idx="0"
                style="position:absolute;top:10%;right:0;height:1px;
-                      width:26px;background:#C17B05;
+                      width:26px;background:#8aab3e;
                       transition:width 0.4s ease,background 0.4s ease;">
             <span class="dining-tick-label"
                   style="position:absolute;right:calc(100% + 8px);top:50%;
@@ -875,7 +875,7 @@
                          font-family:'ABeeZee',sans-serif;
                          font-size:0.42rem;font-weight:500;
                          letter-spacing:0.18em;text-transform:uppercase;
-                         color:#C17B05;
+                         color:#8aab3e;
                          transition:opacity 0.4s ease,color 0.4s ease;">café</span>
           </div>
 
@@ -964,8 +964,8 @@
 
   <!-- ══════════════════════════════════════════════════ CONTACT FOOTER ══════ -->
   <footer id="contact" style="
-    background:#2D1B0E;
-    border-top:1px solid rgba(193,123,5,0.12);
+    background:#0D1108;
+    border-top:1px solid rgba(138,171,62,0.12);
     padding:7rem 2.4rem 4rem;
     position:relative;
     z-index:2;
@@ -975,7 +975,7 @@
     <!-- Radial glow -->
     <div style="position:absolute;inset:0;pointer-events:none;
                 background:radial-gradient(ellipse 70% 60% at 50% 0%,
-                  rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
+                  rgba(138,171,62,0.06) 0%, transparent 70%);"></div>
 
     <!-- Info grid -->
     <div class="contact-grid">
@@ -994,13 +994,13 @@
     </div>
 
     <!-- Divider -->
-    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);
+    <div style="width:48px;height:1px;background:rgba(138,171,62,0.22);
                 margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
 
     <!-- Copyright -->
     <p style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;font-weight:300;
               letter-spacing:0.2em;text-transform:uppercase;
-              color:rgba(245,240,232,0.18);text-align:center;
+              color:rgba(238,238,230,0.18);text-align:center;
               position:relative;z-index:1;">
       &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Luanda, Angola
     </p>
@@ -1320,8 +1320,8 @@
           const lbl = tick.querySelector('.dining-tick-label');
           if (i === idx) {
             tick.style.width      = '26px';
-            tick.style.background = '#C17B05';
-            if (lbl) { lbl.style.opacity = '1'; lbl.style.color = '#C17B05'; }
+            tick.style.background = '#8aab3e';
+            if (lbl) { lbl.style.opacity = '1'; lbl.style.color = '#8aab3e'; }
           } else {
             tick.style.width      = '12px';
             tick.style.background = 'rgba(255,255,255,0.2)';

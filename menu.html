@@ -11,7 +11,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body {
-      background: #47331F;
+      background: #1C2210;
       min-height: 100svh;
       font-family: 'ABeeZee', sans-serif;
       overflow-x: hidden;
@@ -22,12 +22,12 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.4rem 2rem;
-      background: linear-gradient(to bottom, rgba(26,16,8,0.92) 0%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(13,17,8,0.92) 0%, transparent 100%);
     }
 
     .back-link {
       display: inline-flex; align-items: center; gap: 0.55rem;
-      color: rgba(250,248,244,0.5); text-decoration: none;
+      color: rgba(240,240,232,0.5); text-decoration: none;
       font-family: 'ABeeZee', sans-serif;
       font-size: 0.56rem; font-weight: 500;
       letter-spacing: 0.2em; text-transform: uppercase;
@@ -36,7 +36,7 @@
       padding: 1rem 1.4rem 1rem 0;
       margin: -1rem -1.4rem -1rem 0;
     }
-    .back-link:hover { color: #C17B05; }
+    .back-link:hover { color: #8aab3e; }
 
     .nav-logo {
       height: 64px; width: auto; display: block; opacity: 0.88;
@@ -55,28 +55,28 @@
       font-family: 'Agbalumo', cursive;
       font-style: italic; font-weight: 300;
       font-size: clamp(3.2rem, 12vw, 6rem);
-      color: #faf8f4;
+      color: #F0F0E8;
       letter-spacing: -0.02em; line-height: 1;
       margin-bottom: 0.6rem;
     }
 
     .picker-rule {
       width: 36px; height: 1px;
-      background: linear-gradient(to right, #C17B05, transparent);
+      background: linear-gradient(to right, #8aab3e, transparent);
       margin-bottom: 3rem;
     }
 
     .cat-row {
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.6rem 0;
-      border-top: 1px solid rgba(250,248,244,0.07);
+      border-top: 1px solid rgba(240,240,232,0.07);
       cursor: pointer; background: none; border-left: none; border-right: none; border-bottom: none;
       width: 100%; text-align: left;
       transition: background 0.2s ease;
       -webkit-tap-highlight-color: transparent;
     }
-    .cat-row:last-child { border-bottom: 1px solid rgba(250,248,244,0.07); }
-    .cat-row:active { background: rgba(193,123,5,0.06); }
+    .cat-row:last-child { border-bottom: 1px solid rgba(240,240,232,0.07); }
+    .cat-row:active { background: rgba(138,171,62,0.06); }
 
     .cat-row-left { display: flex; flex-direction: column; gap: 0.3rem; }
 
@@ -84,7 +84,7 @@
       font-family: 'Agbalumo', cursive;
       font-style: italic; font-weight: 300;
       font-size: clamp(1.9rem, 6vw, 2.8rem);
-      color: #faf8f4; line-height: 1;
+      color: #F0F0E8; line-height: 1;
       letter-spacing: -0.01em;
     }
 
@@ -92,21 +92,21 @@
       font-family: 'ABeeZee', sans-serif;
       font-size: 0.5rem; font-weight: 500;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: #C17B05;
+      color: #8aab3e;
     }
 
     .cat-row-arrow {
-      color: rgba(250,248,244,0.2);
+      color: rgba(240,240,232,0.2);
       flex-shrink: 0; margin-left: 1rem;
       transition: color 0.2s ease, transform 0.2s ease;
     }
     .cat-row:hover .cat-row-arrow,
-    .cat-row:active .cat-row-arrow { color: #C17B05; transform: translateX(4px); }
+    .cat-row:active .cat-row-arrow { color: #8aab3e; transform: translateX(4px); }
 
     /* ── CATEGORY DETAIL VIEW ────────────────────────────────────── */
     #cat-view {
       position: fixed; inset: 0; z-index: 200;
-      background: #47331F;
+      background: #1C2210;
       opacity: 0; transform: translateY(28px);
       pointer-events: none;
       transition: opacity 0.45s ease, transform 0.45s ease;
@@ -119,25 +119,25 @@
 
     #cat-header {
       padding: 5.5rem 2.4rem 2.4rem;
-      border-bottom: 1px solid rgba(193,123,5,0.12);
+      border-bottom: 1px solid rgba(138,171,62,0.12);
     }
 
     #cat-title {
       font-family: 'Agbalumo', cursive;
       font-style: italic; font-weight: 300;
       font-size: clamp(2.8rem, 10vw, 5rem);
-      color: #faf8f4; line-height: 0.95;
+      color: #F0F0E8; line-height: 0.95;
       letter-spacing: -0.02em;
     }
     #cat-sub {
       font-family: 'ABeeZee', sans-serif;
       font-size: 0.52rem; font-weight: 500;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: #C17B05; margin-top: 0.9rem;
+      color: #8aab3e; margin-top: 0.9rem;
     }
     .cat-orn {
       width: 30px; height: 1px;
-      background: linear-gradient(to right, #C17B05, transparent);
+      background: linear-gradient(to right, #8aab3e, transparent);
       margin-top: 1.8rem;
     }
 
@@ -147,7 +147,7 @@
       display: flex; justify-content: space-between;
       align-items: flex-start; gap: 1.2rem;
       padding: 1.8rem 0;
-      border-bottom: 1px solid rgba(250,248,244,0.05);
+      border-bottom: 1px solid rgba(240,240,232,0.05);
     }
     .menu-item:last-child { border-bottom: none; }
 
@@ -155,19 +155,19 @@
     .menu-item-name {
       font-family: 'Agbalumo', cursive;
       font-weight: 300; font-size: 1.5rem;
-      color: #faf8f4; line-height: 1.1;
+      color: #F0F0E8; line-height: 1.1;
       letter-spacing: -0.01em;
     }
     .menu-item-desc {
       font-family: 'ABeeZee', sans-serif;
       font-size: 0.62rem; font-weight: 300;
-      line-height: 1.8; color: rgba(250,248,244,0.4);
+      line-height: 1.8; color: rgba(240,240,232,0.4);
       margin-top: 0.4rem;
     }
     .menu-item-price {
       font-family: 'ABeeZee', sans-serif;
       font-size: 0.56rem; font-weight: 500;
-      letter-spacing: 0.1em; color: #C17B05;
+      letter-spacing: 0.1em; color: #8aab3e;
       white-space: nowrap; padding-top: 0.3rem;
       flex-shrink: 0;
     }
@@ -193,9 +193,9 @@
     <img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café" />
     <a href="index.html#contact"
        style="font-family:'ABeeZee',sans-serif;font-size:0.56rem;font-weight:500;
-              letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.45);
+              letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,240,232,0.45);
               text-decoration:none;transition:color 0.22s ease;"
-       onmouseover="this.style.color='#C17B05'" onmouseout="this.style.color='rgba(250,248,244,0.45)'">Contacto</a>
+       onmouseover="this.style.color='#8aab3e'" onmouseout="this.style.color='rgba(240,240,232,0.45)'">Contacto</a>
   </nav>
 
   <!-- ── CATEGORY PICKER ──────────────────────────────────────── -->
