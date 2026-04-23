@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eventos — Okulya Café</title>
+  <title>Experiências — Okulya Café</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=ABeeZee:ital@0;1&display=swap" rel="stylesheet" />
@@ -18,12 +18,11 @@
       overflow-x: clip;
     }
 
-    /* ── SCROLLBAR ─────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #2D1B0E; }
     ::-webkit-scrollbar-thumb { background: #C17B0544; border-radius: 2px; }
 
-    /* ── NAV ───────────────────────────────────────────────────── */
+    /* ── NAV ─────────────────────────────────────────────────────── */
     #top-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
@@ -36,13 +35,13 @@
       font-family: 'ABeeZee', sans-serif; font-size: 0.75rem;
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
       color: #f5f0e8; background: none; border: none; cursor: pointer;
-      padding: 1rem 0 1rem 0; margin: -1rem 0 -1rem 0;
+      padding: 1rem 0; margin: -1rem 0;
       transition: opacity 0.25s ease;
     }
     .nav-voltar:hover { opacity: 0.6; }
     .nav-logo { height: 72px; width: auto; max-width: none; display: block; }
 
-    /* ── MAGAZINE MASTHEAD ─────────────────────────────────────── */
+    /* ── MASTHEAD ────────────────────────────────────────────────── */
     #masthead {
       position: relative; width: 100%; min-height: 100vh;
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -52,7 +51,6 @@
       position: absolute; inset: 0;
       background: linear-gradient(160deg, #47331F 0%, #3D2510 40%, #2D1B0E 100%);
     }
-    /* grain texture */
     #masthead-bg::after {
       content: '';
       position: absolute; inset: 0;
@@ -61,17 +59,15 @@
     }
     #masthead-img {
       position: absolute; inset: 0;
-      background: url('dining-1.webp') center/cover no-repeat;
-      opacity: 0.22;
+      background: url('dining-cocktails.webp') center/cover no-repeat;
+      opacity: 0.18;
       mix-blend-mode: luminosity;
     }
-    /* gold radial glow */
     #masthead-glow {
       position: absolute; inset: 0;
       background: radial-gradient(ellipse 70% 55% at 65% 60%, rgba(193,123,5,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .masthead-inner {
       position: relative; z-index: 2;
       padding: 0 2.4rem 5rem;
@@ -89,23 +85,18 @@
     }
     .masthead-title {
       font-family: 'Agbalumo', cursive;
-      font-size: clamp(5.5rem, 16vw, 13rem);
+      font-size: clamp(5rem, 15vw, 12rem);
       font-weight: 300; letter-spacing: -0.02em; line-height: 0.88;
       color: #f5f0e8;
     }
-    .masthead-title em {
-      font-style: italic; color: #C17B05;
-    }
+    .masthead-title em { font-style: italic; color: #C17B05; }
     .masthead-tagline {
       font-family: 'Agbalumo', cursive; font-style: italic;
       font-size: clamp(1.1rem, 2.8vw, 1.55rem); font-weight: 300;
-      color: rgba(245,240,232,0.65); margin-top: 1.8rem; max-width: 480px;
+      color: rgba(245,240,232,0.65); margin-top: 1.8rem; max-width: 520px;
       line-height: 1.6;
     }
-    .masthead-divider {
-      width: 48px; height: 1px; background: #C17B05;
-      margin: 2rem 0;
-    }
+    .masthead-divider { width: 48px; height: 1px; background: #C17B05; margin: 2rem 0; }
     .masthead-side {
       display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
       padding-bottom: 0.4rem;
@@ -127,7 +118,7 @@
       background: rgba(245,240,232,0.2);
     }
 
-    /* ── SECTION LABEL ─────────────────────────────────────────── */
+    /* ── SECTION LABEL ───────────────────────────────────────────── */
     .section-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.68rem;
       font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
@@ -138,19 +129,15 @@
       background: linear-gradient(to right, #C17B0544, transparent);
     }
 
-    /* ── UPCOMING EVENT ────────────────────────────────────────── */
-    #upcoming {
-      padding: 5rem 2.4rem 0;
-    }
+    /* ── UPCOMING / FEATURED ─────────────────────────────────────── */
+    #upcoming { padding: 5rem 2.4rem 0; }
     .upcoming-inner {
       display: grid; grid-template-columns: 1fr 1fr; gap: 0;
       margin-top: 2.5rem; overflow: hidden; cursor: pointer;
       min-height: 80vh;
     }
     .upcoming-inner:hover .upcoming-img-wrap img { transform: scale(1.04); }
-    .upcoming-img-wrap {
-      position: relative; overflow: hidden;
-    }
+    .upcoming-img-wrap { position: relative; overflow: hidden; }
     .upcoming-img-wrap img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
@@ -180,7 +167,7 @@
     .upcoming-date-block { margin-bottom: 2rem; }
     .upcoming-date-day {
       font-family: 'Agbalumo', cursive; font-weight: 300;
-      font-size: clamp(4rem, 9vw, 8rem); line-height: 1;
+      font-size: clamp(3rem, 7vw, 6rem); line-height: 1;
       color: #f5f0e8; letter-spacing: -0.03em;
     }
     .upcoming-date-rest {
@@ -188,12 +175,10 @@
       font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(245,240,232,0.45); margin-top: 0.3rem;
     }
-    .upcoming-divider {
-      width: 36px; height: 1px; background: #C17B05; margin: 1.5rem 0;
-    }
+    .upcoming-divider { width: 36px; height: 1px; background: #C17B05; margin: 1.5rem 0; }
     .upcoming-title {
       font-family: 'Agbalumo', cursive; font-weight: 300;
-      font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1;
+      font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1;
       color: #f5f0e8; margin-bottom: 1.2rem;
     }
     .upcoming-title em { font-style: italic; color: #C17B05; }
@@ -207,22 +192,16 @@
       font-family: 'ABeeZee', sans-serif; font-size: 0.72rem;
       font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
       color: #C17B05; border: none; background: none; cursor: pointer;
-      transition: gap 0.3s ease, opacity 0.3s ease;
-      padding: 0; align-self: flex-start;
+      transition: gap 0.3s ease; padding: 0; align-self: flex-start;
     }
-    .upcoming-cta:hover { gap: 1.2rem; opacity: 0.8; }
+    .upcoming-cta:hover { gap: 1.2rem; }
     .upcoming-cta-line {
       width: 28px; height: 1px; background: #C17B05;
       transition: width 0.3s ease;
     }
     .upcoming-cta:hover .upcoming-cta-line { width: 44px; }
 
-    /* ── FEATURED EVENT STRIP ──────────────────────────────────── */
-    #featured {
-      padding: 6rem 2.4rem 0;
-    }
-
-    /* ── EVENT GRID ────────────────────────────────────────────── */
+    /* ── EVENT GRID ──────────────────────────────────────────────── */
     #event-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -230,7 +209,7 @@
       padding: 3rem 2.4rem 6rem;
     }
 
-    /* ── EVENT CARD ────────────────────────────────────────────── */
+    /* ── EVENT CARD ──────────────────────────────────────────────── */
     .ev-card {
       position: relative; overflow: hidden; cursor: pointer;
       background: #47331F;
@@ -271,125 +250,32 @@
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.3s ease, background 0.3s ease;
     }
-    .ev-card:hover .ev-card-arrow {
-      border-color: #C17B05; background: rgba(193,123,5,0.1);
-    }
+    .ev-card:hover .ev-card-arrow { border-color: #C17B05; background: rgba(193,123,5,0.1); }
 
-    /* card size classes */
-    .ev-full   { grid-column: span 12; height: 70vh; min-height: 480px; }
     .ev-large  { grid-column: span 7;  height: 60vh; min-height: 400px; }
     .ev-medium { grid-column: span 5;  height: 60vh; min-height: 400px; }
-    .ev-wide   { grid-column: span 8;  height: 50vh; min-height: 340px; }
-    .ev-slim   { grid-column: span 4;  height: 50vh; min-height: 340px; }
-    .ev-third  { grid-column: span 4;  height: 46vh; min-height: 300px; }
+    .ev-half   { grid-column: span 6;  height: 52vh; min-height: 340px; }
 
-    .ev-full .ev-card-title  { font-size: clamp(2.4rem, 5vw, 4rem); }
-    .ev-large .ev-card-title { font-size: clamp(2rem, 3.5vw, 3rem); }
+    .ev-large .ev-card-title  { font-size: clamp(2rem, 3.5vw, 3rem); }
     .ev-medium .ev-card-title { font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
-    .ev-wide .ev-card-title  { font-size: clamp(1.8rem, 3vw, 2.6rem); }
-    .ev-slim .ev-card-title  { font-size: clamp(1.5rem, 2vw, 2rem); }
-    .ev-third .ev-card-title { font-size: clamp(1.4rem, 2vw, 2rem); }
+    .ev-half .ev-card-title   { font-size: clamp(1.8rem, 2.8vw, 2.6rem); }
 
-    /* ── MAGAZINE DIVIDER ──────────────────────────────────────── */
-    .mag-divider {
-      display: flex; align-items: center; gap: 2rem;
-      padding: 0 2.4rem; margin-bottom: 2rem;
-    }
-    .mag-divider-line { flex: 1; height: 1px; background: rgba(193,123,5,0.15); }
-    .mag-divider-text {
-      font-family: 'ABeeZee', sans-serif; font-size: 0.65rem;
-      font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: rgba(193,123,5,0.4);
-    }
-
-    /* ── EVENT DETAIL OVERLAY ──────────────────────────────────── */
-    #ev-overlay {
-      position: fixed; inset: 0; z-index: 1000;
-      background: #2D1B0E;
-      overflow-y: auto;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-    }
-    #ev-overlay.open {
-      opacity: 1; pointer-events: auto;
-    }
-    #ev-overlay-inner { min-height: 100vh; }
-
-    /* overlay nav */
-    #ev-overlay-nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2.4rem;
-      background: #47331F;
-      border-bottom: 1px solid rgba(193,123,5,0.12);
-    }
-
-    /* overlay hero */
-    #ev-hero {
-      position: relative; width: 100%; height: 85vh; overflow: hidden;
-    }
-    #ev-hero-img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    #ev-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(14,9,4,1) 0%, rgba(14,9,4,0.5) 40%, rgba(14,9,4,0.1) 100%);
-    }
-    #ev-hero-content {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 4rem 2.4rem 3rem;
-    }
-    #ev-tag {
-      font-family: 'ABeeZee', sans-serif; font-size: 0.68rem;
-      font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-      color: #C17B05; margin-bottom: 1rem;
-    }
-    #ev-title {
-      font-family: 'Agbalumo', cursive; font-weight: 300;
-      font-size: clamp(3rem, 8vw, 6rem); line-height: 1; color: #f5f0e8;
-    }
-    #ev-title em { font-style: italic; color: #C17B05; }
-    #ev-meta {
-      display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem;
-      font-family: 'ABeeZee', sans-serif; font-size: 0.78rem;
-      font-weight: 300; letter-spacing: 0.14em;
-      color: rgba(245,240,232,0.5);
-    }
-    #ev-meta span { display: flex; align-items: center; gap: 0.5rem; }
-
-    /* overlay body */
-    #ev-body { padding: 4rem 2.4rem 6rem; max-width: 900px; }
-    #ev-desc {
-      font-family: 'Agbalumo', cursive; font-style: italic;
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 300;
-      line-height: 1.75; color: rgba(245,240,232,0.85);
-      margin-bottom: 3rem;
-    }
-    #ev-detail-text {
-      font-family: 'ABeeZee', sans-serif; font-size: 0.95rem;
-      font-weight: 300; line-height: 1.85;
-      color: rgba(245,240,232,0.55);
-    }
-
-    /* ── TESTIMONIALS SLIDER ───────────────────────────────────── */
-    #ev-testimonials {
+    /* ── PAGE-LEVEL TESTIMONIALS ─────────────────────────────────── */
+    #page-testimonials {
       padding: 5rem 2.4rem;
       background: #47331F;
       position: relative;
     }
-    #ev-testimonials::before {
+    #page-testimonials::before {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(193,123,5,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
-    .test-slider-wrap {
-      margin-top: 3rem; position: relative; overflow: hidden;
-    }
-    .test-slider-track {
-      display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
-    }
+    .test-slider-wrap { margin-top: 3rem; position: relative; overflow: hidden; }
+    .test-slider-track { display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
     .test-card {
-      flex: 0 0 100%; padding: 2.5rem 2rem 2rem; border: 1px solid rgba(193,123,5,0.15);
+      flex: 0 0 100%; padding: 2.5rem 2rem 2rem;
+      border: 1px solid rgba(193,123,5,0.15);
       position: relative; box-sizing: border-box;
     }
     .test-card::before {
@@ -409,18 +295,14 @@
       font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
       color: #C17B05; margin-top: 1.8rem;
     }
-    .test-stars {
-      color: #C17B05; font-size: 0.88rem; letter-spacing: 0.1em;
-      margin-top: 0.4rem;
-    }
-    .test-slider-controls {
-      display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem;
-    }
+    .test-stars { color: #C17B05; font-size: 0.88rem; letter-spacing: 0.1em; margin-top: 0.4rem; }
+    .test-slider-controls { display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem; }
     .test-btn {
-      width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(193,123,5,0.3);
-      background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: border-color 0.25s ease, background 0.25s ease;
-      flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(193,123,5,0.3);
+      background: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.25s ease, background 0.25s ease; flex-shrink: 0;
     }
     .test-btn:hover { border-color: #C17B05; background: rgba(193,123,5,0.08); }
     .test-dots { display: flex; gap: 0.5rem; align-items: center; }
@@ -431,90 +313,97 @@
     }
     .test-dot.active { background: #C17B05; transform: scale(1.4); }
 
-    /* ── GALLERY ───────────────────────────────────────────────── */
-    #ev-gallery { padding: 5rem 2.4rem 7rem; }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 200px;
-      gap: 1rem; margin-top: 3rem;
+    /* ── EVENT DETAIL OVERLAY ────────────────────────────────────── */
+    #ev-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: #2D1B0E;
+      overflow-y: auto;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
     }
-    .gal-item {
-      position: relative; overflow: hidden;
+    #ev-overlay.open { opacity: 1; pointer-events: auto; }
+    #ev-overlay-inner { min-height: 100vh; }
+    #ev-overlay-nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.4rem;
       background: #47331F;
+      border-bottom: 1px solid rgba(193,123,5,0.12);
     }
-    .gal-item img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.6s ease;
-    }
-    .gal-item:hover img { transform: scale(1.04); }
-    .gal-item.video-item::after {
-      content: '';
+    #ev-hero { position: relative; width: 100%; height: 85vh; overflow: hidden; }
+    #ev-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #ev-hero-overlay {
       position: absolute; inset: 0;
-      background: rgba(14,9,4,0.45);
-      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(to top, rgba(14,9,4,1) 0%, rgba(14,9,4,0.5) 40%, rgba(14,9,4,0.1) 100%);
     }
-    .play-btn {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); z-index: 2;
-      width: 52px; height: 52px; border-radius: 50%;
-      border: 1.5px solid rgba(193,123,5,0.7);
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(14,9,4,0.5);
-      transition: background 0.3s ease, border-color 0.3s ease;
+    #ev-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 4rem 2.4rem 3rem; }
+    #ev-tag {
+      font-family: 'ABeeZee', sans-serif; font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
+      color: #C17B05; margin-bottom: 1rem;
     }
-    .gal-item:hover .play-btn {
-      background: rgba(193,123,5,0.2); border-color: #C17B05;
+    #ev-title {
+      font-family: 'Agbalumo', cursive; font-weight: 300;
+      font-size: clamp(3rem, 8vw, 6rem); line-height: 1; color: #f5f0e8;
     }
-    .g-tall  { grid-column: span 4; grid-row: span 2; }
-    .g-wide  { grid-column: span 8; grid-row: span 1; }
-    .g-half  { grid-column: span 4; grid-row: span 1; }
-    .g-med   { grid-column: span 6; grid-row: span 1; }
-    .g-full  { grid-column: span 12; grid-row: span 1; }
+    #ev-title em { font-style: italic; color: #C17B05; }
+    #ev-meta {
+      display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem;
+      font-family: 'ABeeZee', sans-serif; font-size: 0.78rem;
+      font-weight: 300; letter-spacing: 0.14em;
+      color: rgba(245,240,232,0.5);
+    }
+    #ev-meta span { display: flex; align-items: center; gap: 0.5rem; }
+    #ev-body { padding: 4rem 2.4rem 3rem; max-width: 900px; }
+    #ev-desc {
+      font-family: 'Agbalumo', cursive; font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 300;
+      line-height: 1.75; color: rgba(245,240,232,0.85);
+      margin-bottom: 3rem;
+    }
+    #ev-detail-text {
+      font-family: 'ABeeZee', sans-serif; font-size: 0.95rem;
+      font-weight: 300; line-height: 1.85;
+      color: rgba(245,240,232,0.55);
+    }
+    #ev-highlights {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(193,123,5,0.1);
+      margin: 3rem 2.4rem; border: 1px solid rgba(193,123,5,0.1);
+    }
+    .ev-highlight-item {
+      background: #2D1B0E; padding: 2rem 1.8rem;
+    }
+    .ev-highlight-icon {
+      font-family: 'Agbalumo', cursive; font-size: 2rem;
+      color: #C17B05; margin-bottom: 0.8rem; line-height: 1;
+    }
+    .ev-highlight-label {
+      font-family: 'ABeeZee', sans-serif; font-size: 0.58rem;
+      font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); margin-bottom: 0.4rem;
+    }
+    .ev-highlight-val {
+      font-family: 'Agbalumo', cursive; font-weight: 300;
+      font-size: 1.1rem; color: rgba(245,240,232,0.8); line-height: 1.3;
+    }
 
-
-    /* ── MOBILE ────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .masthead-inner { grid-template-columns: 1fr; }
-      .masthead-side { display: none; }
-      #event-grid { padding: 2rem 1.2rem 4rem; gap: 1rem; }
-      .ev-full   { grid-column: span 12; height: 55vw; min-height: 280px; }
-      .ev-large  { grid-column: span 12; height: 55vw; min-height: 260px; }
-      .ev-medium { grid-column: span 12; height: 50vw; min-height: 240px; }
-      .ev-wide   { grid-column: span 12; height: 50vw; }
-      .ev-slim   { grid-column: span 12; height: 50vw; }
-      .ev-third  { grid-column: span 12; height: 50vw; }
-      .gallery-grid { grid-auto-rows: 140px; }
-      .g-tall  { grid-column: span 6; grid-row: span 2; }
-      .g-wide  { grid-column: span 6; grid-row: span 1; }
-      .g-half  { grid-column: span 6; }
-      .g-med   { grid-column: span 6; }
-      .g-full  { grid-column: span 12; }
-      #ev-body { padding: 2rem 1.2rem 4rem; }
-      #ev-hero { height: 65vh; }
-      #upcoming { padding: 3rem 1.2rem 0; }
-      .upcoming-inner { grid-template-columns: 1fr; min-height: auto; }
-      .upcoming-img-wrap { height: 55vw; }
-      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(193,123,5,0.1); border-top: none; }
-      #featured { padding: 4rem 1.2rem 0; }
-      .mag-divider { padding: 0 1.2rem; }
-      #top-nav { padding: 0.8rem 1.5rem; }
+    /* Overlay testimonials */
+    #ev-testimonials { padding: 2rem 2.4rem 5rem; background: #47331F; position: relative; }
+    #ev-testimonials::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(193,123,5,0.06) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    /* ── Contact footer grid ─────────────────────────────────────── */
+    /* ── CONTACT FOOTER ──────────────────────────────────────────── */
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 3rem;
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      position: relative; z-index: 1;
-      text-align: center;
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem; max-width: 800px; margin: 0 auto 4rem;
+      position: relative; z-index: 1; text-align: center;
     }
     .contact-col { padding: 2rem 0; }
-    .contact-col + .contact-col {
-      border-left: 1px solid rgba(193,123,5,0.12);
-    }
+    .contact-col + .contact-col { border-left: 1px solid rgba(193,123,5,0.12); }
     .contact-label {
       font-family: 'ABeeZee', sans-serif; font-size: 0.6rem;
       font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
@@ -524,7 +413,23 @@
       font-family: 'Agbalumo', cursive; font-size: 1.2rem;
       font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.72);
     }
+
+    /* ── MOBILE ──────────────────────────────────────────────────── */
     @media (max-width: 768px) {
+      .masthead-inner { grid-template-columns: 1fr; }
+      .masthead-side { display: none; }
+      #event-grid { padding: 2rem 1.2rem 4rem; gap: 1rem; }
+      .ev-large, .ev-medium, .ev-half { grid-column: span 12; height: 55vw; min-height: 260px; }
+      #top-nav { padding: 0.8rem 1.5rem; }
+      #upcoming { padding: 3rem 1.2rem 0; }
+      .upcoming-inner { grid-template-columns: 1fr; min-height: auto; }
+      .upcoming-img-wrap { height: 55vw; }
+      .upcoming-content { padding: 2.5rem 1.8rem; border-left: 1px solid rgba(193,123,5,0.1); border-top: none; }
+      #ev-body { padding: 2rem 1.2rem 3rem; }
+      #ev-hero { height: 65vh; }
+      #ev-highlights { grid-template-columns: 1fr; margin: 2rem 1.2rem; }
+      #ev-testimonials { padding: 2rem 1.2rem 4rem; }
+      #page-testimonials { padding: 3rem 1.2rem; }
       .contact-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
       .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(193,123,5,0.12) !important; }
     }
@@ -532,7 +437,7 @@
 </head>
 <body>
 
-  <!-- ── NAV ───────────────────────────────────────────────────── -->
+  <!-- ── NAV ────────────────────────────────────────────────────── -->
   <nav id="top-nav">
     <button class="nav-voltar" onclick="window.location.href='index.html'">
       <svg width="15" height="10" viewBox="0 0 15 10" fill="none" style="flex-shrink:0;">
@@ -554,84 +459,65 @@
     <div id="masthead-bg"></div>
     <div id="masthead-img"></div>
     <div id="masthead-glow"></div>
-
     <div class="masthead-inner">
       <div>
-        <p class="masthead-meta">Okulya Café</p>
-        <p class="masthead-issue">Vol. I &nbsp;·&nbsp; Edição Abril 2026 &nbsp;·&nbsp; Luanda, Angola</p>
+        <p class="masthead-meta">Okulya Café · Talatona</p>
+        <p class="masthead-issue">Eventos &nbsp;·&nbsp; Promoções &nbsp;·&nbsp; Serviços &nbsp;·&nbsp; Luanda, Angola</p>
         <h1 class="masthead-title">
-          Even<em>tos</em>
+          Experi<em>ências</em>
         </h1>
         <div class="masthead-divider"></div>
         <p class="masthead-tagline">
-          Uma curadoria de noites inesquecíveis, música ao vivo e experiências gastronómicas que definem o ritmo de Luanda.
+          Cada visita ao Okulya Café é uma ocasião. Explore o que temos preparado para si — dos nossos eventos semanais às celebrações mais especiais.
         </p>
-        <p class="masthead-scroll-hint">Explorar edição</p>
+        <p class="masthead-scroll-hint">Explorar</p>
       </div>
       <div class="masthead-side">
-        <span class="masthead-side-label">Cultura &amp; Gastronomia</span>
+        <span class="masthead-side-label">Eventos &amp; Serviços</span>
         <span class="masthead-side-label">2026</span>
       </div>
     </div>
   </section>
 
-  <!-- ── UPCOMING EVENT ────────────────────────────────────────── -->
+  <!-- ── FEATURED: AFTER WORK ───────────────────────────────────── -->
   <section id="upcoming">
-    <div class="section-label">Próximo evento</div>
-    <div class="upcoming-inner" onclick="openEvent('sextas')">
+    <div class="section-label">Evento semanal em destaque</div>
+    <div class="upcoming-inner" onclick="openEvent('afterwork')">
       <div class="upcoming-img-wrap">
-        <img src="dining-friday.png" alt="Sextas com RYBAY" />
+        <!-- Replace with After Work event photo when available -->
+        <img src="dining-cocktails.webp" alt="After Work Fridays" />
         <div class="upcoming-img-overlay"></div>
       </div>
       <div class="upcoming-content">
         <span class="upcoming-badge">
           <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#47331F"/></svg>
-          Esta semana
+          Todas as sextas
         </span>
         <div class="upcoming-date-block">
-          <div class="upcoming-date-day">25</div>
-          <div class="upcoming-date-rest">Abril 2026 &nbsp;·&nbsp; Sexta-feira &nbsp;·&nbsp; 20h00</div>
+          <div class="upcoming-date-day">After<br>Work</div>
+          <div class="upcoming-date-rest">Sextas-feiras &nbsp;·&nbsp; A partir das 20h00 &nbsp;·&nbsp; Talatona</div>
         </div>
         <div class="upcoming-divider"></div>
-        <h2 class="upcoming-title">Sextas com<br><em>RYBAY</em></h2>
-        <p class="upcoming-desc">Música ao vivo com RYBAY, menu especial À Moda do Chef e a energia única das sextas no Okulya Café. A noite perfeita para entrar no fim de semana com estilo.</p>
+        <h2 class="upcoming-title">After <em>QuickShop</em><br>Work</h2>
+        <p class="upcoming-desc">Onde o expediente termina e a noite verdadeira começa. Música envolvente, cocktails bem servidos, shisha para partilhar e um ambiente pensado para quem sabe apreciar o fim de semana.</p>
         <button class="upcoming-cta">
           <span class="upcoming-cta-line"></span>
-          Ver detalhes do evento
+          Saber mais
         </button>
       </div>
     </div>
   </section>
 
-  <!-- ── FEATURED (past events) ───────────────────────────────── -->
-  <section id="featured">
-    <div class="section-label" style="margin-bottom:2rem;">Edições passadas</div>
-
-    <div class="ev-card ev-full" onclick="openEvent('jazz')">
-      <img class="ev-card-img" src="dining-1.webp" alt="Wine &amp; Jazz" />
-      <div class="ev-card-body">
-        <p class="ev-card-tag">Todas as quartas &nbsp;·&nbsp; 19h00</p>
-        <h2 class="ev-card-title">Wine &amp; Jazz<br><em style="font-family:'Agbalumo',cursive;font-style:italic;color:#C17B05;">Night</em></h2>
-        <p class="ev-card-sub">Carta de vinhos curada · Música ao vivo · Mesa do Chef</p>
-      </div>
-      <div class="ev-card-arrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── GRID ───────────────────────────────────────────────────── -->
+  <!-- ── EVENT GRID ──────────────────────────────────────────────── -->
   <section id="event-grid">
 
-    <!-- Row 1: large + medium -->
-    <div class="ev-card ev-large" onclick="openEvent('sextas')">
-      <img class="ev-card-img" src="dining-friday.png" alt="Sextas com RYBAY" />
+    <div class="ev-card ev-large" onclick="openEvent('prato')">
+      <!-- Replace with Prato do Dia photo when available -->
+      <img class="ev-card-img" src="dining-salad.webp" alt="Prato do Dia" />
       <div class="ev-card-body">
-        <p class="ev-card-tag">Todas as sextas &nbsp;·&nbsp; 20h00</p>
-        <h2 class="ev-card-title">Sextas com<br>RYBAY</h2>
-        <p class="ev-card-sub">Música ao vivo · Menu especial do Chef</p>
+        <p class="ev-card-tag">Disponível todos os dias</p>
+        <h2 class="ev-card-title">Prato<br>do Dia</h2>
+        <p class="ev-card-sub">Apenas 5.000 Kz · Ingredientes frescos diários</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -640,12 +526,13 @@
       </div>
     </div>
 
-    <div class="ev-card ev-medium" onclick="openEvent('carnaval')">
-      <img class="ev-card-img" src="dining-2.webp" alt="Festa de Carnaval" />
+    <div class="ev-card ev-medium" onclick="openEvent('aniversario')">
+      <!-- Replace with Birthday event photo when available -->
+      <img class="ev-card-img" src="dining-coffee.webp" alt="Aniversário no Okulya" />
       <div class="ev-card-body">
-        <p class="ev-card-tag">Evento especial</p>
-        <h2 class="ev-card-title">Festa de<br>Carnaval</h2>
-        <p class="ev-card-sub">Gastronomia · Dança · Cultura angolana</p>
+        <p class="ev-card-tag">Reservas privadas</p>
+        <h2 class="ev-card-title">O Teu<br>Aniversário</h2>
+        <p class="ev-card-sub">Celebrações à medida · Grupos a partir de 10</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -654,20 +541,18 @@
       </div>
     </div>
 
-    <!-- Mag divider inside grid -->
     <div style="grid-column:span 12; display:flex; align-items:center; gap:2rem; margin: 0.5rem 0;">
       <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
-      <span style="font-family:'ABeeZee',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(193,123,5,0.35);">Agenda mensal</span>
+      <span style="font-family:'ABeeZee',sans-serif;font-size:0.42rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(193,123,5,0.35);">Espaço &amp; Serviços</span>
       <div style="flex:1;height:1px;background:rgba(193,123,5,0.12);"></div>
     </div>
 
-    <!-- Row 2: three equal -->
-    <div class="ev-card ev-third" onclick="openEvent('terca')">
-      <img class="ev-card-img" src="dining-tuesday.jpg" alt="Terça do Chefe" />
+    <div class="ev-card ev-half" onclick="openEvent('afterwork')">
+      <img class="ev-card-img" src="dining-cocktails.webp" alt="After Work" />
       <div class="ev-card-body">
-        <p class="ev-card-tag">Todas as terças &nbsp;·&nbsp; 19h00</p>
-        <h2 class="ev-card-title">Noite do<br>Chef</h2>
-        <p class="ev-card-sub">Menu exclusivo + caipirinha</p>
+        <p class="ev-card-tag">Todas as sextas · 20h00</p>
+        <h2 class="ev-card-title">After Work<br>Fridays</h2>
+        <p class="ev-card-sub">Música · Drinks · Shisha · Networking</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -676,55 +561,13 @@
       </div>
     </div>
 
-    <div class="ev-card ev-third" onclick="openEvent('segunda')">
-      <img class="ev-card-img" src="dining-monday.jpg" alt="Segunda Sem Lei" />
+    <div class="ev-card ev-half" onclick="openEvent('corporativo')">
+      <!-- Replace with corporate event photo when available -->
+      <img class="ev-card-img" src="dining-wine.webp" alt="Eventos Corporativos" />
       <div class="ev-card-body">
-        <p class="ev-card-tag">Todas as segundas &nbsp;·&nbsp; 18h00</p>
-        <h2 class="ev-card-title">Segunda<br>Sem Lei</h2>
-        <p class="ev-card-sub">20% nas carnes premium</p>
-      </div>
-      <div class="ev-card-arrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="ev-card ev-third" onclick="openEvent('quinta')">
-      <img class="ev-card-img" src="dining-thursday.jpg" alt="Quintas da Costela" />
-      <div class="ev-card-body">
-        <p class="ev-card-tag">Todas as quintas</p>
-        <h2 class="ev-card-title">Quintas da<br>Costela</h2>
-        <p class="ev-card-sub">2h cerveja Brava incluída</p>
-      </div>
-      <div class="ev-card-arrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Row 3: wide + slim -->
-    <div class="ev-card ev-wide" onclick="openEvent('cultural')">
-      <img class="ev-card-img" src="dining-3.webp" alt="Agenda Cultural" />
-      <div class="ev-card-body">
-        <p class="ev-card-tag">Mensal</p>
-        <h2 class="ev-card-title">Agenda<br>Cultural</h2>
-        <p class="ev-card-sub">Arte · Música · Gastronomia angolana</p>
-      </div>
-      <div class="ev-card-arrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#C17B05" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="ev-card ev-slim" onclick="openEvent('privado')">
-      <img class="ev-card-img" src="dining-2.webp" alt="Eventos Privados" />
-      <div class="ev-card-body">
-        <p class="ev-card-tag">Sob reserva</p>
-        <h2 class="ev-card-title">Eventos<br>Privados</h2>
-        <p class="ev-card-sub">Jantares corporativos · Aniversários</p>
+        <p class="ev-card-tag">Espaço empresarial</p>
+        <h2 class="ev-card-title">Eventos<br>Corporativos</h2>
+        <p class="ev-card-sub">Reuniões · Lançamentos · Networking</p>
       </div>
       <div class="ev-card-arrow">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -735,59 +578,82 @@
 
   </section>
 
-  <!-- ══════════════════════════════════════════════════ CONTACT FOOTER ══════ -->
-  <footer id="contact" style="
-    background:#2D1B0E;
-    border-top:1px solid rgba(193,123,5,0.12);
-    padding:7rem 2.4rem 4rem;
-    position:relative;
-    z-index:2;
-    overflow:hidden;
-  ">
+  <!-- ── PAGE TESTIMONIALS ──────────────────────────────────────── -->
+  <section id="page-testimonials">
+    <div class="section-label">O que dizem de nós</div>
+    <div class="test-slider-wrap">
+      <div class="test-slider-track" id="page-test-track">
+        <div class="test-card">
+          <p class="test-quote">O After Work do Quickshop tornou-se o ponto alto da minha semana. A música, os cocktails e a shisha criam uma atmosfera única em Talatona que não encontro em mais lado nenhum.</p>
+          <p class="test-author">M. Ferreira &nbsp;·&nbsp; After Work</p>
+          <p class="test-stars">★★★★★</p>
+        </div>
+        <div class="test-card">
+          <p class="test-quote">5.000 Kz por um prato desta qualidade é, honestamente, impressionante. Venho cá almoçar pelo menos três vezes por semana. A consistência deles é notável.</p>
+          <p class="test-author">L. Costa &nbsp;·&nbsp; Prato do Dia</p>
+          <p class="test-stars">★★★★★</p>
+        </div>
+        <div class="test-card">
+          <p class="test-quote">Organizei o meu aniversário aqui e foi a festa mais elogiada que já fiz. A equipa cuidou de cada detalhe com um profissionalismo e uma atenção que raramente se vê.</p>
+          <p class="test-author">S. Baptista &nbsp;·&nbsp; Celebração Privada</p>
+          <p class="test-stars">★★★★★</p>
+        </div>
+        <div class="test-card">
+          <p class="test-quote">Realizámos o nosso evento de final de ano aqui e foi o evento corporativo mais elogiado que já organizámos. A logística foi impecável e a qualidade da comida superou todas as expectativas.</p>
+          <p class="test-author">Dir. Operações, Grupo Luanda &nbsp;·&nbsp; Evento Corporativo</p>
+          <p class="test-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="test-slider-controls">
+      <button class="test-btn" id="page-prev" aria-label="Anterior">
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <line x1="13" y1="5" x2="1" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
+          <polyline points="5,1 1,5 5,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="test-dots" id="page-dots">
+        <div class="test-dot active"></div>
+        <div class="test-dot"></div>
+        <div class="test-dot"></div>
+        <div class="test-dot"></div>
+      </div>
+      <button class="test-btn" id="page-next" aria-label="Próximo">
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <line x1="1" y1="5" x2="13" y2="5" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round"/>
+          <polyline points="9,1 13,5 9,9" stroke="#C17B05" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </section>
 
-    <!-- Radial glow -->
-    <div style="position:absolute;inset:0;pointer-events:none;
-                background:radial-gradient(ellipse 70% 60% at 50% 0%,
-                  rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
-
-    <!-- Info grid -->
+  <!-- ── CONTACT FOOTER ─────────────────────────────────────────── -->
+  <footer id="contact" style="background:#2D1B0E;border-top:1px solid rgba(193,123,5,0.12);padding:7rem 2.4rem 4rem;position:relative;z-index:2;overflow:hidden;">
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(193,123,5,0.06) 0%, transparent 70%);"></div>
     <div class="contact-grid">
       <div class="contact-col">
         <span class="contact-label">Morada</span>
-        <p class="contact-val">Luanda, Angola</p>
+        <p class="contact-val">Talatona, Luanda</p>
       </div>
       <div class="contact-col">
         <span class="contact-label">Reservas</span>
-        <p class="contact-val">+244 900 000 000</p>
+        <p class="contact-val">+244 933 002 904</p>
       </div>
       <div class="contact-col">
-        <span class="contact-label">Horário</span>
-        <p class="contact-val">Seg – Dom<br>18h00 – 00h00</p>
+        <span class="contact-label">Instagram</span>
+        <p class="contact-val">@okulya.cafe</p>
       </div>
     </div>
-
-    <!-- Divider -->
-    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);
-                margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
-
-    <!-- Copyright -->
-    <p style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;font-weight:300;
-              letter-spacing:0.2em;text-transform:uppercase;
-              color:rgba(245,240,232,0.18);text-align:center;
-              position:relative;z-index:1;">
-      &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Luanda, Angola
+    <div style="width:48px;height:1px;background:rgba(193,123,5,0.22);margin:0 auto 2.5rem;position:relative;z-index:1;"></div>
+    <p style="font-family:'ABeeZee',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.18);text-align:center;position:relative;z-index:1;">
+      &copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Talatona, Luanda
     </p>
-
   </footer>
 
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       EVENT DETAIL OVERLAY
-  ═══════════════════════════════════════════════════════════════ -->
+  <!-- ── EVENT DETAIL OVERLAY ───────────────────────────────────── -->
   <div id="ev-overlay" role="dialog" aria-modal="true">
     <div id="ev-overlay-inner">
 
-      <!-- sticky overlay nav -->
       <nav id="ev-overlay-nav">
         <button class="nav-voltar" id="ev-close">
           <svg width="15" height="10" viewBox="0 0 15 10" fill="none" style="flex-shrink:0;">
@@ -799,7 +665,6 @@
         <img src="Brand Reasources/logo.png" alt="Okulya Café" class="nav-logo" />
       </nav>
 
-      <!-- Hero image -->
       <div id="ev-hero">
         <img id="ev-hero-img" src="" alt="" />
         <div id="ev-hero-overlay"></div>
@@ -808,19 +673,20 @@
           <h1 id="ev-title"></h1>
           <div id="ev-meta">
             <span id="ev-when"></span>
-            <span id="ev-time"></span>
-            <span id="ev-loc">Okulya Café, Luanda</span>
+            <span id="ev-loc">Quickshop by Okulya Café, Talatona</span>
           </div>
         </div>
       </div>
 
-      <!-- Body text -->
       <div id="ev-body">
         <p id="ev-desc"></p>
         <p id="ev-detail-text"></p>
       </div>
 
-      <!-- Testimonials slider -->
+      <div id="ev-highlights">
+        <!-- filled by JS -->
+      </div>
+
       <section id="ev-testimonials">
         <div class="section-label">O que dizem</div>
         <div class="test-slider-wrap">
@@ -843,172 +709,113 @@
         </div>
       </section>
 
-      <!-- Gallery -->
-      <section id="ev-gallery">
-        <div class="section-label">Galeria</div>
-        <div class="gallery-grid" id="gal-grid"></div>
-      </section>
-
     </div>
   </div>
 
-
   <script>
-    /* ── EVENT DATA ─────────────────────────────────────────────── */
     const EVENTS = {
-      jazz: {
-        tag: 'Todas as quartas · 19h00',
-        title: 'Wine &amp; Jazz <em>Night</em>',
-        when: 'Toda quarta-feira',
-        time: '19h00 — encerramento',
-        img: 'dining-1.webp',
-        desc: 'Uma noite construída em torno do silêncio que só o jazz pode criar — quebrado pelas notas certas, pelo vinho certo, pelo prato certo.',
-        detail: 'Cada quarta-feira, o Okulya Café transforma-se num palco intimista para os melhores músicos de jazz de Luanda e convidados internacionais. A nossa carta de vinhos, curada pelo sommelier da casa, apresenta mais de 40 rótulos seleccionados. O menu do Chef muda a cada semana, reflectindo o melhor do mercado local e a visão criativa da nossa cozinha. Mesas limitadas — reserva antecipada recomendada.',
-        testimonials: [
-          { quote: 'A melhor noite de jazz que já vivi fora de Lisboa. O ambiente, a comida, o vinho — tudo numa sintonia perfeita.', author: 'Maria C.', stars: '★★★★★' },
-          { quote: 'Vim pela primeira vez numa quarta e não consigo parar de voltar. O trio de jazz e o risotto de marisco são incomparáveis.', author: 'João A.', stars: '★★★★★' },
-          { quote: 'O sommelier recomendou um Douro que nunca tinha provado. Casamento perfeito com o entrecôte. Experiência memorável.', author: 'Carla M.', stars: '★★★★★' },
+      afterwork: {
+        tag: 'Todas as sextas · A partir das 20h00',
+        title: 'After <em>QuickShop</em> Work',
+        when: 'Todas as sextas-feiras',
+        img: 'dining-cocktails.webp',
+        desc: 'Onde o expediente termina e a noite verdadeira começa — música envolvente, cocktails bem servidos e um ambiente pensado para quem sabe que os melhores momentos acontecem depois do trabalho.',
+        detail: 'Todas as sextas-feiras, o Quickshop by Okulya Café em Talatona transforma-se no ponto de encontro preferido de profissionais e criativos que procuram encerrar a semana com qualidade. O After Work reúne uma atmosfera vibrante mas relaxada — com música a dar o tom certo, shisha para partilhar, uma carta de cocktails cuidadosamente elaborada e um menu de petiscos pensado para a ocasião. Mais do que uma saída ao final do dia, é um espaço de conexões reais, onde ideias fluem e a semana se dissolve com estilo. Para grupos com reserva prévia, oferecemos mesas reservadas e um serviço personalizado.',
+        highlights: [
+          { icon: '♪', label: 'Ambiente', val: 'Música envolvente' },
+          { icon: '◎', label: 'Localização', val: 'Talatona' },
+          { icon: '✦', label: 'Contacto', val: '+244 933 002 904' },
         ],
-        galleryImgs: ['dining-1.webp','dining-2.webp','dining-3.webp','dining-tuesday.jpg','dining-friday.png','dining-monday.jpg'],
-        galleryTypes: ['photo','photo','photo','photo','photo','photo'],
-      },
-      sextas: {
-        tag: 'Todas as sextas · 20h00',
-        title: 'Sextas com <em>RYBAY</em>',
-        when: 'Toda sexta-feira',
-        time: '20h00 — encerramento',
-        img: 'dining-friday.png',
-        desc: 'O fim de semana começa quando RYBAY pega na guitarra e o Chef abre o seu menu mais ousado da semana.',
-        detail: 'As sextas no Okulya Café têm uma energia única. RYBAY, um dos artistas mais talentosos da cena musical de Luanda, toca ao vivo enquanto a cozinha serve o Menu Especial À Moda do Chef — um percurso de 5 momentos que celebra a fusão entre a cozinha angolana e técnicas de alta gastronomia. Ambiente vibrante, mas elegante. A noite perfeita para entrar no fim de semana com estilo.',
         testimonials: [
-          { quote: 'RYBAY ao vivo é uma experiência que não se descreve. E a costela do Chef? Absurda — no bom sentido.', author: 'Pedro L.', stars: '★★★★★' },
-          { quote: 'Trouxe clientes de Lisboa para jantar e ficaram boquiabertos. Disseram que era melhor do que qualquer restaurante europeu que frequentam.', author: 'Ana B.', stars: '★★★★★' },
-          { quote: 'As sextas aqui tornaram-se o meu ritual semanal. A música, a comida e a equipa fazem sempre sentir que somos especiais.', author: 'Miguel S.', stars: '★★★★★' },
+          { quote: 'O After Work do Quickshop tornou-se o ponto alto da minha semana. A música, os cocktails e a shisha criam uma atmosfera que não encontro em mais lado nenhum em Talatona.', author: 'M. Ferreira', stars: '★★★★★' },
+          { quote: 'Vim por recomendação de um colega e não voltei ao escritório sem passar por aqui às sextas. A equipa recebe-nos sempre como se fôssemos clientes de sempre.', author: 'P. Almeida', stars: '★★★★★' },
+          { quote: 'O lugar certo, com as pessoas certas, na hora certa. O Okulya Café percebeu exatamente o que faltava em Luanda.', author: 'A. Santos', stars: '★★★★★' },
         ],
-        galleryImgs: ['dining-friday.png','dining-1.webp','dining-3.webp','dining-2.webp','dish-1.webp','dish-2.webp'],
-        galleryTypes: ['photo','photo','video','photo','photo','video'],
       },
-      carnaval: {
-        tag: 'Evento especial anual',
-        title: 'Festa de <em>Carnaval</em>',
-        when: 'Época de Carnaval',
-        time: 'Edição limitada',
-        img: 'dining-2.webp',
-        desc: 'Uma celebração que mistura os sabores mais profundos de Angola com a euforia da época mais colorida do ano.',
-        detail: 'A Festa de Carnaval do Okulya Café é o evento mais aguardado do ano. Durante a época de Carnaval, o restaurante veste-se de cor e energia com um programa especial de 3 noites: música ao vivo com bandas convidadas, menu temático com pratos tradicionais angolanos reinterpretados, cocktails exclusivos criados para a ocasião e actuações de dança. Uma imersão total na cultura e gastronomia angolana.',
+
+      prato: {
+        tag: 'Disponível todos os dias',
+        title: 'Prato <em>do Dia</em>',
+        when: 'Todos os dias · Enquanto houver',
+        img: 'dining-salad.webp',
+        desc: 'O melhor da cozinha do Okulya Café num único prato, preparado diariamente com os ingredientes mais frescos do mercado — a 5.000 Kz.',
+        detail: 'O Prato do Dia do Quickshop by Okulya Café é a nossa forma de garantir que uma refeição de qualidade está ao alcance de todos os dias. Preparado de manhã com ingredientes selecionados no mercado local, o prato muda diariamente para refletir a sazonalidade e a criatividade da nossa cozinha. Sabor, apresentação cuidada e rapidez de serviço num único prato irresistível. Disponível para consumo no espaço ou por encomenda via telefone. Recomendamos que chegue cedo — quando acaba, acaba.',
+        highlights: [
+          { icon: '✦', label: 'Preço', val: 'Apenas 5.000 Kz' },
+          { icon: '◉', label: 'Disponibilidade', val: 'Todos os dias' },
+          { icon: '☏', label: 'Encomenda', val: '+244 933 002 904' },
+        ],
         testimonials: [
-          { quote: 'Nunca tinha visto o Carnaval desta forma. Comi, dancei e saí com lágrimas nos olhos de tanta emoção. Que noite!', author: 'Luísa F.', stars: '★★★★★' },
-          { quote: 'O muamba que serviram nessa noite fez-me lembrar a comida da minha avó. Perfeito. Absolutamente perfeito.', author: 'Eduardo K.', stars: '★★★★★' },
-          { quote: 'Vim com um grupo de 12 pessoas e toda a gente ainda fala no jantar de Carnaval do Okulya Café.', author: 'Sofia N.', stars: '★★★★★' },
+          { quote: '5.000 Kz por um prato desta qualidade é, honestamente, impressionante. Venho cá almoçar pelo menos três vezes por semana e nunca repete.', author: 'L. Costa', stars: '★★★★★' },
+          { quote: 'Nunca sei o que vai ser o Prato do Dia, mas sei sempre que vai ser bom. A consistência deles é o que nos faz voltar sempre.', author: 'R. Neto', stars: '★★★★★' },
+          { quote: 'Encomendei por telefone pela primeira vez e chegou rápido e bem apresentado. O Okulya Café percebe o que os clientes precisam.', author: 'C. Lima', stars: '★★★★★' },
         ],
-        galleryImgs: ['dining-2.webp','dining-1.webp','dining-3.webp','dining-tuesday.jpg','dish-3.webp','dish-4.webp'],
-        galleryTypes: ['photo','video','photo','photo','photo','video'],
       },
-      terca: {
-        tag: 'Todas as terças · 19h00',
-        title: 'Noite do <em>Chef</em>',
-        when: 'Toda terça-feira',
-        time: '19h00 — encerramento',
-        img: 'dining-tuesday.jpg',
-        desc: 'Uma mesa para os curiosos — onde o Chef partilha a sua visão sem filtros, com ingredientes que chegaram nessa manhã ao mercado.',
-        detail: 'As terças pertencem ao Chef. É a noite em que a criatividade da cozinha do Okulya Café não tem limites. O menu é surpresa e muda todas as semanas, mas uma coisa é certa: começa sempre com uma rodada de caipirinha por nossa conta para cada cliente. Ingredientes locais, técnica internacional, resultado imprevisível — mas sempre extraordinário. Para reservas de grupo, é possível solicitar uma visita à cozinha.',
-        testimonials: [
-          { quote: 'Nunca sei o que vai aparecer na mesa, mas sei sempre que vai ser incrível. É a minha noite favorita da semana.', author: 'Ricardo A.', stars: '★★★★★' },
-          { quote: 'A caipirinha de boas-vindas já devia ser lei em todos os restaurantes. E o menu? Teatro puro na mesa.', author: 'Cristina V.', stars: '★★★★★' },
-          { quote: 'O Chef passou pela mesa para explicar o menu. Uma pessoa apaixonada. Sente-se em cada prato.', author: 'Nuno P.', stars: '★★★★★' },
-        ],
-        galleryImgs: ['dining-tuesday.jpg','dish-1.webp','dish-2.webp','dining-1.webp','dish-3.webp','dish-4.webp'],
-        galleryTypes: ['photo','photo','video','photo','photo','photo'],
-      },
-      segunda: {
-        tag: 'Todas as segundas · 18h00',
-        title: 'Segunda <em>Sem Lei</em>',
-        when: 'Toda segunda-feira',
-        time: '18h00 — encerramento',
-        img: 'dining-monday.jpg',
-        desc: 'Porque a segunda-feira não precisa de ser o dia mais duro da semana. Comece a semana como se fosse um sábado.',
-        detail: 'A Segunda Sem Lei é a forma do Okulya Café dizer que a semana merece começar com alegria. Todos os clientes que jantem às segundas beneficiam de 20% de desconto em toda a carta de carnes premium — dos cortes americanos aged aos medalhões da costa angolana. Sem código de desconto, sem complicações. Só boa carne, bom vinho e boa energia.',
-        testimonials: [
-          { quote: 'Descobri as Segundas Sem Lei há 3 meses e desde então raramente janto segunda em casa. O desconto nas carnes é real e a qualidade ainda melhor.', author: 'Carlos M.', stars: '★★★★★' },
-          { quote: 'O entrecôte com 20% foi literalmente o melhor jantar de segunda que tive na vida.', author: 'Patrícia L.', stars: '★★★★★' },
-          { quote: 'Vim com a equipa do escritório. Saímos unidos para a semana toda. Magia.', author: 'Fernando T.', stars: '★★★★★' },
-        ],
-        galleryImgs: ['dining-monday.jpg','dish-1.webp','dining-2.webp','dish-2.webp','dining-3.webp','dish-4.webp'],
-        galleryTypes: ['photo','photo','photo','video','photo','photo'],
-      },
-      quinta: {
-        tag: 'Todas as quintas',
-        title: 'Quintas da <em>Costela</em>',
-        when: 'Toda quinta-feira',
-        time: 'A partir das 19h00',
-        img: 'dining-thursday.jpg',
-        desc: 'A costela premium do Okulya Café com 2 horas de cerveja Brava incluída. Noite de generosidade pura.',
-        detail: 'Na quinta-feira, a costela é rainha. O nosso corte de costela premium — marinado por 24 horas e assado lentamente — vem acompanhado por 2 horas de cerveja Brava por nossa conta para cada cliente que pedir o prato. Uma promoção que celebra a generosidade angolana e a nossa paixão por grandes cortes. Disponível enquanto houver stock — chegue cedo.',
-        testimonials: [
-          { quote: 'A costela desfaz-se na boca. Já comi costela em muitos sítios mas esta tem qualquer coisa diferente. E a Brava de brinde? Perfeito.', author: 'Tiago R.', stars: '★★★★★' },
-          { quote: 'A minha quinta perfeita: costela, cerveja, boa conversa. O Okulya Café percebeu o que a vida deve ser.', author: 'Daniela C.', stars: '★★★★★' },
-          { quote: 'Marquei com amigos às 20h e já não havia mais costela. Aprendi a chegar mais cedo. Mas valeu a pena a espera por outra noite.', author: 'Alexandre M.', stars: '★★★★★' },
-        ],
-        galleryImgs: ['dining-thursday.jpg','dish-1.webp','dish-3.webp','dining-1.webp','dish-2.webp','dining-2.webp'],
-        galleryTypes: ['photo','photo','photo','video','photo','photo'],
-      },
-      cultural: {
-        tag: 'Mensal',
-        title: 'Agenda <em>Cultural</em>',
-        when: 'Mensal — ver calendário',
-        time: 'Horário variável',
-        img: 'dining-3.webp',
-        desc: 'Um mês, uma agenda. Arte, música e gastronomia em diálogo permanente — o Okulya Café como palco da cultura angolana.',
-        detail: 'A Agenda Cultural do Okulya Café é um programa mensal que convida artistas, músicos, escritores e chefs convidados a partilhar a sua visão com os nossos clientes. Cada edição é diferente: pode ser um jantar com um artista plástico cujas obras decoram a sala durante a noite, uma sessão de poesia ao vivo acompanhada de cocktails, ou um showcooking com um chef convidado de outro país africano. Consulte a agenda do mês nas nossas redes sociais.',
-        testimonials: [
-          { quote: 'Fui à edição de Março com uma exposição fotográfica. Fiquei uma hora a olhar para as fotos entre pratos. Arte e comida — que combinação.', author: 'Beatriz A.', stars: '★★★★★' },
-          { quote: 'A edição com o chef moçambicano foi extraordinária. Fusão real, sem artificialidade. Esperamos mais.', author: 'Henrique S.', stars: '★★★★★' },
-          { quote: 'É raro um restaurante ter esta visão cultural. O Okulya Café não é só um restaurante — é um espaço de cultura mesmo.', author: 'Inês M.', stars: '★★★★★' },
-        ],
-        galleryImgs: ['dining-3.webp','dining-1.webp','falafel-bowl-bg.webp','dining-2.webp','dish-1.webp','dining-friday.png'],
-        galleryTypes: ['photo','video','photo','photo','photo','photo'],
-      },
-      privado: {
-        tag: 'Sob reserva',
-        title: 'Eventos <em>Privados</em>',
+
+      aniversario: {
+        tag: 'Reservas privadas',
+        title: 'O Teu <em>Aniversário</em>',
         when: 'Mediante disponibilidade',
-        time: 'Horário personalizado',
-        img: 'dining-2.webp',
-        desc: 'O Okulya Café a tempo inteiro, para celebrar os seus momentos mais importantes com a mesma excelência que nos define.',
-        detail: 'Aniversários, jantares corporativos, lançamentos de produto, celebrações de casamento — o Okulya Café está disponível para eventos privados de 20 a 120 pessoas em regime exclusivo. A nossa equipa de eventos trabalha consigo na criação de um menu personalizado, decoração temática e programação musical. Contacte-nos para receber uma proposta à medida.',
-        testimonials: [
-          { quote: 'Organizei o jantar de aniversário da empresa aqui e foi o evento corporativo mais elogiado que já organizámos. A equipa cuidou de tudo.', author: 'Directora RH, Empresa Luanda', stars: '★★★★★' },
-          { quote: 'Celebrei os meus 40 anos com família e amigos. O Chef criou um menu especial com os meus pratos favoritos. Nunca me senti tão especial.', author: 'Fernanda C.', stars: '★★★★★' },
-          { quote: 'Logística impecável, comida extraordinária, staff discreto e profissional. Recomendo sem hesitar.', author: 'Jorge A.', stars: '★★★★★' },
+        img: 'dining-coffee.webp',
+        desc: 'Porque as memórias mais importantes merecem o cenário certo. O Okulya Café recebe a tua celebração com a atenção e o cuidado que o momento exige.',
+        detail: 'No Quickshop by Okulya Café transformamos qualquer celebração num momento inesquecível. Aniversários, casamentos, baptizados ou qualquer ocasião especial — a nossa equipa trabalha consigo na criação de uma experiência à medida: menu personalizado com os pratos que preferir, decoração temática, ambiente exclusivo e um serviço que garante que o único trabalho seu é desfrutar. Aceitamos reservas para grupos a partir de 10 pessoas. Contacte-nos para receber uma proposta personalizada sem compromisso.',
+        highlights: [
+          { icon: '✦', label: 'Capacidade', val: 'A partir de 10 pessoas' },
+          { icon: '◎', label: 'Menu', val: 'Personalizado' },
+          { icon: '☏', label: 'Reservas', val: '+244 933 002 904' },
         ],
-        galleryImgs: ['dining-2.webp','dining-1.webp','dining-3.webp','dining-friday.png','dish-3.webp','falafel-bowl-bg.webp'],
-        galleryTypes: ['photo','photo','video','photo','photo','photo'],
+        testimonials: [
+          { quote: 'Organizei o meu aniversário aqui e foi a festa mais elogiada que já fiz. A equipa cuidou de cada detalhe com um profissionalismo que raramente se encontra.', author: 'S. Baptista', stars: '★★★★★' },
+          { quote: 'O Chef criou um menu com os meus pratos favoritos. Nunca me senti tão bem tratada num restaurante. Os meus convidados ainda falam nisso.', author: 'F. Cardoso', stars: '★★★★★' },
+          { quote: 'Escolhi o Okulya Café para celebrar os meus 30 anos e não podia ter feito melhor escolha. Perfeito do início ao fim.', author: 'M. Dias', stars: '★★★★★' },
+        ],
+      },
+
+      corporativo: {
+        tag: 'Espaço empresarial',
+        title: 'Eventos <em>Corporativos</em>',
+        when: 'Mediante disponibilidade',
+        img: 'dining-wine.webp',
+        desc: 'Um espaço com a sofisticação necessária para elevar qualquer encontro profissional — da reunião de equipa ao lançamento de produto.',
+        detail: 'O Quickshop by Okulya Café disponibiliza o seu espaço para eventos empresariais de diferentes formatos e dimensões. Almoços de negócios, sessões de networking, apresentações de produto, celebrações de equipa, reuniões de direção ou eventos de fim de ano — a nossa equipa assegura catering personalizado, configuração de sala adaptada ao evento e um suporte completo do início ao fim. A elegância do espaço e a qualidade da gastronomia fazem o resto. Contacte-nos para verificar disponibilidade e receber uma proposta detalhada.',
+        highlights: [
+          { icon: '◉', label: 'Formato', val: 'Totalmente adaptável' },
+          { icon: '✦', label: 'Catering', val: 'Menu personalizado' },
+          { icon: '☏', label: 'Contacto', val: '+244 933 002 904' },
+        ],
+        testimonials: [
+          { quote: 'Realizámos o nosso evento de final de ano aqui e foi o evento corporativo mais elogiado que já organizámos. A logística foi impecável e a comida superou todas as expectativas.', author: 'Dir. Operações, Grupo Luanda', stars: '★★★★★' },
+          { quote: 'O almoço de negócios com clientes internacionais foi um sucesso total. O espaço impressionou e a qualidade da comida fechou a parceria.', author: 'G. António', stars: '★★★★★' },
+          { quote: 'Profissionalismo, qualidade e atenção ao detalhe em cada aspeto. O Okulya Café é o nosso parceiro preferido para eventos empresariais.', author: 'Gestora de Eventos, Luanda', stars: '★★★★★' },
+        ],
       },
     };
 
-    /* Gallery layout patterns (cycles through) */
-    const GAL_LAYOUTS = [
-      ['g-tall','g-wide','g-half','g-wide','g-half'],
-      ['g-med','g-med','g-tall','g-half','g-wide'],
-    ];
-
-    const overlay   = document.getElementById('ev-overlay');
-    const evClose   = document.getElementById('ev-close');
+    const overlay = document.getElementById('ev-overlay');
+    const evClose = document.getElementById('ev-close');
 
     function openEvent(key) {
       const ev = EVENTS[key];
       if (!ev) return;
 
       document.getElementById('ev-hero-img').src = ev.img;
-      document.getElementById('ev-hero-img').alt = ev.title.replace(/<[^>]+>/g,'');
+      document.getElementById('ev-hero-img').alt = ev.title.replace(/<[^>]+>/g, '');
       document.getElementById('ev-tag').textContent = ev.tag;
       document.getElementById('ev-title').innerHTML = ev.title;
       document.getElementById('ev-when').textContent = ev.when;
-      document.getElementById('ev-time').textContent = ev.time;
       document.getElementById('ev-desc').textContent = ev.desc;
       document.getElementById('ev-detail-text').textContent = ev.detail;
 
-      // Testimonials slider
+      // Highlights
+      document.getElementById('ev-highlights').innerHTML = ev.highlights.map(h => `
+        <div class="ev-highlight-item">
+          <div class="ev-highlight-icon">${h.icon}</div>
+          <div class="ev-highlight-label">${h.label}</div>
+          <div class="ev-highlight-val">${h.val}</div>
+        </div>
+      `).join('');
+
+      // Testimonials
       const track = document.getElementById('test-track');
       const dots  = document.getElementById('test-dots');
       track.innerHTML = ev.testimonials.map(t => `
@@ -1018,29 +825,13 @@
           <p class="test-stars">${t.stars}</p>
         </div>
       `).join('');
-      dots.innerHTML = ev.testimonials.map((_,i) =>
-        `<div class="test-dot${i===0?' active':''}"></div>`
+      dots.innerHTML = ev.testimonials.map((_, i) =>
+        `<div class="test-dot${i === 0 ? ' active' : ''}"></div>`
       ).join('');
       track._idx = 0;
       track._total = ev.testimonials.length;
       track.style.transform = 'translateX(0)';
 
-      // Gallery
-      const gg = document.getElementById('gal-grid');
-      const layout = GAL_LAYOUTS[Object.keys(EVENTS).indexOf(key) % GAL_LAYOUTS.length];
-      gg.innerHTML = ev.galleryImgs.map((img, i) => {
-        const cls  = layout[i % layout.length];
-        const type = ev.galleryTypes[i];
-        const playBtn = type === 'video'
-          ? `<div class="play-btn"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#C17B05"/></svg></div>`
-          : '';
-        return `<div class="gal-item ${cls} ${type === 'video' ? 'video-item' : ''}">
-          <img src="${img}" alt="" loading="lazy" />
-          ${playBtn}
-        </div>`;
-      }).join('');
-
-      // Open overlay — push history so browser back closes it
       overlay.scrollTop = 0;
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -1053,7 +844,6 @@
     }
 
     function closeEvent() {
-      // Go back in history (popstate will call _closeOverlayDOM)
       if (history.state && history.state.event) {
         history.back();
       } else {
@@ -1062,39 +852,52 @@
       }
     }
 
-    // Browser back: if overlay is open, just close it
     window.addEventListener('popstate', () => {
-      if (overlay.classList.contains('open')) {
-        _closeOverlayDOM();
-      }
+      if (overlay.classList.contains('open')) _closeOverlayDOM();
     });
 
     evClose.addEventListener('click', closeEvent);
 
-    // Testimonial slider controls
-    function sliderGoTo(idx) {
-      const track = document.getElementById('test-track');
-      const dotEls = document.querySelectorAll('.test-dot');
+    // Overlay testimonial slider
+    function sliderGoTo(trackId, dotsId, idx) {
+      const track = document.getElementById(trackId);
+      const dotEls = document.querySelectorAll('#' + dotsId + ' .test-dot');
       if (!track || !track._total) return;
       idx = (idx + track._total) % track._total;
       track._idx = idx;
-      const cardWidth = track.parentElement.clientWidth;
-      track.style.transform = `translateX(-${idx * cardWidth}px)`;
-      dotEls.forEach((d,i) => d.classList.toggle('active', i === idx));
+      track.style.transform = `translateX(-${idx * track.parentElement.clientWidth}px)`;
+      dotEls.forEach((d, i) => d.classList.toggle('active', i === idx));
     }
+
     document.getElementById('test-prev').addEventListener('click', () => {
       const t = document.getElementById('test-track');
-      if (t) sliderGoTo((t._idx || 0) - 1);
+      sliderGoTo('test-track', 'test-dots', (t._idx || 0) - 1);
     });
     document.getElementById('test-next').addEventListener('click', () => {
       const t = document.getElementById('test-track');
-      if (t) sliderGoTo((t._idx || 0) + 1);
+      sliderGoTo('test-track', 'test-dots', (t._idx || 0) + 1);
     });
 
-    // Close on Escape
+    // Page-level testimonial slider
+    (function () {
+      const track = document.getElementById('page-test-track');
+      track._idx = 0;
+      track._total = track.children.length;
+      document.getElementById('page-prev').addEventListener('click', () =>
+        sliderGoTo('page-test-track', 'page-dots', (track._idx || 0) - 1)
+      );
+      document.getElementById('page-next').addEventListener('click', () =>
+        sliderGoTo('page-test-track', 'page-dots', (track._idx || 0) + 1)
+      );
+    })();
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeEvent();
     });
+
+    // Deep-link
+    const h = (location.hash || '').replace('#', '');
+    if (h && EVENTS[h]) openEvent(h);
   </script>
 </body>
 </html>
