@@ -259,57 +259,6 @@
       color: rgba(241,255,255,0.45);
     }
 
-    /* ── CTA SECTION ──────────────────────────────────────────── */
-    #cta {
-      text-align: center;
-      padding: 6rem 2.4rem 7rem;
-      border-top: 1px solid rgba(237,155,35,0.08);
-      position: relative; overflow: hidden;
-    }
-    #cta::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(237,155,35,0.07) 0%, transparent 65%);
-    }
-    .cta-heading {
-      font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      color: #F1FFFF; letter-spacing: -0.02em; line-height: 1.05;
-      margin-bottom: 1rem; position: relative; z-index: 1;
-    }
-    .cta-sub {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 0.82rem; font-weight: 300; line-height: 1.7;
-      color: rgba(241,255,255,0.4); max-width: 44ch;
-      margin: 0 auto 2.4rem; position: relative; z-index: 1;
-    }
-    .cta-btns {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-      position: relative; z-index: 1;
-    }
-    .btn-primary {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: #000000; background: #ED9B23;
-      border: none; cursor: pointer; text-decoration: none;
-      padding: 1rem 2.4rem; border-radius: 2px;
-      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
-      display: inline-block;
-    }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
-    .btn-outline {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 0.68rem; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(241,255,255,0.6);
-      border: 1px solid rgba(241,255,255,0.18);
-      background: none; cursor: pointer; text-decoration: none;
-      padding: 1rem 2.4rem; border-radius: 2px;
-      transition: border-color 0.22s ease, color 0.22s ease;
-      display: inline-block;
-    }
-    .btn-outline:hover { border-color: #ED9B23; color: #ED9B23; }
-
     /* ── FOOTER ───────────────────────────────────────────────── */
     .contact-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
@@ -356,7 +305,6 @@
       .contact-col + .contact-col { border-left: none !important; border-top: 1px solid rgba(237,155,35,0.12) !important; }
       .story-section { padding: 5rem 1.6rem; }
       #lunch-pitch { padding: 5rem 1.6rem; }
-      #cta { padding: 5rem 1.6rem; }
       .hero-scroll-hint { display: none; }
     }
   </style>
@@ -481,16 +429,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── CTA ────────────────────────────────────────────────────── -->
-  <section id="cta">
-    <h2 class="cta-heading">Venha conhecer-nos</h2>
-    <p class="cta-sub">De segunda a sexta das 7h às 20h, e ao fim de semana das 7h às 18h. Estamos à sua espera em Talatona.</p>
-    <div class="cta-btns">
-      <a href="menu.html" class="btn-primary">Ver o Menu</a>
-      <a href="events.html" class="btn-outline">Eventos &amp; Experiências</a>
     </div>
   </section>
 
