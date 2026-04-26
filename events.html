@@ -624,22 +624,7 @@
   <!-- ── GRID ───────────────────────────────────────────────────── -->
   <section id="event-grid">
 
-    <!-- Row 1: large + medium -->
-    <div class="ev-card ev-large" onclick="openEvent('carnaval')">
-      <img class="ev-card-img" src="dining-2.webp" alt="Festa de Carnaval" />
-      <div class="ev-card-body">
-        <p class="ev-card-tag">Evento especial anual</p>
-        <h2 class="ev-card-title">Festa de<br>Carnaval</h2>
-        <p class="ev-card-sub">Gastronomia · Dança · Cultura angolana</p>
-      </div>
-      <div class="ev-card-arrow">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="#ED9B23" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="ev-card ev-medium" onclick="openEvent('descontos')">
+    <div class="ev-card ev-full" onclick="openEvent('descontos')">
       <img class="ev-card-img" src="dining-pastry.webp" alt="Promoções e Descontos" />
       <div class="ev-card-body">
         <p class="ev-card-tag">Para todos os clientes</p>
@@ -882,22 +867,6 @@
         ],
         galleryImgs: ['dining-wine.webp','dining-1.webp','dining-2.webp','dining-3.webp','dish-1.webp','falafel-bowl-bg.webp'],
         galleryTypes: ['photo','photo','video','photo','photo','photo'],
-      },
-      carnaval: {
-        tag: 'Evento especial anual',
-        title: 'Festa de <em>Carnaval</em>',
-        when: 'Época de Carnaval',
-        time: 'Edição limitada',
-        img: 'dining-2.webp',
-        desc: 'Uma celebração que mistura os sabores mais profundos de Angola com a euforia da época mais colorida do ano.',
-        detail: 'A Festa de Carnaval do Okulya Café é o evento mais aguardado do ano. Durante a época de Carnaval, o restaurante veste-se de cor e energia com um programa especial de 3 noites: música ao vivo com bandas convidadas, menu temático com pratos tradicionais angolanos reinterpretados, cocktails exclusivos criados para a ocasião e actuações de dança. Uma imersão total na cultura e gastronomia angolana.',
-        testimonials: [
-          { quote: 'Nunca tinha visto o Carnaval desta forma. Comi, dancei e saí com lágrimas nos olhos de tanta emoção. Que noite!', author: 'Luísa F.', stars: '★★★★★' },
-          { quote: 'O muamba que serviram nessa noite fez-me lembrar a comida da minha avó. Perfeito. Absolutamente perfeito.', author: 'Eduardo K.', stars: '★★★★★' },
-          { quote: 'Vim com um grupo de 12 pessoas e toda a gente ainda fala no jantar de Carnaval do Okulya Café.', author: 'Sofia N.', stars: '★★★★★' },
-        ],
-        galleryImgs: ['dining-2.webp','dining-1.webp','dining-3.webp','dining-tuesday.jpg','dish-3.webp','dish-4.webp'],
-        galleryTypes: ['photo','video','photo','photo','photo','video'],
       },
       descontos: {
         tag: 'Para todos os clientes',
