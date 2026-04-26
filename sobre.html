@@ -261,7 +261,7 @@
 
     /* ── FOOTER ───────────────────────────────────────────────── */
     .contact-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
     }
     .contact-col {
       padding: 2.4rem; border-left: 1px solid rgba(237,155,35,0.12);
@@ -332,9 +332,10 @@
       position: absolute; opacity: 0;
       transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1);
       pointer-events: auto; display: block;
+      mix-blend-mode: color;
     }
-    .bean-sprite.in-view { opacity: var(--op, 0.07); }
-    .bean-sprite:hover { opacity: 0.22 !important; transition: opacity 0.18s ease; cursor: default; }
+    .bean-sprite.in-view { opacity: var(--op, 0.55); }
+    .bean-sprite:hover { opacity: 0.9 !important; transition: opacity 0.18s ease; cursor: default; }
     .bean-cluster { position: absolute; pointer-events: none; z-index: 2; }
     .bean-cluster .bean-sprite { pointer-events: auto; }
     @media (max-width: 768px) { .bean-cluster { transform: scale(0.65); transform-origin: top left; } }
@@ -365,7 +366,7 @@
       </svg>
       Voltar
     </a>
-    <img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café" />
+    <a href="index.html" style="display:block;line-height:0;"><img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café" /></a>
     <a href="menu.html" style="flex:1;text-align:right;font-family:'Quicksand',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(241,255,255,0.45);text-decoration:none;transition:color 0.22s ease;" onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(241,255,255,0.45)'">Menu</a>
   </nav>
 
@@ -507,19 +508,14 @@
           <a href="https://www.google.com/maps/dir//Quick+Shop,+35MX%2B4RC,+Unnamed+Road,+Belas,+Angola/@51.5254742,-0.105732,5778m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x1a51f5836cad81bd:0x32e2ee1b39045b8c!2m2!1d13.1995378!2d-8.9171841?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="contact-val" style="color:rgba(235,250,250,0.72);text-decoration:none;border-bottom:1px solid rgba(237,155,35,0.3);padding-bottom:2px;transition:color 0.22s ease;" onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(235,250,250,0.72)'">Rua do Mat, ao lado do<br>Espaço Luanda, Talatona</a>
         </div>
         <div class="contact-col">
-          <span class="contact-label">Reservas &amp; Encomendas</span>
-          <p class="contact-val">+244 933 002 904</p>
-        </div>
-        <div class="contact-col">
           <span class="contact-label">Horário</span>
-          <p class="contact-val" style="line-height:1.8;">Seg. – Sex. &nbsp;7h – 20h<br><span style="font-size:0.88em;opacity:0.65;">Sáb., Dom. e Feriados<br>7h – 18h</span></p>
+          <p class="contact-val" style="line-height:1.9;">Seg. – Sex. &nbsp;7h – 20h<br>Sáb., Dom. e Feriados &nbsp;7h – 18h</p>
         </div>
       </div>
     </div>
 
     <!-- SOCIAL CTA -->
     <div class="footer-social-cta">
-      <p style="font-family:'Quicksand',sans-serif;font-size:0.58rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#ED9B23;margin-bottom:1.2rem;position:relative;z-index:1;">Siga-nos</p>
       <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(2rem,4.5vw,3.8rem);color:#F1FFFF;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.8rem;position:relative;z-index:1;">Siga. Partilhe. <em style="color:#ED9B23;font-style:normal;">Inspire.</em></h2>
       <p style="font-family:'Quicksand',sans-serif;font-size:0.78rem;font-weight:300;color:rgba(241,255,255,0.4);margin-bottom:0.5rem;letter-spacing:0.04em;position:relative;z-index:1;">Marque-nos nas suas fotos e faça parte da nossa história.</p>
       <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(237,155,35,0.55);margin-bottom:2.4rem;position:relative;z-index:1;">@0kulya.cafe</p>
@@ -545,11 +541,6 @@
           <span class="social-icon-label">TripAdvisor</span>
         </a>
       </div>
-      <a href="https://linktr.ee/okulya.cafe" target="_blank" rel="noopener"
-         style="font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,155,35,0.45);text-decoration:none;transition:color 0.22s ease;position:relative;z-index:1;"
-         onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(237,155,35,0.45)'">
-        Todos os nossos links &nbsp;→&nbsp; linktr.ee/okulya.cafe
-      </a>
     </div>
 
     <p style="font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(235,250,250,0.28);text-align:center;padding-bottom:1.5rem;position:relative;z-index:1;">&copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Talatona, Luanda, Angola</p>

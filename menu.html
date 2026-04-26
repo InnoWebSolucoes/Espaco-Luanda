@@ -191,9 +191,10 @@
       position: absolute; opacity: 0;
       transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1);
       pointer-events: auto; display: block;
+      mix-blend-mode: color;
     }
-    .bean-sprite.in-view { opacity: var(--op, 0.07); }
-    .bean-sprite:hover { opacity: 0.22 !important; transition: opacity 0.18s ease; cursor: default; }
+    .bean-sprite.in-view { opacity: var(--op, 0.55); }
+    .bean-sprite:hover { opacity: 0.9 !important; transition: opacity 0.18s ease; cursor: default; }
     .bean-cluster { position: absolute; pointer-events: none; z-index: 0; }
     .bean-cluster .bean-sprite { pointer-events: auto; }
     @media (max-width: 600px) { .bean-cluster { transform: scale(0.65); transform-origin: top left; } }
@@ -216,7 +217,7 @@
       </svg>
       Voltar
     </a>
-    <img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café" />
+    <a href="index.html" style="display:block;line-height:0;"><img src="Brand Reasources/logo.png" class="nav-logo" alt="Okulya Café" /></a>
     <a href="index.html#contact"
        style="font-family:'Quicksand',sans-serif;font-size:0.56rem;font-weight:500;
               letter-spacing:0.22em;text-transform:uppercase;color:rgba(241,255,255,0.45);
@@ -282,14 +283,14 @@
     </button>
 
     <!-- Location & Hours -->
-    <div style="margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid rgba(241,255,255,0.07);">
-      <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <p style="font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(241,255,255,0.28);">
-          <span style="color:#ED9B23;margin-right:0.5rem;">&#9679;</span>Rua do Mat, ao lado do Espaço Luanda, Talatona
-        </p>
-        <p style="font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(241,255,255,0.28);">
-          <span style="color:#ED9B23;margin-right:0.5rem;">&#9679;</span>Seg. – Sex. 7h – 20h &nbsp;·&nbsp; Sáb., Dom. e Feriados 7h – 18h
-        </p>
+    <div style="margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid rgba(241,255,255,0.1);display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;">
+      <div>
+        <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#ED9B23;margin-bottom:0.7rem;">Morada</span>
+        <p style="font-family:'Quicksand',sans-serif;font-size:0.82rem;font-weight:400;line-height:1.65;color:rgba(241,255,255,0.62);margin:0;">Rua do Mat, ao lado do<br>Espaço Luanda, Talatona</p>
+      </div>
+      <div>
+        <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#ED9B23;margin-bottom:0.7rem;">Horário</span>
+        <p style="font-family:'Quicksand',sans-serif;font-size:0.82rem;font-weight:400;line-height:1.9;color:rgba(241,255,255,0.62);margin:0;">Seg. – Sex. &nbsp;7h – 20h<br>Sáb., Dom. e Feriados &nbsp;7h – 18h</p>
       </div>
     </div>
   </div>
@@ -446,74 +447,64 @@
   </script>
 
   <!-- ── FOOTER ────────────────────────────────────────────── -->
-  <footer id="contact" style="background:#47331F;border-top:1px solid rgba(237,155,35,0.12);padding:4rem 0 0;position:relative;z-index:2;overflow:hidden;">
-    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(237,155,35,0.06) 0%, transparent 70%);"></div>
+  <footer id="contact" style="background:#ffffff;border-top:1px solid rgba(71,51,31,0.12);padding:4rem 0 0;position:relative;z-index:2;overflow:hidden;">
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(196,123,10,0.05) 0%, transparent 70%);"></div>
 
     <!-- TITLE -->
     <div style="text-align:center;padding:0 2.4rem 2.5rem;position:relative;z-index:1;">
-      <p style="font-family:'Quicksand',sans-serif;font-size:0.55rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#ED9B23;margin-bottom:0.7rem;">Encontre-nos</p>
-      <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#F1FFFF;letter-spacing:-0.02em;line-height:1.1;margin:0;">Okulya Café</h2>
+      <p style="font-family:'Quicksand',sans-serif;font-size:0.55rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#C47B0A;margin-bottom:0.7rem;">Encontre-nos</p>
+      <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#2D1B0E;letter-spacing:-0.02em;line-height:1.1;margin:0;">Okulya Café</h2>
     </div>
 
-    <!-- INFO GRID -->
-    <div style="padding:0 2.4rem 0;position:relative;z-index:1;border-top:1px solid rgba(237,155,35,0.1);">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;max-width:800px;margin:0 auto;text-align:center;">
+    <!-- INFO GRID (2 cols) -->
+    <div style="padding:0 2.4rem 0;position:relative;z-index:1;border-top:1px solid rgba(196,123,10,0.15);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:560px;margin:0 auto;text-align:center;">
         <div style="padding:2rem 0;">
-          <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#ED9B23;margin-bottom:1rem;">Morada</span>
+          <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#C47B0A;margin-bottom:1rem;">Morada</span>
           <a href="https://www.google.com/maps/dir//Quick+Shop,+35MX%2B4RC,+Unnamed+Road,+Belas,+Angola/@51.5254742,-0.105732,5778m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x1a51f5836cad81bd:0x32e2ee1b39045b8c!2m2!1d13.1995378!2d-8.9171841?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D"
              target="_blank" rel="noopener"
-             style="font-family:'Quicksand',sans-serif;font-size:0.9rem;font-weight:400;line-height:1.75;color:rgba(235,250,250,0.72);text-decoration:none;border-bottom:1px solid rgba(237,155,35,0.3);padding-bottom:2px;transition:color 0.22s ease;"
-             onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(235,250,250,0.72)'">
+             style="font-family:'Quicksand',sans-serif;font-size:0.9rem;font-weight:400;line-height:1.75;color:rgba(45,27,14,0.7);text-decoration:none;border-bottom:1px solid rgba(196,123,10,0.3);padding-bottom:2px;transition:color 0.22s ease;"
+             onmouseover="this.style.color='#C47B0A'" onmouseout="this.style.color='rgba(45,27,14,0.7)'">
             Rua do Mat, ao lado do<br>Espaço Luanda, Talatona
           </a>
         </div>
-        <div style="padding:2rem 0;border-left:1px solid rgba(237,155,35,0.12);">
-          <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#ED9B23;margin-bottom:1rem;">Reservas &amp; Encomendas</span>
-          <p style="font-family:'Quicksand',sans-serif;font-size:0.9rem;font-weight:400;line-height:1.75;color:rgba(235,250,250,0.72);margin:0;">+244 933 002 904</p>
-        </div>
-        <div style="padding:2rem 0;border-left:1px solid rgba(237,155,35,0.12);">
-          <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#ED9B23;margin-bottom:1rem;">Horário</span>
-          <p style="font-family:'Quicksand',sans-serif;font-size:0.9rem;font-weight:400;line-height:1.8;color:rgba(235,250,250,0.72);margin:0;">Seg. – Sex. &nbsp;7h – 20h<br><span style="font-size:0.88em;opacity:0.65;">Sáb., Dom. e Feriados<br>7h – 18h</span></p>
+        <div style="padding:2rem 0;border-left:1px solid rgba(196,123,10,0.15);">
+          <span style="display:block;font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#C47B0A;margin-bottom:1rem;">Horário</span>
+          <p style="font-family:'Quicksand',sans-serif;font-size:0.9rem;font-weight:400;line-height:1.9;color:rgba(45,27,14,0.7);margin:0;">Seg. – Sex. &nbsp;7h – 20h<br>Sáb., Dom. e Feriados &nbsp;7h – 18h</p>
         </div>
       </div>
     </div>
 
     <!-- SOCIAL CTA -->
-    <div style="position:relative;z-index:1;text-align:center;padding:2rem 2.4rem 3.5rem;border-top:1px solid rgba(237,155,35,0.1);">
-      <p style="font-family:'Quicksand',sans-serif;font-size:0.58rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#ED9B23;margin-bottom:1.2rem;">Siga-nos</p>
-      <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(2rem,4.5vw,3.8rem);color:#F1FFFF;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.8rem;">Siga. Partilhe. <em style="color:#ED9B23;font-style:normal;">Inspire.</em></h2>
-      <p style="font-family:'Quicksand',sans-serif;font-size:0.78rem;font-weight:300;color:rgba(241,255,255,0.4);margin-bottom:0.5rem;letter-spacing:0.04em;">Marque-nos nas suas fotos e faça parte da nossa história.</p>
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(237,155,35,0.55);margin-bottom:2.4rem;">@0kulya.cafe</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:nowrap;margin-bottom:1.5rem;">
+    <div style="position:relative;z-index:1;text-align:center;padding:2rem 2.4rem 3.5rem;border-top:1px solid rgba(196,123,10,0.12);">
+      <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(2rem,4.5vw,3.8rem);color:#2D1B0E;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.8rem;">Siga. Partilhe. <em style="color:#C47B0A;font-style:normal;">Inspire.</em></h2>
+      <p style="font-family:'Quicksand',sans-serif;font-size:0.78rem;font-weight:300;color:rgba(45,27,14,0.45);margin-bottom:0.5rem;letter-spacing:0.04em;">Marque-nos nas suas fotos e faça parte da nossa história.</p>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(196,123,10,0.7);margin-bottom:2.4rem;">@0kulya.cafe</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:nowrap;">
         <a href="https://www.instagram.com/0kulya.cafe/" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.5rem;text-decoration:none;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,255,255,0.12);background:rgba(241,255,255,0.04);display:flex;align-items:center;justify-content:center;color:#F1FFFF;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#ED9B23';this.style.background='rgba(237,155,35,0.08)'" onmouseout="this.style.borderColor='rgba(241,255,255,0.12)';this.style.background='rgba(241,255,255,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
-          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(241,255,255,0.3);">Instagram</span>
+          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(71,51,31,0.15);background:rgba(71,51,31,0.04);display:flex;align-items:center;justify-content:center;color:#2D1B0E;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#C47B0A';this.style.background='rgba(196,123,10,0.08)'" onmouseout="this.style.borderColor='rgba(71,51,31,0.15)';this.style.background='rgba(71,51,31,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(45,27,14,0.4);">Instagram</span>
         </a>
         <a href="https://www.facebook.com/profile.php?id=100083340589429" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.5rem;text-decoration:none;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,255,255,0.12);background:rgba(241,255,255,0.04);display:flex;align-items:center;justify-content:center;color:#F1FFFF;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#ED9B23';this.style.background='rgba(237,155,35,0.08)'" onmouseout="this.style.borderColor='rgba(241,255,255,0.12)';this.style.background='rgba(241,255,255,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
-          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(241,255,255,0.3);">Facebook</span>
+          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(71,51,31,0.15);background:rgba(71,51,31,0.04);display:flex;align-items:center;justify-content:center;color:#2D1B0E;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#C47B0A';this.style.background='rgba(196,123,10,0.08)'" onmouseout="this.style.borderColor='rgba(71,51,31,0.15)';this.style.background='rgba(71,51,31,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(45,27,14,0.4);">Facebook</span>
         </a>
         <a href="https://www.tiktok.com/@0kulya.cafe" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.5rem;text-decoration:none;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,255,255,0.12);background:rgba(241,255,255,0.04);display:flex;align-items:center;justify-content:center;color:#F1FFFF;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#ED9B23';this.style.background='rgba(237,155,35,0.08)'" onmouseout="this.style.borderColor='rgba(241,255,255,0.12)';this.style.background='rgba(241,255,255,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.74a8.2 8.2 0 0 0 4.79 1.52V6.82a4.85 4.85 0 0 1-1.03-.13z"/></svg></div>
-          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(241,255,255,0.3);">TikTok</span>
+          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(71,51,31,0.15);background:rgba(71,51,31,0.04);display:flex;align-items:center;justify-content:center;color:#2D1B0E;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#C47B0A';this.style.background='rgba(196,123,10,0.08)'" onmouseout="this.style.borderColor='rgba(71,51,31,0.15)';this.style.background='rgba(71,51,31,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.74a8.2 8.2 0 0 0 4.79 1.52V6.82a4.85 4.85 0 0 1-1.03-.13z"/></svg></div>
+          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(45,27,14,0.4);">TikTok</span>
         </a>
         <a href="https://www.linkedin.com/company/okulya" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.5rem;text-decoration:none;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,255,255,0.12);background:rgba(241,255,255,0.04);display:flex;align-items:center;justify-content:center;color:#F1FFFF;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#ED9B23';this.style.background='rgba(237,155,35,0.08)'" onmouseout="this.style.borderColor='rgba(241,255,255,0.12)';this.style.background='rgba(241,255,255,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(241,255,255,0.3);">LinkedIn</span>
+          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(71,51,31,0.15);background:rgba(71,51,31,0.04);display:flex;align-items:center;justify-content:center;color:#2D1B0E;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#C47B0A';this.style.background='rgba(196,123,10,0.08)'" onmouseout="this.style.borderColor='rgba(71,51,31,0.15)';this.style.background='rgba(71,51,31,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(45,27,14,0.4);">LinkedIn</span>
         </a>
         <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g293763-d33320831-Reviews-Okulya_Cafe-Luanda_Luanda_Province.html" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.5rem;text-decoration:none;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,255,255,0.12);background:rgba(241,255,255,0.04);display:flex;align-items:center;justify-content:center;color:#F1FFFF;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#ED9B23';this.style.background='rgba(237,155,35,0.08)'" onmouseout="this.style.borderColor='rgba(241,255,255,0.12)';this.style.background='rgba(241,255,255,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 4.295c-2.02 0-4.035.554-5.773 1.633A9.91 9.91 0 003 8.3L.68 6.27v5.026l2.9.028C3.79 16.05 7.465 19.5 12 19.5s8.21-3.45 8.42-8.176l2.9-.028V6.27L21 8.3a9.91 9.91 0 00-3.233-2.372A11.105 11.105 0 0012.006 4.295zM8.064 8.28a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm7.872 0a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm-7.872 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm7.872 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/></svg></div>
-          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(241,255,255,0.3);">TripAdvisor</span>
+          <div style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(71,51,31,0.15);background:rgba(71,51,31,0.04);display:flex;align-items:center;justify-content:center;color:#2D1B0E;transition:border-color 0.22s ease,background 0.22s ease;" onmouseover="this.style.borderColor='#C47B0A';this.style.background='rgba(196,123,10,0.08)'" onmouseout="this.style.borderColor='rgba(71,51,31,0.15)';this.style.background='rgba(71,51,31,0.04)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 4.295c-2.02 0-4.035.554-5.773 1.633A9.91 9.91 0 003 8.3L.68 6.27v5.026l2.9.028C3.79 16.05 7.465 19.5 12 19.5s8.21-3.45 8.42-8.176l2.9-.028V6.27L21 8.3a9.91 9.91 0 00-3.233-2.372A11.105 11.105 0 0012.006 4.295zM8.064 8.28a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm7.872 0a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm-7.872 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm7.872 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/></svg></div>
+          <span style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(45,27,14,0.4);">TripAdvisor</span>
         </a>
       </div>
-      <a href="https://linktr.ee/okulya.cafe" target="_blank" rel="noopener"
-         style="font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,155,35,0.45);text-decoration:none;transition:color 0.22s ease;"
-         onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(237,155,35,0.45)'">
-        Todos os nossos links &nbsp;→&nbsp; linktr.ee/okulya.cafe
-      </a>
     </div>
 
-    <p style="font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(235,250,250,0.28);text-align:center;padding-bottom:1.5rem;position:relative;z-index:1;">&copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Talatona, Luanda, Angola</p>
+    <p style="font-family:'Quicksand',sans-serif;font-size:0.52rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(45,27,14,0.3);text-align:center;padding-bottom:1.5rem;position:relative;z-index:1;">&copy; 2026 Okulya Café &nbsp;&middot;&nbsp; Talatona, Luanda, Angola</p>
   </footer>
 
 </body>

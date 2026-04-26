@@ -272,9 +272,10 @@
       transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1);
       will-change: opacity;
       display: block;
+      mix-blend-mode: color;
     }
-    .bean-sprite.in-view { opacity: var(--op, 0.07); }
-    .bean-sprite:hover { opacity: 0.22 !important; transition: opacity 0.18s ease; cursor: default; }
+    .bean-sprite.in-view { opacity: var(--op, 0.55); }
+    .bean-sprite:hover { opacity: 0.9 !important; transition: opacity 0.18s ease; cursor: default; }
     .bean-cluster { position: absolute; pointer-events: none; z-index: 1; }
     .bean-cluster .bean-sprite { pointer-events: auto; }
     @media (max-width: 768px) {
@@ -284,9 +285,9 @@
     /* ─── Contact footer grid ────────────────────────────────────────────────── */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 3rem;
-      max-width: 800px;
+      max-width: 560px;
       margin: 0 auto;
       position: relative; z-index: 1;
       text-align: center;
@@ -669,8 +670,10 @@
         </svg>
         Voltar
       </button>
-      <img src="Brand Reasources/logo.png" alt="Okulya Café"
-           style="height:72px;width:auto;display:block;opacity:0.88;" />
+      <a href="index.html" onclick="document.getElementById('mob-overlay').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:block;line-height:0;">
+        <img src="Brand Reasources/logo.png" alt="Okulya Café"
+             style="height:72px;width:auto;display:block;opacity:0.88;" />
+      </a>
     </div>
 
     <!-- Nav links - left-aligned, full-width -->
@@ -819,8 +822,10 @@
     <div style="position:sticky;top:0;z-index:10;width:100%;
                 display:flex;align-items:center;padding:0.9rem 1.8rem;
                 background:#47331F;border-bottom:1px solid rgba(237,155,35,0.12);">
-      <img src="Brand Reasources/logo.png" alt="Okulya Café"
-           style="height:72px;width:auto;max-width:none;display:block;opacity:0.9;" />
+      <a href="index.html" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:block;line-height:0;">
+        <img src="Brand Reasources/logo.png" alt="Okulya Café"
+             style="height:72px;width:auto;max-width:none;display:block;opacity:0.9;" />
+      </a>
     </div>
 
     <div id="dining-content-wrapper" style="display:flex;width:100%;align-items:flex-start;">
@@ -1120,19 +1125,14 @@
           </a>
         </div>
         <div class="contact-col">
-          <span class="contact-label">Reservas &amp; Encomendas</span>
-          <p class="contact-val">+244 933 002 904</p>
-        </div>
-        <div class="contact-col">
           <span class="contact-label">Horário</span>
-          <p class="contact-val" style="line-height:1.8;">Seg. – Sex. &nbsp;7h – 20h<br><span style="font-size:0.88em;opacity:0.65;">Sáb., Dom. e Feriados<br>7h – 18h</span></p>
+          <p class="contact-val" style="line-height:1.9;">Seg. – Sex. &nbsp;7h – 20h<br>Sáb., Dom. e Feriados &nbsp;7h – 18h</p>
         </div>
       </div>
     </div>
 
     <!-- ── SOCIAL CTA (second) ── -->
     <div class="footer-social-cta">
-      <p style="font-family:'Quicksand',sans-serif;font-size:0.58rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#ED9B23;margin-bottom:1.2rem;position:relative;z-index:1;">Siga-nos</p>
       <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(2rem,4.5vw,3.8rem);color:#F1FFFF;letter-spacing:-0.02em;line-height:1.1;margin-bottom:0.8rem;position:relative;z-index:1;">Siga. Partilhe. <em style="color:#ED9B23;font-style:normal;">Inspire.</em></h2>
       <p style="font-family:'Quicksand',sans-serif;font-size:0.78rem;font-weight:300;color:rgba(241,255,255,0.4);margin-bottom:0.5rem;letter-spacing:0.04em;position:relative;z-index:1;">Marque-nos nas suas fotos e faça parte da nossa história.</p>
       <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(237,155,35,0.55);margin-bottom:2.4rem;position:relative;z-index:1;">@0kulya.cafe</p>
@@ -1171,11 +1171,6 @@
         </a>
       </div>
 
-      <a href="https://linktr.ee/okulya.cafe" target="_blank" rel="noopener"
-         style="font-family:'Quicksand',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,155,35,0.45);text-decoration:none;transition:color 0.22s ease;position:relative;z-index:1;"
-         onmouseover="this.style.color='#ED9B23'" onmouseout="this.style.color='rgba(237,155,35,0.45)'">
-        Todos os nossos links &nbsp;→&nbsp; linktr.ee/okulya.cafe
-      </a>
     </div>
 
     <!-- Copyright -->
