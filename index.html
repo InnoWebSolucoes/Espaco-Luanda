@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    a:focus, button:focus { outline: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #ED9B23; outline-offset: 2px; }
 
     /* ─── Nav link - ornamental hover underline ─────────────────────────────
        On hover a small calligraphic ornament scales in from the centre,
@@ -191,12 +193,12 @@
     /* Contact info in overlay */
     .mob-contact {
       font-family: 'Quicksand', sans-serif;
-      font-size: 0.56rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.32);
-      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
     }
 
     /* ─── Dining times section ───────────────────────────────────────────────── */
@@ -582,7 +584,6 @@
       <video id="hero-video" autoplay muted loop playsinline preload="auto"
              style="position:absolute;inset:0;width:100%;height:100%;
                     object-fit:cover;object-position:center;background:#0d0907;"
-             poster="dining-monday.jpg">
         <source src="hero-video.mp4" type="video/mp4" />
       </video>
     </div>
@@ -687,9 +688,10 @@
 
     <!-- Contact info pinned to bottom -->
     <div style="position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;">
-      <div style="width:36px;height:1px;background:rgba(255,255,255,0.18);margin-bottom:1rem;"></div>
+      <div style="width:36px;height:1px;background:#ED9B23;margin-bottom:1.2rem;opacity:0.6;"></div>
+      <p style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:#ED9B23;margin-bottom:0.8rem;opacity:0.85;">Encontre-nos</p>
       <p class="mob-contact">Rua do Mat, ao lado do Espaço Luanda, Talatona</p>
-      <p class="mob-contact" style="margin-top:0.35rem;">Seg. – Sex. 7h – 20h &nbsp;·&nbsp; Sáb., Dom. e Feriados 7h – 18h</p>
+      <p class="mob-contact" style="margin-top:0.5rem;color:rgba(237,155,35,0.8);">Seg. – Sex. &nbsp;7h – 20h &nbsp;·&nbsp; Sáb., Dom. e Feriados &nbsp;7h – 18h</p>
     </div>
 
   </div>
@@ -851,7 +853,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-1.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="right:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:66px;right:6px;top:14px;transform:rotate(14deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.45;width:42px;right:60px;top:74px;transform:rotate(-20deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.55;width:52px;right:12px;top:130px;transform:rotate(28deg);" />
+            </div>
             <h2 class="dining-title">café</h2>
             <p class="dining-sub">a partir das 10h</p>
             <p class="dining-desc">O nosso programa de café é construído em torno do equilíbrio e da clareza. Os grãos são selecionados pelo seu carácter e torrados para realçar a expressão natural de cada um. De um espresso rápido a um cappuccino mais demorado, as manhãs no Okulya são relaxadas e ao seu ritmo.</p>
@@ -866,7 +873,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-2.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="left:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:64px;left:8px;top:14px;transform:rotate(-16deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.45;width:44px;left:58px;top:76px;transform:rotate(22deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.55;width:54px;left:10px;top:132px;transform:rotate(-8deg);" />
+            </div>
             <h2 class="dining-title">pastelaria</h2>
             <p class="dining-sub">a partir das 10h</p>
             <p class="dining-desc">Os bolos são feitos frescos todas as manhãs com técnicas clássicas e ingredientes sazonais. Croissants, brioches e especiais do dia oferecem um início simples e cuidado. Tudo é preparado com atenção e amor silencioso ao artesanato.</p>
@@ -881,7 +893,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-3.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="right:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:60px;right:10px;top:16px;transform:rotate(-10deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.48;width:46px;right:58px;top:72px;transform:rotate(24deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:56px;right:8px;top:134px;transform:rotate(-32deg);" />
+            </div>
             <h2 class="dining-title">almoço</h2>
             <p class="dining-sub">a partir das 12h30</p>
             <p class="dining-desc">O nosso menu de almoço é leve, sazonal e descontraído. Os pratos são simples e generosos, inspirados nos cafés de bairro e bares de vinho. Os ingredientes mudam com a estação e as ideias da cozinha.</p>
@@ -896,7 +913,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-4.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="left:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:68px;left:6px;top:12px;transform:rotate(18deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:40px;left:60px;top:78px;transform:rotate(-15deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.56;width:56px;left:12px;top:136px;transform:rotate(6deg);" />
+            </div>
             <h2 class="dining-title">petiscos</h2>
             <p class="dining-sub">a partir das 17h</p>
             <p class="dining-desc">Os nossos petiscos são pensados para partilhar e comer com calma. O menu reúne pratos sazonais e descontraídos que combinam naturalmente com vinho ou cocktails. Alguns reflectem tradições locais, outros exploram sabores recolhidos de mais longe.</p>
@@ -911,7 +933,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dining-cocktails.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="right:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.55;width:62px;right:8px;top:18px;transform:rotate(8deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.5;width:48px;right:56px;top:76px;transform:rotate(-26deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:58px;right:6px;top:132px;transform:rotate(20deg);" />
+            </div>
             <h2 class="dining-title">vinho</h2>
             <p class="dining-sub">servido todo o dia</p>
             <p class="dining-desc">A nossa carta de vinhos é moldada pela curiosidade e pela conversa. Procuramos produtores com alma, de pequena escala, e focamo-nos em vinhos descontraídos mas pensados. Cada garrafa é escolhida pela sua frescura, carácter e capacidade de surpreender.</p>
@@ -926,7 +953,12 @@
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dining-wine.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;overflow:visible;">
+            <div class="bean-cluster" style="left:-14px;top:10px;width:130px;height:190px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:64px;left:8px;top:12px;transform:rotate(-12deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.46;width:42px;left:56px;top:74px;transform:rotate(18deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:54px;left:10px;top:134px;transform:rotate(-26deg);" />
+            </div>
             <h2 class="dining-title">cocktails</h2>
             <p class="dining-sub">servido todo o dia</p>
             <p class="dining-desc">Os nossos cocktails celebram as estações e o carácter de cada ingrediente. Trabalhamos de perto com produtores locais e construímos o menu em torno do que está fresco e disponível. Usando técnicas como a evaporação rotativa, capturamos sabores puros em bebidas simples, expressivas e discretamente inventivas.</p>
@@ -934,50 +966,6 @@
           </div>
         </article>
 
-      </div>
-
-      <!-- ── BEAN CLUSTERS: one per dining article, alternating left/right ── -->
-      <!-- Article 0 (café) — right edge -->
-      <div class="bean-cluster" style="right:0;top:2%;width:220px;height:260px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:74px;right:10px;top:20px;transform:rotate(14deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:46px;right:68px;top:80px;transform:rotate(-8deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:56px;right:16px;top:145px;transform:rotate(28deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.05;width:38px;right:78px;top:200px;transform:rotate(-20deg);" />
-      </div>
-      <!-- Article 1 (pastelaria) — left edge -->
-      <div class="bean-cluster" style="left:0;top:18%;width:190px;height:260px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.07;width:58px;left:6px;top:15px;transform:rotate(-18deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:80px;left:52px;top:72px;transform:rotate(12deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:44px;left:12px;top:158px;transform:rotate(30deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:62px;left:62px;top:206px;transform:rotate(-6deg);" />
-      </div>
-      <!-- Article 2 (almoço) — right edge -->
-      <div class="bean-cluster" style="right:0;top:35%;width:200px;height:250px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:62px;right:8px;top:22px;transform:rotate(-12deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:44px;right:64px;top:86px;transform:rotate(22deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:76px;right:14px;top:148px;transform:rotate(-30deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.05;width:40px;right:72px;top:210px;transform:rotate(8deg);" />
-      </div>
-      <!-- Article 3 (petiscos) — left edge -->
-      <div class="bean-cluster" style="left:0;top:51%;width:185px;height:250px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:66px;left:8px;top:18px;transform:rotate(20deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:42px;left:58px;top:85px;transform:rotate(-14deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:78px;left:16px;top:142px;transform:rotate(5deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:48px;left:64px;top:204px;transform:rotate(-26deg);" />
-      </div>
-      <!-- Article 4 (vinho) — right edge -->
-      <div class="bean-cluster" style="right:0;top:68%;width:210px;height:250px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.07;width:54px;right:18px;top:24px;transform:rotate(-8deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:72px;right:62px;top:80px;transform:rotate(18deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:40px;right:10px;top:152px;transform:rotate(35deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:60px;right:56px;top:200px;transform:rotate(-16deg);" />
-      </div>
-      <!-- Article 5 (cocktails) — left edge -->
-      <div class="bean-cluster" style="left:0;top:84%;width:180px;height:240px;">
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:68px;left:10px;top:12px;transform:rotate(10deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:44px;left:56px;top:78px;transform:rotate(-22deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.09;width:74px;left:14px;top:140px;transform:rotate(28deg);" />
-        <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.05;width:38px;left:64px;top:200px;transform:rotate(-5deg);" />
       </div>
 
       <!-- ── RIGHT: sticky timeline - vertical line RIGHT, ticks extend LEFT ── -->

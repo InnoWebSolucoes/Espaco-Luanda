@@ -9,9 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    a:focus, button:focus { outline: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #ED9B23; outline-offset: 2px; }
 
     body {
-      background: #482E2B;
+      background: #47331F;
       min-height: 100svh;
       font-family: 'Quicksand', sans-serif;
       overflow-x: hidden;
@@ -106,7 +108,7 @@
     /* ── CATEGORY DETAIL VIEW ────────────────────────────────────── */
     #cat-view {
       position: fixed; inset: 0; z-index: 200;
-      background: #482E2B;
+      background: #47331F;
       opacity: 0; transform: translateY(28px);
       pointer-events: none;
       transition: opacity 0.45s ease, transform 0.45s ease;
@@ -186,19 +188,6 @@
     }
     #wa-widget:hover { transform: scale(1.1); }
 
-    /* ── Coffee bean scatter ──────────────────────────────────── */
-    .bean-sprite {
-      position: absolute; opacity: 0;
-      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1);
-      pointer-events: auto; display: block;
-      mix-blend-mode: color;
-    }
-    .bean-sprite.in-view { opacity: var(--op, 0.55); }
-    .bean-sprite:hover { opacity: 0.9 !important; transition: opacity 0.18s ease; cursor: default; }
-    .bean-cluster { position: absolute; pointer-events: none; z-index: 0; }
-    .bean-cluster .bean-sprite { pointer-events: auto; }
-    @media (max-width: 600px) { .bean-cluster { transform: scale(0.65); transform-origin: top left; } }
-
     @media (max-width: 600px) {
       #picker-view  { padding: 6rem 1.6rem 3rem; }
       #cat-header   { padding: 6rem 1.6rem 2rem; }
@@ -227,14 +216,6 @@
 
   <!-- ── CATEGORY PICKER ──────────────────────────────────────── -->
   <div id="picker-view" style="position:relative;">
-    <!-- Bean clusters -->
-    <div class="bean-cluster" style="right:0;top:20%;width:160px;height:300px;">
-      <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.07;width:62px;right:8px;top:10px;transform:rotate(16deg);" />
-      <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.05;width:42px;right:54px;top:80px;transform:rotate(-22deg);" />
-      <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.08;width:74px;right:4px;top:140px;transform:rotate(8deg);" />
-      <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.06;width:48px;right:60px;top:210px;transform:rotate(-14deg);" />
-      <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.07;width:56px;right:12px;top:260px;transform:rotate(28deg);" />
-    </div>
     <h1 class="picker-heading">menu</h1>
     <div class="picker-rule"></div>
 
@@ -398,19 +379,6 @@
 
     var h = (location.hash || '').replace('#', '');
     if (h && MENU[h]) showCat(h);
-
-    /* Bean scatter */
-    (function() {
-      var bObs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          e.target.querySelectorAll('.bean-sprite').forEach(function(b, i) {
-            if (e.isIntersecting) setTimeout(function(){ b.classList.add('in-view'); }, i * 60);
-            else b.classList.remove('in-view');
-          });
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-      document.querySelectorAll('.bean-cluster').forEach(function(c){ bObs.observe(c); });
-    })();
 
     // WhatsApp widget
     var wa = document.getElementById('wa-widget');
