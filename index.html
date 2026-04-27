@@ -528,12 +528,12 @@
     .footer-social-cta {
       position: relative; z-index: 1;
       text-align: center;
-      padding: 2rem 2.4rem 3.5rem;
+      padding: 2rem 2.4rem 0.8rem;
       border-top: 1px solid rgba(237,155,35,0.1);
     }
     .social-icons-row {
       display: flex; align-items: center; justify-content: center;
-      gap: 1.4rem; flex-wrap: nowrap; margin-bottom: 1.5rem;
+      gap: 1.4rem; flex-wrap: nowrap; margin-bottom: 0;
     }
     .social-icon-btn {
       display: inline-flex; flex-direction: column; align-items: center;
@@ -608,7 +608,7 @@
       <!-- Logo (always centred, absolute) -->
       <div id="hero-logo-wrap" style="position:absolute;left:50%;transform:translateX(-50%);width:max-content;">
         <img src="Brand Reasources/logo.png" alt="Okulya Café"
-             style="height:72px;width:auto;max-width:none;display:block;" />
+             style="height:104px;width:auto;max-width:none;display:block;" />
       </div>
 
       <!-- Right: desktop links + mobile hamburger -->
@@ -676,16 +676,16 @@
     </nav>
 
     <!-- Contact info pinned to bottom -->
-    <div style="position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;">
+    <div style="position:absolute;bottom:2.5rem;left:2.5rem;right:5.5rem;">
       <div style="width:36px;height:1px;background:#ED9B23;margin-bottom:1.2rem;opacity:0.6;"></div>
       <p style="font-family:'Quicksand',sans-serif;font-size:0.48rem;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:#ED9B23;margin-bottom:0.8rem;opacity:0.85;">Encontre-nos</p>
       <p class="mob-contact">Rua do Mat, ao lado do Espaço Luanda, Talatona</p>
       <div style="margin-top:0.6rem;display:flex;flex-direction:column;gap:0.22rem;">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="display:flex;align-items:baseline;gap:1.2rem;">
           <span class="mob-contact" style="color:rgba(237,155,35,0.8);">Seg. – Sex.</span>
           <span class="mob-contact" style="color:rgba(237,155,35,0.8);">7h – 20h</span>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="display:flex;align-items:baseline;gap:1.2rem;">
           <span class="mob-contact" style="color:rgba(237,155,35,0.8);">Sáb., Dom. e Feriados</span>
           <span class="mob-contact" style="color:rgba(237,155,35,0.8);">7h – 18h</span>
         </div>
@@ -846,22 +846,20 @@
 
         <!-- Item 0: Coffee -->
         <article class="dining-item" data-period="0" style="position:relative;">
-          <!-- Bean near where title meets the image edge -->
-          <div class="bean-cluster" style="left:40%;top:6%;width:52px;height:72px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:46px;left:2px;top:4px;transform:rotate(14deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.46;width:30px;left:16px;top:48px;transform:rotate(-22deg);" />
-          </div>
-          <!-- Bean near the CTA link, bottom of text side -->
-          <div class="bean-cluster" style="left:78%;bottom:10%;width:48px;height:66px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.55;width:42px;left:3px;top:4px;transform:rotate(-10deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.42;width:28px;left:14px;top:42px;transform:rotate(24deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-coffee.webp" alt="Café"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-1.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:1.2rem;right:-14px;width:62px;height:84px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:48px;left:0;top:4px;transform:rotate(14deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.45;width:30px;left:20px;top:54px;transform:rotate(-22deg);" />
+            </div>
+            <div class="bean-cluster" style="bottom:1.2rem;left:-8px;width:58px;height:78px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:44px;left:2px;top:4px;transform:rotate(-10deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.42;width:28px;left:18px;top:48px;transform:rotate(24deg);" />
+            </div>
             <h2 class="dining-title">café</h2>
             <p class="dining-sub">a partir das 10h</p>
             <p class="dining-desc">O nosso programa de café é construído em torno do equilíbrio e da clareza. Os grãos são selecionados pelo seu carácter e torrados para realçar a expressão natural de cada um. De um espresso rápido a um cappuccino mais demorado, as manhãs no Okulya são relaxadas e ao seu ritmo.</p>
@@ -871,22 +869,20 @@
 
         <!-- Item 1: Pastries -->
         <article class="dining-item" data-period="1" style="position:relative;">
-          <!-- Bean at top-left of text col, next to title -->
-          <div class="bean-cluster" style="left:2%;top:5%;width:50px;height:68px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:44px;left:3px;top:4px;transform:rotate(-16deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:28px;left:18px;top:44px;transform:rotate(20deg);" />
-          </div>
-          <!-- Bean overlapping the image left edge at mid-height -->
-          <div class="bean-cluster" style="left:54%;top:42%;width:52px;height:70px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:46px;left:2px;top:6px;transform:rotate(18deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.42;width:30px;left:20px;top:48px;transform:rotate(-12deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-snacks.webp" alt="Pastelaria"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-2.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:1.2rem;left:-14px;width:62px;height:84px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.60;width:48px;left:2px;top:4px;transform:rotate(-16deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:30px;left:20px;top:54px;transform:rotate(20deg);" />
+            </div>
+            <div class="bean-cluster" style="top:44%;right:-8px;width:58px;height:76px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.56;width:46px;left:0;top:4px;transform:rotate(18deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.40;width:30px;left:16px;top:50px;transform:rotate(-12deg);" />
+            </div>
             <h2 class="dining-title">pastelaria</h2>
             <p class="dining-sub">a partir das 10h</p>
             <p class="dining-desc">Os bolos são feitos frescos todas as manhãs com técnicas clássicas e ingredientes sazonais. Croissants, brioches e especiais do dia oferecem um início simples e cuidado. Tudo é preparado com atenção e amor silencioso ao artesanato.</p>
@@ -896,22 +892,20 @@
 
         <!-- Item 2: Light Lunch -->
         <article class="dining-item" data-period="2" style="position:relative;">
-          <!-- Bean overlapping lower portion of image -->
-          <div class="bean-cluster" style="left:10%;bottom:18%;width:54px;height:74px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.65;width:48px;left:2px;top:4px;transform:rotate(-8deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.48;width:30px;left:20px;top:50px;transform:rotate(28deg);" />
-          </div>
-          <!-- Bean next to the CTA link, bottom right of text col -->
-          <div class="bean-cluster" style="left:74%;bottom:8%;width:48px;height:66px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.56;width:42px;left:3px;top:5px;transform:rotate(16deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.4;width:28px;left:16px;top:44px;transform:rotate(-20deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-salad.webp" alt="Almoço"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-3.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:40%;left:-8px;width:60px;height:82px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.64;width:48px;left:2px;top:4px;transform:rotate(-8deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.46;width:30px;left:20px;top:52px;transform:rotate(28deg);" />
+            </div>
+            <div class="bean-cluster" style="bottom:1.2rem;right:-14px;width:58px;height:76px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.55;width:44px;left:0;top:4px;transform:rotate(16deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.40;width:28px;left:18px;top:48px;transform:rotate(-20deg);" />
+            </div>
             <h2 class="dining-title">almoço</h2>
             <p class="dining-sub">a partir das 12h30</p>
             <p class="dining-desc">O nosso menu de almoço é leve, sazonal e descontraído. Os pratos são simples e generosos, inspirados nos cafés de bairro e bares de vinho. Os ingredientes mudam com a estação e as ideias da cozinha.</p>
@@ -921,22 +915,20 @@
 
         <!-- Item 3: Snacks -->
         <article class="dining-item" data-period="3" style="position:relative;">
-          <!-- Bean at top of image col -->
-          <div class="bean-cluster" style="left:56%;top:6%;width:50px;height:68px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:44px;left:3px;top:4px;transform:rotate(-14deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.45;width:28px;left:18px;top:46px;transform:rotate(22deg);" />
-          </div>
-          <!-- Bean near button, bottom-left of text col -->
-          <div class="bean-cluster" style="left:6%;bottom:8%;width:48px;height:66px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:42px;left:2px;top:5px;transform:rotate(10deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.43;width:26px;left:18px;top:44px;transform:rotate(-26deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-pastry.webp" alt="Petiscos"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dish-4.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:1.2rem;right:-8px;width:62px;height:82px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.60;width:48px;left:2px;top:4px;transform:rotate(-14deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:30px;left:20px;top:54px;transform:rotate(22deg);" />
+            </div>
+            <div class="bean-cluster" style="bottom:1.2rem;left:-14px;width:58px;height:76px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.57;width:44px;left:2px;top:4px;transform:rotate(10deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.42;width:28px;left:18px;top:48px;transform:rotate(-26deg);" />
+            </div>
             <h2 class="dining-title">petiscos</h2>
             <p class="dining-sub">a partir das 17h</p>
             <p class="dining-desc">Os nossos petiscos são pensados para partilhar e comer com calma. O menu reúne pratos sazonais e descontraídos que combinam naturalmente com vinho ou cocktails. Alguns reflectem tradições locais, outros exploram sabores recolhidos de mais longe.</p>
@@ -946,22 +938,20 @@
 
         <!-- Item 4: Wine -->
         <article class="dining-item" data-period="4" style="position:relative;">
-          <!-- Bean at top of text col, next to title -->
-          <div class="bean-cluster" style="left:47%;top:5%;width:50px;height:68px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:44px;left:2px;top:4px;transform:rotate(20deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.45;width:28px;left:18px;top:46px;transform:rotate(-8deg);" />
-          </div>
-          <!-- Bean overlapping image lower-left area -->
-          <div class="bean-cluster" style="left:24%;bottom:14%;width:52px;height:72px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:46px;left:2px;top:5px;transform:rotate(-18deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:30px;left:18px;top:48px;transform:rotate(30deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-wine.webp" alt="Vinho"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dining-cocktails.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:1.2rem;left:-8px;width:60px;height:82px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.62;width:48px;left:0;top:4px;transform:rotate(20deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:30px;left:18px;top:54px;transform:rotate(-8deg);" />
+            </div>
+            <div class="bean-cluster" style="top:44%;right:-14px;width:58px;height:76px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.60;width:46px;left:0;top:4px;transform:rotate(-18deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.43;width:30px;left:16px;top:50px;transform:rotate(30deg);" />
+            </div>
             <h2 class="dining-title">vinho</h2>
             <p class="dining-sub">servido todo o dia</p>
             <p class="dining-desc">A nossa carta de vinhos é moldada pela curiosidade e pela conversa. Procuramos produtores com alma, de pequena escala, e focamo-nos em vinhos descontraídos mas pensados. Cada garrafa é escolhida pela sua frescura, carácter e capacidade de surpreender.</p>
@@ -971,22 +961,20 @@
 
         <!-- Item 5: Cocktails -->
         <article class="dining-item" data-period="5" style="position:relative;">
-          <!-- Bean near button, bottom-left of text col -->
-          <div class="bean-cluster" style="left:3%;bottom:7%;width:50px;height:68px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.6;width:44px;left:2px;top:4px;transform:rotate(-12deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.44;width:28px;left:18px;top:46px;transform:rotate(18deg);" />
-          </div>
-          <!-- Bean at image center-right area -->
-          <div class="bean-cluster" style="left:66%;top:38%;width:52px;height:72px;">
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.58;width:46px;left:2px;top:5px;transform:rotate(22deg);" />
-            <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.42;width:30px;left:18px;top:50px;transform:rotate(-16deg);" />
-          </div>
           <div class="dining-item-img-col" style="overflow:hidden;">
             <img src="dining-cocktails.webp" alt="Cocktails"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;" />
             <img class="dining-img-2" src="dining-wine.webp" alt="" />
           </div>
-          <div class="dining-item-text-col">
+          <div class="dining-item-text-col" style="position:relative;">
+            <div class="bean-cluster" style="top:42%;left:-14px;width:60px;height:82px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.60;width:48px;left:2px;top:4px;transform:rotate(-12deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.43;width:30px;left:18px;top:54px;transform:rotate(18deg);" />
+            </div>
+            <div class="bean-cluster" style="bottom:1.2rem;right:-8px;width:58px;height:76px;">
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.57;width:46px;left:0;top:4px;transform:rotate(22deg);" />
+              <img class="bean-sprite" src="Brand Reasources/coffee-bean.png" style="--op:0.41;width:30px;left:16px;top:50px;transform:rotate(-16deg);" />
+            </div>
             <h2 class="dining-title">cocktails</h2>
             <p class="dining-sub">servido todo o dia</p>
             <p class="dining-desc">Os nossos cocktails celebram as estações e o carácter de cada ingrediente. Trabalhamos de perto com produtores locais e construímos o menu em torno do que está fresco e disponível. Usando técnicas como a evaporação rotativa, capturamos sabores puros em bebidas simples, expressivas e discretamente inventivas.</p>
